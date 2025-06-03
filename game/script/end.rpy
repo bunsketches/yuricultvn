@@ -1,6 +1,6 @@
 label end:
     default end_string = ""
-    scene bg room
+    scene bg background3
     marcy "This is the ending scene."
     "First, we will compare how many times we chose Eleanor or Sarah."
     if eleanor_count > sarah_count:
@@ -19,21 +19,25 @@ label end:
     jump expression end_string
 
 label eleanor_good:
+    scene bg background1
     marcy "This is the Good Ending with Eleanor."
     "It should end the game after this..."
     return
 
 label eleanor_bad:
+    scene bg background1
     marcy "This is the Bad Ending with Eleanor."
     "It should end the game after this..."
     return
 
 label sarah_good:
+    scene bg background1
     marcy "This is the Good Ending with Sarah."
     "It should end the game after this..."
     return
 
 label sarah_bad:
+    scene bg background1
     marcy "This is the Bad Ending with Sarah."
     "It should end the game after this..."
     return

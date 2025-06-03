@@ -241,21 +241,27 @@ screen quick_menu():
     zorder 100
 
     if quick_menu:
-
         hbox:
             style_prefix "quick"
-
-            xalign 0.5
-            yalign 1.0
-
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            spacing 32
+            pos(0.95, 0.05)
+            anchor(1.0, 0.0)
+            imagebutton auto "gui/button/btn_hide_%s.png" #action ToggleVariable("hide_quick_menu")
+            imagebutton auto "gui/button/btn_save_%s.png" action ShowMenu('save')
+            imagebutton auto "gui/button/btn_auto_%s.png" action Preference("auto-forward", "toggle")
+            imagebutton auto "gui/button/btn_load_%s.png" action ShowMenu('load')
+            imagebutton auto "gui/button/btn_settings_%s.png" action ShowMenu('preferences')
+            # Removed buttons
+            # textbutton _("Back") action Rollback()
+            # textbutton _("History") action ShowMenu('history')
+            # textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            # textbutton _("Q.Save") action QuickSave()
+            # textbutton _("Q.Load") action QuickLoad()
+            # Old buttons
+            # textbutton _("Save") action ShowMenu('save')
+            # textbutton _("Auto") action Preference("auto-forward", "toggle")
+            # textbutton _("Load") action ShowMenu('load')
+            # textbutton _("Gear") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever

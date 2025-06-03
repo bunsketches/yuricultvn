@@ -2,7 +2,7 @@ label day1:
     # Reset good and bad choice counts to 0
     $ good_choice_count = 0
     $ bad_choice_count = 0
-    scene bg room
+    scene bg background3
     marcy "This is the intro of Day 1."
     "This is just some basic setup for the events of the day."
     "Time for the daily prayer to Forever..."
@@ -27,6 +27,7 @@ label day1:
             jump day1_sarah
 
 label day1_eleanor:
+    scene bg background2
     marcy "I am spending the day with Eleanor."
     marcy "This is Dialogue Opportunity 1 for Eleanor, Day 1."
     menu:
@@ -67,6 +68,7 @@ label day1_eleanor:
     jump day1_end
 
 label day1_sarah:
+    scene bg background2
     marcy "I am spending the day with Sarah."
     marcy "This is Dialogue Opportunity 1 for Sarah, Day 1."
     menu:
@@ -98,6 +100,7 @@ label day1_sarah:
     jump day1_end
 
 label day1_end:
+    scene bg background3
     marcy "This is the end of Day 1. We will compare how many good and bad choices for were made for this day."
     if good_choice_count > bad_choice_count:
         "Looks like we made more good choices than bad. Today was a good day!"

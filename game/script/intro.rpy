@@ -1,16 +1,3 @@
-# Settings
-# fullscreen, windowed,
-# volume slider (sfx),
-# volume slider (music),
-# text speed,
-
-# Main menu
-# start,
-# load,
-# settings,
-# credits,
-# quit
-
 # Sprite variations
 # neutral
 # happy
@@ -37,7 +24,7 @@ default good_choice_count = 0
 default bad_choice_count = 0
 
 label start:
-    scene bg room
+    scene bg background1
     marcy "This is the intro scene."
     "Here, we will go over the background information of what's going on."
     "Also, we will introduce the main players of the story."
