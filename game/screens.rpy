@@ -246,7 +246,7 @@ screen quick_menu():
             spacing 32
             pos(0.95, 0.05)
             anchor(1.0, 0.0)
-            imagebutton auto "gui/button/btn_hide_%s.png" #action ToggleVariable("hide_quick_menu")
+            imagebutton auto "gui/button/btn_hide_%s.png" action HideInterface()
             imagebutton auto "gui/button/btn_save_%s.png" action ShowMenu('save')
             imagebutton auto "gui/button/btn_auto_%s.png" action Preference("auto-forward", "toggle")
             imagebutton auto "gui/button/btn_load_%s.png" action ShowMenu('load')
@@ -770,14 +770,25 @@ screen preferences():
                         label _("SFX Volume")
                         hbox:
                             bar value Preference("sound volume")
+                            text _( "{:.0f}%".format(GetMixer("sfx") * 100) )
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
                     if config.has_music:
                         label _("Music Volume")
                         hbox:
                             bar value Preference("music volume")
+                            text _( "{:.0f}%".format(GetMixer("music") * 100) )
                     label _("Text Speed")
-                    bar value Preference("text speed")
+                    vbox:
+                        bar value FieldValue(_preferences, "text_cps", range=100, offset=50, force_step=True, style="slider", step=50)
+                        # label str(_preferences.text_cps)
+                        if _preferences.text_cps == 150:
+                            label "Fast"
+                        elif _preferences.text_cps == 100:
+                            label "Medium"
+                        elif _preferences.text_cps == 50:
+                            label "Slow"
+                        
                     # label _("Auto-Forward Time")
                     # bar value Preference("auto-forward time")
                     # No VO for this project
