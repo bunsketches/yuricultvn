@@ -294,52 +294,26 @@ screen navigation():
 
     vbox:
         style_prefix "navigation"
-        align(0.5, 0.5)
+
+        xpos gui.navigation_xpos
+
+        yalign 0.5
+
         spacing gui.navigation_spacing
 
-        image "gui/title.png"
-
-        if main_menu:
-
-            # textbutton _("Start") action Start()
-            imagebutton:
-                xalign 0.5
-                auto "gui/button/start_%s.png"
-                action Start()
-
-        else:
-
+        if not main_menu:
             textbutton _("History") action ShowMenu("history")
-
             textbutton _("Save") action ShowMenu("save")
 
-        imagebutton:
-            xalign 0.5
-            auto "gui/button/load_%s.png"
-            action ShowMenu("load")
-
-        imagebutton:
-            xalign 0.5
-            auto "gui/button/options_%s.png"
-            action ShowMenu("preferences")
+        textbutton _("Load") action ShowMenu("load")
+        textbutton _("Options") action ShowMenu("preferences")
 
         if _in_replay:
-
             textbutton _("End Replay") action EndReplay(confirm=True)
-
         elif not main_menu:
-
             textbutton _("Main Menu") action MainMenu()
 
-        imagebutton:
-            xalign 0.5
-            auto "gui/button/credits_%s.png"
-            action ShowMenu("credits")
-
-        imagebutton:
-            xalign 0.5
-            auto "gui/button/warnings_%s.png"
-            action ShowMenu("credits")
+        textbutton _("Credits") action ShowMenu("credits")
 
         # Omit Help button for this project
         # if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
@@ -347,14 +321,8 @@ screen navigation():
             # textbutton _("Help") action ShowMenu("help")
 
         if renpy.variant("pc"):
-
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
-            imagebutton:
-                xalign 0.5
-                auto "gui/button/quit_%s.png"
-                action Quit(confirm=not main_menu)
-
+            ## The quit button is banned on iOS and unnecessary on Android and Web.
+            textbutton _("Quit") action Quit(confirm=not main_menu)
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
@@ -386,19 +354,52 @@ screen main_menu():
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
-    use navigation
+    vbox:
+        style_prefix "navigation"
+        align(0.5, 0.5)
+        spacing gui.navigation_spacing
+
+        image "gui/title.png"
+
+        imagebutton:
+            xalign 0.5
+            auto "gui/button/start_%s.png"
+            action Start()
+
+        imagebutton:
+            xalign 0.5
+            auto "gui/button/load_%s.png"
+            action ShowMenu("load")
+
+        imagebutton:
+            xalign 0.5
+            auto "gui/button/options_%s.png"
+            action ShowMenu("preferences")
+
+        imagebutton:
+            xalign 0.5
+            auto "gui/button/credits_%s.png"
+            action ShowMenu("credits")
+
+        imagebutton:
+            xalign 0.5
+            auto "gui/button/warnings_%s.png"
+            action ShowMenu("warnings")
+
+        if renpy.variant("pc"):
+            ## The quit button is banned on iOS and unnecessary on Android and Web.
+            imagebutton:
+                xalign 0.5
+                auto "gui/button/quit_%s.png"
+                action Quit(confirm=not main_menu)
 
     if gui.show_name:
-
         hbox:
             align(1.0, 1.0)
-
             text "[config.name!t]":
                 style "main_menu_version"
-
             text "[config.version]":
                 style "main_menu_version"
-
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -598,6 +599,27 @@ style about_text is gui_text
 style about_label_text:
     size gui.label_text_size
 
+screen warnings():
+    tag menu
+
+    ## This use statement includes the game_menu screen inside this one. The
+    ## vbox child is then included inside the viewport inside the game_menu
+    ## screen.
+    use game_menu(_("Warnings"), scroll="viewport"):
+
+        style_prefix "about"
+
+        vbox:
+            label "[config.name!t]"
+            if gui.warnings:
+                text "[gui.warnings!t]\n"
+
+style about_label is gui_label
+style about_label_text is gui_label_text
+style about_text is gui_text
+
+style about_label_text:
+    size gui.label_text_size
 
 ## Load and Save screens #######################################################
 ##
