@@ -294,15 +294,18 @@ screen navigation():
 
     vbox:
         style_prefix "navigation"
-
-        xpos gui.navigation_xpos
-        yalign 0.5
-
+        align(0.5, 0.5)
         spacing gui.navigation_spacing
+
+        image "gui/title.png"
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            # textbutton _("Start") action Start()
+            imagebutton:
+                xalign 0.5
+                auto "gui/button/start_%s.png"
+                action Start()
 
         else:
 
@@ -310,9 +313,15 @@ screen navigation():
 
             textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        imagebutton:
+            xalign 0.5
+            auto "gui/button/load_%s.png"
+            action ShowMenu("load")
 
-        textbutton _("Settings") action ShowMenu("preferences")
+        imagebutton:
+            xalign 0.5
+            auto "gui/button/options_%s.png"
+            action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -322,7 +331,15 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("Credits") action ShowMenu("credits")
+        imagebutton:
+            xalign 0.5
+            auto "gui/button/credits_%s.png"
+            action ShowMenu("credits")
+
+        imagebutton:
+            xalign 0.5
+            auto "gui/button/warnings_%s.png"
+            action ShowMenu("credits")
 
         # Omit Help button for this project
         # if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
@@ -333,7 +350,10 @@ screen navigation():
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            imagebutton:
+                xalign 0.5
+                auto "gui/button/quit_%s.png"
+                action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -370,11 +390,11 @@ screen main_menu():
 
     if gui.show_name:
 
-        vbox:
-            style "main_menu_vbox"
+        hbox:
+            align(1.0, 1.0)
 
             text "[config.name!t]":
-                style "main_menu_title"
+                style "main_menu_version"
 
             text "[config.version]":
                 style "main_menu_version"
