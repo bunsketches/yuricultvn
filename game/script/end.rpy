@@ -50,5 +50,5 @@ label sarah_bad:
     scene bg background1
     "Sarah begins to turn for the woods."
     sarah neutral "Goodbye, Marcy."
-    "She walks away, leaving you, the Barn, and Forever behind."
+    "She walks away, leaving you, Aeuternum, and Forever behind."
     return

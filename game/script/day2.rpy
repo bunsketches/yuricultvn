@@ -70,45 +70,61 @@ label day2_eleanor:
     show marcy neutral at left_side with dissolve
     show eleanor neutral at right_side with dissolve
     "Eleanor tasks you with cutting meat and ingredient prep in the kitchen. For reasons known only to her, she follows you there."
-    "Eleanor fills the silence with remarks about you, comparing you to herself when she got started at the Barn."
+    "Eleanor fills the silence with remarks about you, comparing you to herself when she got started at Aeuternum."
     "The otherwise innocent small talk is barbed with occasional questions about Sarah, laced with a bitter edge of jealousy."
     "Eleanor lays a leg of ham on the butcher block and gestures at it."
     eleanor "Be a dear and portion out the ham, would you, Marcy?"
     scene bg day2 eleanor1 with fade
     "As you get to hacking the large cut of meat into more manageable pieces, Eleanor stands beside you, patiently stirring a large pot of broth."
-    eleanor happy "You know, I started off without a goal. Did you know that?"
+    eleanor "You know, I started off without a goal. Did you know that?"
     "You listen while chopping the meat into rough, ragged chunks. Eleanor smiles."
-    eleanor happy "There was just something about my life back then that was... lacking."
+    eleanor "There was just something about my life back then that was... lacking."
     "Eleanor glances at you, still stirring the pot."
     menu:
-        eleanor happy "What is your purpose here, Marcy?"
+        eleanor "What is your purpose here, Marcy?"
         "To be loved, and to learn to love. To be Forever's Chosen, of course.":
-            eleanor happy "Good girl. I've seen you pray to Her every morning, and I am sure the goddess has noticed your efforts. It is our duty as her lovers to show our loyalty."
+            eleanor "Good girl. I've seen you pray to Her every morning, and I am sure the goddess has noticed your efforts."
+            eleanor "It is our duty as her lovers to show our loyalty."
             $ good_choice_count += 1
         "To figure out my life. I am still getting there.":
-            eleanor neutral "Your life begins here. I wouldn't miss the opportunity if I were you, Marcy."
+            eleanor "Your life begins here. I wouldn't miss the opportunity if I were you, Marcy."
+            "You don’t miss the warning tone in Eleanor’s bluntness, though someone like Sarah probably would."
+            "This is just how Eleanor navigates conversation. Her pleasantries aren’t so much a mask as they are a part of her. Her demeanor doesn’t break, it bends."
             $ bad_choice_count += 1
         "I don't know.":
             "Eleanor clicks her tongue softly."
-            eleanor neutral "To take your shots aimlessly is to miss the chances that were right before you, Marcy. Don't be selfish - missing those chances here is careless."
+            eleanor "To take your shots aimlessly is to miss the chances that were right before you, Marcy. Don't be selfish - missing those chances here is careless."
+            "Eleanor says the words sweetly, as if she were gently chiding a puppy. Still, you feel the sting. The word “selfish” echoes in your head as you’re left to ponder such an assessment of your character."
+            "Still, you can’t find it in you to argue, much less against someone like Eleanor. She’d find a way to make her statement true regardless."
             $ bad_choice_count += 1
-    "Eleanor looks down at her reflection in the simmering broth. Her questions continue, her tone remaining warm and inquisitive."
-    "Yet, there is a cautious, calculating undertone present."
+    "Eleanor looks down at her reflection in the simmering broth. As she stirs over the flame, you notice that she’s barely tall enough to comfortably stir such a large stockpot. You almost chuckle a bit at the mental image of Eleanor needing a step stool to reach the burners."
+    "Before you can entertain the thought further, Eleanor begins speaking again. Her tone, lovely as always, but still cautious and calculated:"
     menu:
         eleanor happy "And how is Sarah fitting in?"
         "Sarah does her best, from what I can tell.":
-            eleanor neutral "Hm. I'll watch her."
+            eleanor neutral "I'll watch her."
+            "You don’t doubt that Eleanor means that. She keeps tabs on everyone at Aeuternum, and always seems to know more about people than they do themselves."
+            "Some find it comforting, others find it disconcerting. The latter usually don’t stay here too long. You have no opinion of it. That’s just… Eleanor."
             $ bad_choice_count += 1
         "Sarah is a bit clumsy. How did you two meet?":
             "Eleanor chuckles at your assessment and question."
             eleanor happy "She is a mess for the goddess, but I know she'll grow into a strong lover for Forever."
+            "Eleanor puffs air through her nose, a half laugh as she recalls the memory."
             eleanor neutral "Poor thing... I found her unconscious and bruised outside of the school I used to go to."
             eleanor neutral "The hour was dark. She had no one. The world certainly did not love her as well as she deserved."
+            "It surprises you how almost genuine Eleanor seems in her recollection."
+            "You’ve known Eleanor for a long time, but less as a friend and more as a mentor. She’s led since you were both younger. Though she used to seem a little less eerily perfect, she’s always been a bit enigmatic."
+            "Even back then she never really talked about her personal life. School, friends, family, anything like that, are all things still shrouded in mystery around Eleanor."
             $ bad_choice_count += 1
         "Sarah does not belong here.":
+            "Eleanor raises her brows in surprise."
             eleanor neutral "Is that so? Tough words against someone who is new, Marcy... but I'll keep an eye on her, if you're so sure."
+            "You almost laugh at the irony of Eleanor scolding you for being harsh."
+            "Well, you suppose she’s right in a way: you’ve always been a bit more curt than others."
+            "You believe what you said though, and part of you thinks that Eleanor agrees. Where Eleanor can see past pretty much anyone, sometimes you think you’re one of the only ones who can catch even a glimpse of her."
             $ good_choice_count += 1
     "Eleanor taps the spoon against the pot, leaving the broth to simmer. She sets the stirring spoon aside on a cloth and appraises your work."
+    "The action startles you out of your thoughts and you tense up a bit. Noticing this, Eleanor attempts to shrug your shoulders back down, smoothing her hands down from your collar."
     show bg day2 eleanor2 with dissolve
     eleanor happy "I have enjoyed seeing how you've grown with us, Marcy. I enjoy this time I share with you, seeing how far you've come since the day I brought you here."
     "Eleanor places a clean hand on your arm, the touch electric even after all this time."
@@ -118,10 +134,15 @@ label day2_eleanor:
         eleanor happy "Be my Second, my right hand in all things. For Forever, for our lovers. I want you to guide them by my side, and feel closer to Her. Together."
         "Eleanor... This feels so sudden. I don't know if I am ready. I'm sorry.":
             eleanor neutral "Of course you are ready, Marcy. But I understand that this is sudden for you. You can take your time to think about it, if you'd like."
+            "Eleanor responds calmly, as if her desired outcome is inevitable. She was born into affluence, after all. You wonder briefly if anyone’s ever told her “No” before responding."
             marcy neural "Sure."
+            "Apparently, you won’t today, either."
             $ bad_choice_count += 1
         "I can't. You should look for someone more qualified.":
+            "Eleanor’s response is already on the tip of her tongue before you can finish your sentence. Still, politely, she waits just until you finish."
             eleanor neutral "Your aim is lacking, Marcy."
+            "True to her word, you look down and notice a small cut on your knuckle where you’ve cut yourself having cut the ham absentmindedly."
+            "You wince a bit, bringing your hand to your mouth to suck on the wound briefly. Eleanor seems to watch the action with great interest."
             $ bad_choice_count += 1
         "Really? Beside you? This is an honor...":
             marcy smile "I don't know what to say. Can I at least think about it tonight?"
@@ -233,6 +254,9 @@ label day2_sarah:
 label day2_end:
     scene bg dining with fade
     "You eventually take a glass of wine as a routine end to the day."
+    "You swish the dark drink around in the cup, examining its contents."
+    "Something is… different about it lately. This happens every so often, the flavor of the wine changing suddenly with no mention. You would normally brush it off but you feel more attuned than usual lately."
+    play music "music/uneasy_ambience.mp3"
     scene bg hallway with fade
     show marcy neutral at left_side with dissolve
     "On the way to your bedroom, you hear the thudding of heavy footfalls approaching."
@@ -251,6 +275,7 @@ label day2_end:
     scene bg bedroom with fade
     "You've done nothing, yet can't help but feel you've managed to cause this somehow..."
     "You rest the night."
+    stop music fadeout 1.0
 
     if good_choice_count > bad_choice_count:
         $ good_day_count += 1

@@ -67,7 +67,7 @@ label day1_sarah:
     scene bg day1 sarah with fade
     "Sarah continues filling water and trades the vase off with you for you to fill it."
     menu:
-        sarah neutral "So, how did you join the Barn?"
+        sarah neutral "So, how did you join Aeuternum?"
         "I left my life behind when Eleanor met me. She took me in.":
             sarah happy "Me too! I went to school with Eleanor and..."
             sarah worried "I had to run from home."
@@ -95,7 +95,7 @@ label day1_sarah:
             marcy neutral "I guess we don’t have that problem here, no."
             $ good_choice_count += 1
     menu:
-        sarah neutral "How is it, getting used to the Barn? Any tips you can give a new friend?"
+        sarah neutral "How is it, getting used to Aeuternum? Any tips you can give a new friend?"
         "Friend? I just met you.":
             sarah worried "Oh, right - I guess I am getting ahead of myself."
             sarah neutral "Well, you're my friend now!"
