@@ -64,12 +64,12 @@ label day2:
             jump day2_sarah
 
 label day2_eleanor:
-    show eleanor neutral at right_side with dissolve
+    show eleanor neutral at right_side, flip with dissolve
     eleanor happy "Marcy! Come join me in the kitchen. We need your help."
     "As she speaks to you, you see the glimmer of some unknown intent in her calculating gaze, partially masked by her inviting smile."
     scene bg kitchen with fade
     show marcy neutral at left_side with dissolve
-    show eleanor neutral at right_side with dissolve
+    show eleanor neutral at right_side, flip with dissolve
     "Eleanor tasks you with cutting meat and ingredient prep in the kitchen. For reasons known only to her, she follows you there."
     "Eleanor fills the silence with remarks about you, comparing you to herself when she got started at Aeuternum."
     "The otherwise innocent small talk is barbed with occasional questions about Sarah, laced with a bitter edge of jealousy."
