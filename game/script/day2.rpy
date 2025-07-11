@@ -153,7 +153,7 @@ label day2_eleanor:
             $ good_choice_count += 1
     show bg kitchen with dissolve
     show marcy neutral at left_side with dissolve
-    show eleanor neutral at right_side with dissolve
+    show eleanor neutral at right_side, flip with dissolve
     "Eleanor pats you on the back."
     eleanor happy "Cook and serve in the dining hall this afternoon. I will be seeing you, Marcy."
     "Eleanor leaves without another word."

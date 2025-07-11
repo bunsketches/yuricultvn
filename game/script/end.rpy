@@ -15,7 +15,7 @@ label eleanor_good:
         scene bg black with fade
         "Your heart beats wildly in your chest, from what you tell yourself is… fear? You’re not sure where Sarah is, and while you hope she escaped, given the situation you assume the worst."
         show marcy devastated at left_side with dissolve
-        show eleanor psychotic at right_side with dissolve
+        show eleanor psychotic at right_side, flip with dissolve
         "Eleanor slowly walks toward you, a crazed look on her face. Everything in you tells you to run, to fight, to scream, to do something."
         marcy angry "G-Get away! S-Stop this!"
         "Eleanor laughs; Though you wanted to be genuine in your warnings, your own voice betrays you, and Eleanor is very aware of this."
@@ -33,11 +33,11 @@ label eleanor_bad:
         scene bg black with fade
         "Your heart beats wildly in your chest, from what you tell yourself is… arousal?"
         show marcy uneasy at left_side with dissolve
-        show eleanor happy at right_side with dissolve
+        show eleanor happy at right_side, flip with dissolve
         "Eleanor leans in, kissing you sweetly before drawing back. She brings the cup of “wine” to your lips."
         "Though you wait eagerly, as soon as the taste of it finally registers as iron after all this time, you cough."
         show marcy devastated at left_side with dissolve
-        show eleanor psychotic at right_side with dissolve
+        show eleanor psychotic at right_side, flip with dissolve
         "Sputtering, you shove her away."
     scene bg background1
     "You wrestle with Eleanor over the altar - and pin her. Fear races into Eleanor's eyes."
