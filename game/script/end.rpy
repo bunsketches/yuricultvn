@@ -2,8 +2,37 @@ label end:
     default end_string = ""
     if eleanor_count > sarah_count:
         $ end_string = "eleanor"
+        if sarah_day3:
+            "The summer night is warm, but something about the air is chilling. Something isn’t right."
+            show marcy concerned at left_side with dissolve
+            marcy "I’m sorry, I forgot Eleanor needed something from me…"
+            hide sarah with fade
+            "You turn away and hurry inside."
+            "You feel a pull to the basement."
+            "She is calling you."
+            show bg hallway with fade
+            "After searching the dark halls of the dimly lit ranch, you stumble into the cold embrace of the Basement where Eleanor awaited you patiently."
+            show eleanor happy at right_side, flip with dissolve
+            "She smiles knowingly and takes your hand."
+            "She then opens a secret door for you, welcoming you into her secret worship."
     else:
         $ end_string = "sarah"
+        if eleanor_day3:
+            scene bg black with fade
+            "Eleanor and the worshipers are closing in on you. The air is tense, and you need to get out. You grunt before telling what you feel is the truth."
+            show marcy uneasy at left_side with dissolve
+            marcy "I’m sorry. I need to speak with someone."
+            show marcy devastated at left_side with dissolve
+            show eleanor psychotic at right_side, flip with dissolve
+            "As you turn away, Eleanor grabs your arm - erratic over what she has shown you, desperate and hungry for you to stay. With a strong tug, you rip yourself out of her grasp."
+            show marcy uneasy at left_side with dissolve
+            hide eleanor with fade
+            "You hurriedly make your way out of the basement, running - not daring to look at the danger that is behind you."
+            "You hear shouts and footsteps behind you, but by quick movements and carefully hiding when necessary, you soon make it outside."
+            "You find yourself in the garden, and find the exact person you were looking for."
+            show sarah worried at right_side with dissolve
+            marcy "Sarah?"
+            sarah "Marcy…!"
     if good_day_count > bad_day_count:
         $ end_string += "_good"
     else:

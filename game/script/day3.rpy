@@ -5,6 +5,7 @@ label day3:
     $ eleanor_bad_day3 = False
     $ sarah_bad_day3 = False
     $ sarah_day3 = False
+    $ eleanor_day3 = False
     scene bg sunrise with fade
     play sound "sfx/rooster.mp3"
     play music "sfx/forest.mp3" fadein 1.0
@@ -97,6 +98,7 @@ label day3:
             jump day3_eleanor
 
 label day3_eleanor:
+    $ eleanor_day3 = True
     scene bg background2
     "You've known Eleanor long enough to know that look, those dark eyes, the scheme lurking behind them."
     "And that smile tells you it's something she is excited about and very sure of."
