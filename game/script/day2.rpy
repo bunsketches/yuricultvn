@@ -265,12 +265,12 @@ label day2_end:
     show sarah cry at right_side with dissolve
     show sarah cry at offscreen_left with move
     hide sarah with dissolve
-    show eleanor cold at right_side with dissolve
+    show eleanor cold at right_side, flip with dissolve
     "The day ends with you on your way to the bedroom when you hear the sound of thumping, catching Sarah trying to run past you in a cry."
     show marcy uneasy at left_side with dissolve
     "You see Eleanor striding in her direction soon after, carrying a ruler in one hand. You hear the distant cries of Sarah as, presumably, Eleanor catches up with her nonchalantly."
     "Your limbs twitch to follow and stop them, to see what is happening - what Sarah could have possibly done - but you are overcome by the fear of being involved."
-    show eleanor cold at offscreen_left with move
+    show eleanor cold at offscreen_left, flip with move
     hide eleanor with dissolve
     scene bg black with fade
     "Before you even realize it, you’ve carried yourself back to your room."
