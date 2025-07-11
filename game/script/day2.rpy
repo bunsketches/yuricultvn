@@ -3,22 +3,24 @@ label day2:
     $ good_choice_count = 0
     $ bad_choice_count = 0
     scene bg sunrise with fade
-    show marcy neutral at left_side with dissolve
     "A rooster's crow pulls you into the waking world, the warmth of sunlight dispelling the fog of sleep as you slowly wake up."
     "Your morning routine is a blur, and you soon find yourself before Forever's altar, ready for morning prayer."
     if secret_end_progress >= 1:
         "It might be a trick of the light, but Forever's idol seems... larger than before, if not in physical size, then in presence at least."
     "Your face appears in the scrying mirror by the candlelight, as you gather your thoughts."
+    show marcy neutral at left_side with dissolve
     menu:
         marcy neutral "What should I pray for?"
         "Offer your praise to the altar":
             "You went and picked up a piece of bread from the dining hall in the morning to offer to the altar, next to the other offerings the others had laid out before."
             marcy neutral "Good morning. Just my way of saying, 'Thanks'. Hope you like it. I'll see you again tomorrow."
         "Pray for yourself":
+            "You clasp your hands together, shutting your eyes tight. It feels like something in you is slipping away, and you are desperately trying to get it back."
             marcy neutral "Are you real? I've prayed to you every morning, and I still feel the same..."
             marcy neutral "Please help me get through this, even if it's just for today."
             $ secret_end_progress += 1
         "Do not pray":
+            "You shake your head with a sigh. It feels like something inside you has shifted as of late. Your arms hang lamely at your sides. While this statue may have filled you with a refreshing sense of hope just a year or two ago, lately you find yourself looking up at it with tired eyes, its presence looming above you."
             marcy neutral "Why am I even here?"
     show bg outside with dissolve
     "You exit the shed, and are greeted by a glorious new day. The wind whistles quietly through the tree branches."
@@ -26,7 +28,7 @@ label day2:
     menu:
         marcy "What should I take care of today?"
         "The garden":
-            scene bg garden with fade
+            scene bg garden2 with fade
             "As you go about your task, you run into Sarah."
             $ sarah_count += 1
             jump day2_sarah
@@ -119,9 +121,7 @@ label day2_eleanor:
             $ bad_choice_count += 1
         "Really? Beside you? This is an honor...":
             marcy smile "I don't know what to say. Can I at least think about it tonight?"
-            "Eleanor's smile is the brightest you've seen it.
-            It almost reaches her eyes, even.
-            Almost."
+            "Eleanor's smile is the brightest you've seen it.\nIt almost reaches her eyes, even.\nAlmost."
             "Even now, there is a gleam of mysterious intent in her gaze."
             eleanor happy "Of course, my dear. Think about it, and come find me tomorrow."
             $ good_choice_count += 1
@@ -143,15 +143,24 @@ label day2_eleanor:
     jump day2_end
 
 label day2_sarah:
-    show sarah neutral at right_side with dissolve
-    "Sarah's face lights up when she sees you."
-    sarah happy "Marcy! I'm so glad you're here - I need your help!"
-    "Without another word, Sarah takes you by the wrist and excitedly leads you to the basement."
-    scene bg basement with fade
     show marcy neutral at left_side with dissolve
+    show sarah neutral at right_side with dissolve
+    "Sarah beams when she sees you."
+    sarah happy "Marcy! I'm so glad you're here - I need your help!"
+    "She takes you by the wrist and brings you to the Basement with her without further say."
+    scene bg basement with fade
+    show marcy uneasy at left_side with dissolve
     show sarah happy at right_side with dissolve
-    "There, she brings you to a battered chaise longue, set in front of an easel holding a plain white canvas."
-    sarah happy "I asked around, and NO ONE wanted to be my reference for a painting today. You're my only hope! I promise it won't be a painting of you - I just need your form."
+    marcy uneasy "Wait, I have to—"
+    show sarah neutral2 at right_side with dissolve
+    "Before you can get another word in, Sarah’s grip on your wrists tighten almost painfully."
+    show marcy smile at left_side with dissolve
+    "You wince a bit before sighing resignedly, your vision filling with Sarah."
+    marcy smile "Your ponytail bounces when you walk."
+    show sarah happy at right_side with dissolve
+    "Sarah scoffs, but laughs anyways."
+    "She brings you to a stool before an easel and a plain white canvas."
+    sarah happy "I asked around and NO ONE wanted to be my reference for a painting today. You are my only hope! I promise it won't be a painting of you - I just need your form."
     menu:
         "You paint here? Does Eleanor allow this?":
             sarah worried "I... I don't know, actually. But I found these supplies just collecting dust."
@@ -166,13 +175,19 @@ label day2_sarah:
         scene bg day2 sarah1 with dissolve
     else:
         scene bg day2 sarah2 with dissolve
-    "You take your seat on the chaise longue. It groans in protest, but endures your weight. Sarah sighs contentedly, an amusing contrast."
+    "You take your seat onto the stool. Sarah sighs in contentment."
     sarah happy "Thank you, I appreciate your help!"
     "She begins to focus on you as she takes her seat on the opposite side of the canvas, beginning to brush away carefully."
     menu:
         "I don't have to take my clothes off, do I?":
+            "Amused, you watch as Sarah puffs up a bit, clearly flustered."
             sarah happy "Pfft! No, you are fine just the way you are. It would certainly improve this portrait, though..."
-            "Sarah laughs heartily, a musical sound that matches her perfectly."
+            "She laughs."
+            "You mirror her laugh with your whole chest—when was the last time you did that?"
+            marcy smile "Really now?"
+            "Sarah rolls her eyes, clicking her tongue, then goes back to painting. The moment passes, but for the next several minutes a faint, but fond smile remains on your lips."
+            "It’s so small, some would say it’s not there at all, but you feel Sarah’s gaze burning into you."
+            "Just as you start to squirm a bit, you notice Sarah’s expression shift."
             $ good_choice_count += 1
         "When do you think you'll finish? I don't want to get into trouble.":
             sarah worried "Is it really that bad of an idea..? Let's just see, first. I can't go back now..."
@@ -182,13 +197,15 @@ label day2_sarah:
     show marcy neutral at left_side with dissolve
     show sarah happy at right_side with dissolve
     "After putting the finishing touches to her painting, Sarah wipes off sweat from her brow."
-    sarah happy "Phew! It looks amazing! Thanks so much, Marcy! I'll go and show this to Ele-"
+    sarah happy "Phew! It looks amazing! Thanks so much, Marcy! I'll go and show this to Ele—"
     show sarah worried
-    "Sarah stops dead as she notices the glint of metal under one of the shelves."
-    "Curious, she searches the shelf, retrieving a large, ornate dagger."
-    "On closer inspection, you both spot flecks of dried blood on the hilt. Sarah looks at you, worried."
+    "Sarah stops dead as she witnesses something shining under one of the shelves. She brings it up to her, hints of dry blood on the hilt, and looks at you."
+    sarah worried "What… is this?"
+    show marcy uneasy at left_side with dissolve
+    "You falter, taking a half step back. The object seems familiar, like you’ve seen it in passing before, but your memory is hazy."
+    "Your head pulses in pain as you try to jog your memory, but Sarah is looking at you expectantly, clearly disturbed. You notice her hands shake, and you want to snatch the dagger from her hand, but your body stills."
     menu:
-        sarah worried "Do you think this is used often?"
+        sarah worried "The blood is dry but… it can’t be too old. Do you think this is used often?"
         "I... I don't know. Ask Eleanor?":
             sarah terrified "But what if Eleanor is the one using this? I guess I could ask her..."
             sarah worried "No, I'll put it back, I'm sure it's nothing crazy."
@@ -198,8 +215,14 @@ label day2_sarah:
             sarah worried "Maybe I should. I don't know whose blood is on this, but I'll wipe it down. I hope no one is getting hurt."
             "Sarah slips the knife into her pocket, despite her unease."
             $ bad_choice_count += 1
+    show marcy uneasy at left_side with dissolve
     sarah neutral "Let's not dwell on this - come on, I'm hungry! Let's go to get lunch."
+    marcy uneasy "Wait, Sarah—"
+    "You get a sense of déjà vu of just a few hours ago when Sarah was ushering you off to the basement. Sarah is already walking back, looking back at you with the same bright smile on her face."
+    "Though you’re not one to disturb easily either, you’re not sure how she can snap back as if nothing happened. The mental image of Sarah grinning so happily after holding such a grim object sends a slight chill down your spine."
+    scene bg black with fade
     "You go to the dining hall with Sarah and spend your dinner hour there, laughing with her."
+    scene bg dining with fade
     "Tonight's menu is pot roast. It was slightly overcooked, a little under-seasoned - but it was warm and fragrant. It reminded you of home."
     jump day2_end
 
@@ -213,13 +236,14 @@ label day2_end:
     show sarah cry at offscreen_left with move
     hide sarah with dissolve
     show eleanor cold at right_side with dissolve
-    "Sarah barrels past you, sobbing loudly. She is followed soon after by Eleanor, walking briskly, wooden ruler in hand."
+    "The day ends with you on your way to the bedroom when you hear the sound of thumping, catching Sarah trying to run past you in a cry."
+    show marcy uneasy at left_side with dissolve
+    "You see Eleanor striding in her direction soon after, carrying a ruler in one hand. You hear the distant cries of Sarah as, presumably, Eleanor catches up with her nonchalantly."
+    "Your limbs twitch to follow and stop them, to see what is happening - what Sarah could have possibly done - but you are overcome by the fear of being involved."
     show eleanor cold at offscreen_left with move
     hide eleanor with dissolve
-    "Even in this unnerving situation, her expression is still calm and collected, as if catching up with Sarah was inevitable."
-    "You stand still for a few agonizing moments, unsure of what to do."
-    "Pained cries ring out as Eleanor corners her prey."
-    "Your limbs twitch to follow and stop them, to see what is happening - what Sarah could have possibly done - but you are overcome by the fear of being involved."
+    scene bg black with fade
+    "Before you even realize it, you’ve carried yourself back to your room."
     scene bg bedroom with fade
     "You've done nothing, yet can't help but feel you've managed to cause this somehow..."
     "You rest the night."
