@@ -158,21 +158,59 @@ label day3_sarah:
     menu:
         "Did Eleanor tell you that?":
             sarah neutral "Something like that... But it's okay."
+            "And there it is again. You suppose you’re glad she’s not as distressed anymore."
+            $ good_choice_count += 1
         "Then you should consider trying harder.":
             marcy neutral "Sarah, you're so... different from the others. You should tone it down."
             sarah neutral "Oh."
+            "You awkwardly shift your weight around on either feet as Sarah bows her head down to sniffle a few more times."
+            "However, as per usual, after a few beats pass she shakes her head and rises again."
+            $ bad_choice_count += 1
     "Sarah rubs her arm."
     sarah neutral "Marcy, I..."
     sarah happy "I just want to say thanks, for being a friend. I really think you're cool. I'm sorry if I made things weird - if I'm weird. I didn't mean for you to see me like this."
     menu:
         "It's not weird at all.":
-            sarah happy "Come with me."
-            "Sarah takes you to the Garden - holding your wrist the same way she had dragged you playfully the other day."
-            "You feel warm inside - like you've found something worth holding onto, that's beyond Forever and this toxic place."
+            marcy smile "Well, aside from trying to get me naked by “painting” me."
+            show sarah happy at right_side with dissolve
+            "Sarah shoves your shoulder in what you assume to be a playful gesture, but you end up stumbling a few steps back. Damn, that girl is stronger than she looks."
+            sarah "Oh my God! I told you that wasn’t why!"
+            "The laughter dies down and the moment breaks."
+            show sarah worried at right_side with dissolve
+            "Sarah looks at you, deadpan, for once her expression is hard to read, but only for a moment. Upon closer inspection, you see bags forming under her eyes that weren’t there before."
+            "Something is there."
+            # sarah happy "Come with me."
+            # "Sarah takes you to the Garden - holding your wrist the same way she had dragged you playfully the other day."
+            # "You feel warm inside - like you've found something worth holding onto, that's beyond Forever and this toxic place."
+            $ good_choice_count += 1
         "You need to get out of here.":
-            marcy neutral "You should leave, tonight. This is not the place for you. I don't want you to get hurt by staying here."
-            sarah neutral2 "Yeah... Maybe I should."
-            sarah neutral "I hope you find the strength to leave this place someday, too."
+            show sarah worried at right_side with dissolve
+            "She tilts her head at you, confused. You can practically see the dog ears drooping down above her head."
+            marcy "This is not the place for you. I don’t want you to get hurt by staying here."
+            show sarah cry at right_side with dissolve
+            "Clearly dejected, Sarah sighs loudly, rubbing at her wrists."
+            sarah "Yeah... Maybe I should."
+    show sarah happy at right_side with dissolve
+    "Sarah wipes her tears."
+    sarah "Thank you."
+    show sarah neutral at right_side with dissolve
+    "Sarah pauses for a moment. She looks up again with an eerie smile, looking at you and seemingly nothing else."
+    sarah "I don’t think I’ve felt so close to someone before. I really appreciate you."
+    marcy uneasy "Sarah..?"
+    sarah "Marcy, It’s a big ask, but… Would you take something of mine? Take it with you, for the rest of your life?"
+    menu:
+        "Sure.":
+            sarah happy "Awesome!"
+            "She takes you to the Garden, guiding you by your wrist."
+            show sarah happy at right_side with dissolve
+            show marcy smile at left_side with dissolve
+            show bg garden1 with fade
+            "You feel warm inside, like you’ve found something worth holding onto, that’s beyond Forever, beyond Aeuternum."
+            "You don’t remember that “beyond” too well, but you feel you could probably get closer to that with Sarah. At least, you hope so."
+        "I don't think I can.":
+            show sarah cry at right_side with dissolve
+            "A sadness grows in her eyes, and you hear her begin to sniffle again."
+            "Then that’s everything… I hope you find the strength to leave this place someday, too."
     if good_choice_count > bad_choice_count:
         $ sarah_bad_day3 = True
     jump day3_end
