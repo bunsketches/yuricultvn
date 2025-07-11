@@ -4,14 +4,16 @@ label end:
         $ end_string = "eleanor"
         if sarah_day3:
             "The summer night is warm, but something about the air is chilling. Something isn’t right."
-            show marcy concerned at left_side with dissolve
+            show marcy concern at left_side with dissolve
             marcy "I’m sorry, I forgot Eleanor needed something from me…"
-            hide sarah with fade
+            hide sarah with dissolve
             "You turn away and hurry inside."
+            show bg house1 with fade
             "You feel a pull to the basement."
             "She is calling you."
             show bg hallway with fade
             "After searching the dark halls of the dimly lit ranch, you stumble into the cold embrace of the Basement where Eleanor awaited you patiently."
+            show bg basement with fade
             show eleanor happy at right_side, flip with dissolve
             "She smiles knowingly and takes your hand."
             "She then opens a secret door for you, welcoming you into her secret worship."
@@ -26,7 +28,7 @@ label end:
             show eleanor psychotic at right_side, flip with dissolve
             "As you turn away, Eleanor grabs your arm - erratic over what she has shown you, desperate and hungry for you to stay. With a strong tug, you rip yourself out of her grasp."
             show marcy uneasy at left_side with dissolve
-            hide eleanor with fade
+            hide eleanor with dissolve
             "You hurriedly make your way out of the basement, running - not daring to look at the danger that is behind you."
             "You hear shouts and footsteps behind you, but by quick movements and carefully hiding when necessary, you soon make it outside."
             "You find yourself in the garden, and find the exact person you were looking for."
@@ -53,8 +55,21 @@ label eleanor_good:
         scene bg black with fade
         "You want to give in."
     scene bg background1
-    "Eleanor kisses you as you sacrifice Sarah together with the sacrificial dagger over an altar in the basement."
-    "You both wield it together by its hilt as if you are a married couple. You are cheered on by surrounding cloaked cult followers, holding up chalices for Sarah's blood."
+    # i'm kind of assuming there's going to be a CG here so i don't need to do sprites
+    "Eleanor kisses you beside another statue of Forever as you sacrifice Sarah together with the silver, intricately engraved ornamental sacrificial knife over an altar in the Basement."
+    "You both wield it together by its hilt as if you are a married couple. You’re sure somewhere in your mind you distantly hear Sarah cry out, but you tell yourself you don’t mind."
+    "You are cheered on by surrounding cloaked cult followers, eagerly holding up chalices for Sarah’s blood."
+    eleanor "Please, please, one at a time! You’ll all get your share, after Her and my Beloved, of course!"
+    marcy "Beloved… is that me?"
+    "Eleanor turns and lovingly gives you another kiss on the cheek."
+    "She looks at you and you feel your heart pumping."
+    "Your hands are warm in Eleanor’s grasp, covered in the “wine”."
+    "Whatever you were butchering now has gone still, signaling for the crowd around you to draw further in with their cups."
+    "Eleanor raises her chalice in the air, ushering you to do the same."
+    eleanor "Tonight, we drink to us! To Her!"
+    "The crowd erupts in cheers."
+    "Your expression breaks, something between a smile and a grimace, but before you let Eleanor see, you bring your chalice to your lips and gulp it down."
+    eleanor "To Forever."
     return
 
 label eleanor_bad:
@@ -69,9 +84,32 @@ label eleanor_bad:
         show eleanor psychotic at right_side, flip with dissolve
         "Sputtering, you shove her away."
     scene bg background1
-    "You wrestle with Eleanor over the altar - and pin her. Fear races into Eleanor's eyes."
-    eleanor neutral "Marcy, wait - I'm sorry-!"
-    "You jab the knife into her leg. With her incapacitated, you close the secret room on Eleanor and lock it."
+    "This is wrong. Seeing an opportunity, you move quickly to wrestle with Eleanor over the altar - and pin her."
+    "You see anger flash across Eleanor’s features."
+    "She’s never let her anger show like that before, and you find the revelation exciting."
+    "It doesn’t last long before it’s replaced by fear, as Eleanor follows your line of sight to the knife."
+    "In a blur, you grab it, holding it to her thigh. For the first time in her silver-spooned life, Eleanor begs."
+    eleanor "Marcy, wait—you can’t!"
+    "You want to hear it again, to draw this moment out longer."
+    eleanor "We can still fix this, please! I need you to! To find Forever—"
+    "Finally, you plunge the knife into her leg."
+    "Though you wanted her to scream, she somehow only hisses. The sound snaps you out of your haze."
+    show marcy angry at left_side with dissolve
+    show eleanor psychotic at right_side, flip with dissolve
+    "With her incapacitated, you quickly get off her, taking the dagger with you as a warning to any devotees who dare get in your way."
+    "While everyone else is still stunned in shock, you run out the basement, locking the door behind you to buy yourself some time."
+    scene bg hallway with fade
+    show marcy uneasy at left_side with dissolve
+    "You run through the hallway, not bothering to look back."
+    "Surely, the rest of the devotees have gone about pounding against the basement door or tending to Eleanor’s wound. If you do not get out soon, they will catch up to you."
+    "You move to make as much distance as possible, the cool steel of the dagger still in hand."
+    scene bg sunrise with fade
+    show marcy uneasy at left_side with dissolve
+    "Kicking open the door of Eleanor’s ranch, you see that it’s already morning again."
+    "Normally, this would be your cue to pray, but not today."
+    "You pause for a moment to catch your breath."
+    "You don’t know where exactly you’re going to go, and your memories of before Aeuternum are hazy, but for once you act before you think."
+    "Puffing out one last breath, you run, ignoring the desire for one last sip of wine."
     return
 
 label sarah_good:

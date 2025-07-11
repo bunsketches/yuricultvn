@@ -177,29 +177,35 @@ label day3_eleanor:
 
 label day3_sarah:
     $ sarah_day3 = True
-    scene bg background2
+    scene bg background2 with fade
+    show marcy neutral at left_side with dissolve
+    show sarah worried at right_side with dissolve
     "You approach Sarah, finding her in distress. Bags hang from under her eyes - her hair disheveled."
-    marcy neutral "Sarah?"
+    marcy "Sarah?"
     "Sarah gasps as she sees you."
-    sarah neutral2 "Marcy! What are you doing here?"
-    marcy neutral "Chores. I saw you passing by. Is everything okay? I heard you last night... and Eleanor. What happened?"
+    show sarah neutral2 at right_side with dissolve
+    sarah "Marcy! What are you doing here?"
+    marcy "Chores. I saw you passing by. Is everything okay? I heard you last night... and Eleanor. What happened?"
     "Sarah sighs.  She smooths her hair, chuckling - and you hear notes of hysteria in that laugh, as if a part of her fell off a ledge inside."
-    sarah neutral2 "Nothing happened. Just..."
-    sarah neutral "I'm not good enough for this place, I guess."
+    sarah "Nothing happened. Just..."
+    show sarah neutral at right_side with dissolve
+    sarah "I'm not good enough for this place, I guess."
     menu:
         "Did Eleanor tell you that?":
-            sarah neutral "Something like that... But it's okay."
+            show marcy concern at left_side with dissolve
+            sarah "Something like that... But it's okay."
             "And there it is again. You suppose you’re glad she’s not as distressed anymore."
             $ good_choice_count += 1
         "Then you should consider trying harder.":
-            marcy neutral "Sarah, you're so... different from the others. You should tone it down."
-            sarah neutral "Oh."
+            marcy "Sarah, you're so... different from the others. You should tone it down."
+            sarah "Oh."
             "You awkwardly shift your weight around on either feet as Sarah bows her head down to sniffle a few more times."
             "However, as per usual, after a few beats pass she shakes her head and rises again."
             $ bad_choice_count += 1
+    show marcy neutral at left_side with dissolve
     "Sarah rubs her arm."
-    sarah neutral "Marcy, I..."
-    sarah happy "I just want to say thanks, for being a friend. I really think you're cool. I'm sorry if I made things weird - if I'm weird. I didn't mean for you to see me like this."
+    sarah "Marcy, I..."
+    sarah "I just want to say thanks, for being a friend. I really think you're cool. I'm sorry if I made things weird - if I'm weird. I didn't mean for you to see me like this."
     menu:
         "It's not weird at all.":
             marcy smile "Well, aside from trying to get me naked by “painting” me."
@@ -230,9 +236,9 @@ label day3_sarah:
         "Sure.":
             sarah happy "Awesome!"
             "She takes you to the Garden, guiding you by your wrist."
+            show bg garden1 with fade
             show sarah happy at right_side with dissolve
             show marcy smile at left_side with dissolve
-            show bg garden1 with fade
             "You feel warm inside, like you’ve found something worth holding onto, that’s beyond Forever, beyond Aeuternum."
             "You don’t remember that “beyond” too well, but you feel you could probably get closer to that with Sarah. At least, you hope so."
         "I don't think I can.":
@@ -244,7 +250,7 @@ label day3_sarah:
     jump day3_end
 
 label day3_end:
-    scene bg background3
+    # scene bg background3
     marcy "This is the end of Day 3. We will compare how many good and bad choices for were made for this day."
     if good_choice_count > bad_choice_count:
         "Looks like we made more good choices than bad. Today was a good day!"
