@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Yuri Cult VN")
+define config.name = _("Forever Yours")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -29,9 +29,8 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
-""")
-
+define gui.about = _p("""Credits go here.""")
+define gui.warnings = _p("""Content warnings go here.""")
 
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,

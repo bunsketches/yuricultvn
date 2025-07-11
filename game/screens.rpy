@@ -241,21 +241,27 @@ screen quick_menu():
     zorder 100
 
     if quick_menu:
-
         hbox:
             style_prefix "quick"
-
-            xalign 0.5
-            yalign 1.0
-
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            spacing 32
+            pos(0.95, 0.05)
+            anchor(1.0, 0.0)
+            imagebutton auto "gui/button/btn_hide_%s.png" action HideInterface()
+            imagebutton auto "gui/button/btn_save_%s.png" action ShowMenu('save')
+            imagebutton auto "gui/button/btn_auto_%s.png" action Preference("auto-forward", "toggle")
+            imagebutton auto "gui/button/btn_load_%s.png" action ShowMenu('load')
+            imagebutton auto "gui/button/btn_settings_%s.png" action ShowMenu('preferences')
+            # Removed buttons
+            # textbutton _("Back") action Rollback()
+            # textbutton _("History") action ShowMenu('history')
+            # textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            # textbutton _("Q.Save") action QuickSave()
+            # textbutton _("Q.Load") action QuickLoad()
+            # Old buttons
+            # textbutton _("Save") action ShowMenu('save')
+            # textbutton _("Auto") action Preference("auto-forward", "toggle")
+            # textbutton _("Load") action ShowMenu('load')
+            # textbutton _("Gear") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -290,45 +296,33 @@ screen navigation():
         style_prefix "navigation"
 
         xpos gui.navigation_xpos
+
         yalign 0.5
 
         spacing gui.navigation_spacing
 
-        if main_menu:
-
-            textbutton _("Start") action Start()
-
-        else:
-
+        if not main_menu:
             textbutton _("History") action ShowMenu("history")
-
             textbutton _("Save") action ShowMenu("save")
 
         textbutton _("Load") action ShowMenu("load")
-
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Options") action ShowMenu("preferences")
 
         if _in_replay:
-
             textbutton _("End Replay") action EndReplay(confirm=True)
-
         elif not main_menu:
-
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        textbutton _("Credits") action ShowMenu("credits")
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
+        # Omit Help button for this project
+        # if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            # textbutton _("Help") action ShowMenu("help")
 
         if renpy.variant("pc"):
-
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
+            ## The quit button is banned on iOS and unnecessary on Android and Web.
             textbutton _("Quit") action Quit(confirm=not main_menu)
-
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
@@ -360,19 +354,52 @@ screen main_menu():
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
-    use navigation
+    vbox:
+        style_prefix "navigation"
+        align(0.5, 0.5)
+        spacing gui.navigation_spacing
+
+        image "gui/title_logo.png"
+
+        imagebutton:
+            xalign 0.5
+            auto "gui/button/title_start_%s.png"
+            action Start()
+
+        imagebutton:
+            xalign 0.5
+            auto "gui/button/title_load_%s.png"
+            action ShowMenu("load")
+
+        imagebutton:
+            xalign 0.5
+            auto "gui/button/title_options_%s.png"
+            action ShowMenu("preferences")
+
+        imagebutton:
+            xalign 0.5
+            auto "gui/button/title_credits_%s.png"
+            action ShowMenu("credits")
+
+        imagebutton:
+            xalign 0.5
+            auto "gui/button/title_warnings_%s.png"
+            action ShowMenu("warnings")
+
+        if renpy.variant("pc"):
+            ## The quit button is banned on iOS and unnecessary on Android and Web.
+            imagebutton:
+                xalign 0.5
+                auto "gui/button/title_quit_%s.png"
+                action Quit(confirm=not main_menu)
 
     if gui.show_name:
-
-        vbox:
-            style "main_menu_vbox"
-
+        hbox:
+            align(1.0, 1.0)
             text "[config.name!t]":
-                style "main_menu_title"
-
+                style "main_menu_version"
             text "[config.version]":
                 style "main_menu_version"
-
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -535,21 +562,21 @@ style return_button:
     yoffset -45
 
 
-## About screen ################################################################
+## Credits screen ################################################################
 ##
 ## This screen gives credit and copyright information about the game and Ren'Py.
 ##
 ## There's nothing special about this screen, and hence it also serves as an
 ## example of how to make a custom screen.
 
-screen about():
+screen credits():
 
     tag menu
 
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("About"), scroll="viewport"):
+    use game_menu(_("Credits"), scroll="viewport"):
 
         style_prefix "about"
 
@@ -572,6 +599,27 @@ style about_text is gui_text
 style about_label_text:
     size gui.label_text_size
 
+screen warnings():
+    tag menu
+
+    ## This use statement includes the game_menu screen inside this one. The
+    ## vbox child is then included inside the viewport inside the game_menu
+    ## screen.
+    use game_menu(_("Warnings"), scroll="viewport"):
+
+        style_prefix "about"
+
+        vbox:
+            label "[config.name!t]"
+            if gui.warnings:
+                text "[gui.warnings!t]\n"
+
+style about_label is gui_label
+style about_label_text is gui_label_text
+style about_text is gui_text
+
+style about_label_text:
+    size gui.label_text_size
 
 ## Load and Save screens #######################################################
 ##
@@ -730,7 +778,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_("Settings"), scroll="viewport"):
 
         vbox:
 
@@ -738,74 +786,65 @@ screen preferences():
                 box_wrap True
 
                 if renpy.variant("pc") or renpy.variant("web"):
-
                     vbox:
                         style_prefix "radio"
                         label _("Display")
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
-
-                vbox:
-                    style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                # Omit for this project
+                # vbox:
+                #     style_prefix "check"
+                #     label _("Skip")
+                #     textbutton _("Unseen Text") action Preference("skip", "toggle")
+                #     textbutton _("After Choices") action Preference("after choices", "toggle")
+                #     textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.
 
-            null height (4 * gui.pref_spacing)
+            null height (2 * gui.pref_spacing)
 
             hbox:
                 style_prefix "slider"
                 box_wrap True
-
                 vbox:
-
-                    label _("Text Speed")
-
-                    bar value Preference("text speed")
-
-                    label _("Auto-Forward Time")
-
-                    bar value Preference("auto-forward time")
-
-                vbox:
-
-                    if config.has_music:
-                        label _("Music Volume")
-
-                        hbox:
-                            bar value Preference("music volume")
-
                     if config.has_sound:
-
-                        label _("Sound Volume")
-
+                        label _("SFX Volume")
                         hbox:
                             bar value Preference("sound volume")
-
+                            text _( "{:.0f}%".format(GetMixer("sfx") * 100) )
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
-
-
-                    if config.has_voice:
-                        label _("Voice Volume")
-
+                    if config.has_music:
+                        label _("Music Volume")
                         hbox:
-                            bar value Preference("voice volume")
-
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
-
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
-
-                        textbutton _("Mute All"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
-
+                            bar value Preference("music volume")
+                            text _( "{:.0f}%".format(GetMixer("music") * 100) )
+                    label _("Text Speed")
+                    vbox:
+                        bar value FieldValue(_preferences, "text_cps", range=100, offset=50, force_step=True, style="slider", step=50)
+                        # label str(_preferences.text_cps)
+                        if _preferences.text_cps == 150:
+                            label "Fast"
+                        elif _preferences.text_cps == 100:
+                            label "Medium"
+                        elif _preferences.text_cps == 50:
+                            label "Slow"
+                        
+                    # label _("Auto-Forward Time")
+                    # bar value Preference("auto-forward time")
+                    # No VO for this project
+                    # if config.has_voice:
+                    #     label _("Voice Volume")
+                    #     hbox:
+                    #         bar value Preference("voice volume")
+                    #         if config.sample_voice:
+                    #             textbutton _("Test") action Play("voice", config.sample_voice)
+                    # if config.has_music or config.has_sound or config.has_voice:
+                    #     null height gui.pref_spacing
+                    #     textbutton _("Mute All"):
+                    #         action Preference("all mute", "toggle")
+                    #         style "mute_all_button"
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text

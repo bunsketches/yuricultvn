@@ -1,0 +1,231 @@
+label day2:
+    # Reset good and bad choice counts to 0
+    $ good_choice_count = 0
+    $ bad_choice_count = 0
+    scene bg sunrise with fade
+    show marcy neutral at left_side with dissolve
+    "A rooster's crow pulls you into the waking world, the warmth of sunlight dispelling the fog of sleep as you slowly wake up."
+    "Your morning routine is a blur, and you soon find yourself before Forever's altar, ready for morning prayer."
+    if secret_end_progress >= 1:
+        "It might be a trick of the light, but Forever's idol seems... larger than before, if not in physical size, then in presence at least."
+    "Your face appears in the scrying mirror by the candlelight, as you gather your thoughts."
+    menu:
+        marcy neutral "What should I pray for?"
+        "Offer your praise to the altar":
+            "You went and picked up a piece of bread from the dining hall in the morning to offer to the altar, next to the other offerings the others had laid out before."
+            marcy neutral "Good morning. Just my way of saying, 'Thanks'. Hope you like it. I'll see you again tomorrow."
+        "Pray for yourself":
+            marcy neutral "Are you real? I've prayed to you every morning, and I still feel the same..."
+            marcy neutral "Please help me get through this, even if it's just for today."
+            $ secret_end_progress += 1
+        "Do not pray":
+            marcy neutral "Why am I even here?"
+    show bg outside with dissolve
+    "You exit the shed, and are greeted by a glorious new day. The wind whistles quietly through the tree branches."
+    marcy neutral "All right, time to get to it, I guess."
+    menu:
+        marcy "What should I take care of today?"
+        "The garden":
+            scene bg garden with fade
+            "As you go about your task, you run into Sarah."
+            $ sarah_count += 1
+            jump day2_sarah
+        "The river":
+            scene bg river with fade
+            "As you go about your task, you run into Eleanor."
+            $ eleanor_count += 1
+            jump day2_eleanor
+        "The dining room":
+            scene bg dining with fade
+            "As you go about your task, you run into Eleanor."
+            $ eleanor_count += 1
+            jump day2_eleanor
+        "The kitchen":
+            scene bg kitchen with fade
+            "As you go about your task, you run into Eleanor."
+            $ eleanor_count += 1
+            jump day2_eleanor
+        "The hallways":
+            scene bg hallway with fade
+            "As you go about your task, you run into Sarah."
+            $ sarah_count += 1
+            jump day2_sarah
+        "The basement":
+            scene bg basement with fade
+            "As you go about your task, you run into Sarah."
+            $ sarah_count += 1
+            jump day2_sarah
+
+label day2_eleanor:
+    show eleanor neutral at right_side with dissolve
+    eleanor happy "Marcy! Come join me in the kitchen. We need your help."
+    "As she speaks to you, you see the glimmer of some unknown intent in her calculating gaze, partially masked by her inviting smile."
+    scene bg kitchen with fade
+    show marcy neutral at left_side with dissolve
+    show eleanor neutral at right_side with dissolve
+    "Eleanor tasks you with cutting meat and ingredient prep in the kitchen. For reasons known only to her, she follows you there."
+    "Eleanor fills the silence with remarks about you, comparing you to herself when she got started at the Barn."
+    "The otherwise innocent small talk is barbed with occasional questions about Sarah, laced with a bitter edge of jealousy."
+    "Eleanor lays a leg of ham on the butcher block and gestures at it."
+    eleanor "Be a dear and portion out the ham, would you, Marcy?"
+    scene bg day2 eleanor1 with fade
+    "As you get to hacking the large cut of meat into more manageable pieces, Eleanor stands beside you, patiently stirring a large pot of broth."
+    eleanor happy "You know, I started off without a goal. Did you know that?"
+    "You listen while chopping the meat into rough, ragged chunks. Eleanor smiles."
+    eleanor happy "There was just something about my life back then that was... lacking."
+    "Eleanor glances at you, still stirring the pot."
+    menu:
+        eleanor happy "What is your purpose here, Marcy?"
+        "To be loved, and to learn to love. To be Forever's Chosen, of course.":
+            eleanor happy "Good girl. I've seen you pray to Her every morning, and I am sure the goddess has noticed your efforts. It is our duty as her lovers to show our loyalty."
+            $ good_choice_count += 1
+        "To figure out my life. I am still getting there.":
+            eleanor neutral "Your life begins here. I wouldn't miss the opportunity if I were you, Marcy."
+            $ bad_choice_count += 1
+        "I don't know.":
+            "Eleanor clicks her tongue softly."
+            eleanor neutral "To take your shots aimlessly is to miss the chances that were right before you, Marcy. Don't be selfish - missing those chances here is careless."
+            $ bad_choice_count += 1
+    "Eleanor looks down at her reflection in the simmering broth. Her questions continue, her tone remaining warm and inquisitive."
+    "Yet, there is a cautious, calculating undertone present."
+    menu:
+        eleanor happy "And how is Sarah fitting in?"
+        "Sarah does her best, from what I can tell.":
+            eleanor neutral "Hm. I'll watch her."
+            $ bad_choice_count += 1
+        "Sarah is a bit clumsy. How did you two meet?":
+            "Eleanor chuckles at your assessment and question."
+            eleanor happy "She is a mess for the goddess, but I know she'll grow into a strong lover for Forever."
+            eleanor neutral "Poor thing... I found her unconscious and bruised outside of the school I used to go to."
+            eleanor neutral "The hour was dark. She had no one. The world certainly did not love her as well as she deserved."
+            $ bad_choice_count += 1
+        "Sarah does not belong here.":
+            eleanor neutral "Is that so? Tough words against someone who is new, Marcy... but I'll keep an eye on her, if you're so sure."
+            $ good_choice_count += 1
+    "Eleanor taps the spoon against the pot, leaving the broth to simmer. She sets the stirring spoon aside on a cloth and appraises your work."
+    show bg day2 eleanor2 with dissolve
+    eleanor happy "I have enjoyed seeing how you've grown with us, Marcy. I enjoy this time I share with you, seeing how far you've come since the day I brought you here."
+    "Eleanor places a clean hand on your arm, the touch electric even after all this time."
+    eleanor happy "And now that we are sharing this moment, I have a proposal for you."
+    marcy neutral "A proposal?"
+    menu:
+        eleanor happy "Be my Second, my right hand in all things. For Forever, for our lovers. I want you to guide them by my side, and feel closer to Her. Together."
+        "Eleanor... This feels so sudden. I don't know if I am ready. I'm sorry.":
+            eleanor neutral "Of course you are ready, Marcy. But I understand that this is sudden for you. You can take your time to think about it, if you'd like."
+            marcy neural "Sure."
+            $ bad_choice_count += 1
+        "I can't. You should look for someone more qualified.":
+            eleanor neutral "Your aim is lacking, Marcy."
+            $ bad_choice_count += 1
+        "Really? Beside you? This is an honor...":
+            marcy smile "I don't know what to say. Can I at least think about it tonight?"
+            "Eleanor's smile is the brightest you've seen it.
+            It almost reaches her eyes, even.
+            Almost."
+            "Even now, there is a gleam of mysterious intent in her gaze."
+            eleanor happy "Of course, my dear. Think about it, and come find me tomorrow."
+            $ good_choice_count += 1
+    show bg kitchen with dissolve
+    show marcy neutral at left_side with dissolve
+    show eleanor neutral at right_side with dissolve
+    "Eleanor pats you on the back."
+    eleanor happy "Cook and serve in the dining hall this afternoon. I will be seeing you, Marcy."
+    "Eleanor leaves without another word."
+    hide eleanor with dissolve
+    "As the others find their way to the dining hall for lunchtime, you see Sarah in the crowd."
+    show sarah worried at right_side with dissolve
+    "She looks crestfallen, her face frozen in anguish. As she approaches you in the queue, she perks up a great deal."
+    sarah happy "Marcy! You're serving today? You make a pretty lunch person, haha."
+    "You serve her ramen with the chopped ham, and she cradles the bowl in her hands, as if it were a precious treasure."
+    sarah happy "Thank you!"
+    show sarah worried
+    "As she moves away, Sarah's gaze falls once more, the joy draining from her face. Did something happen?"
+    jump day2_end
+
+label day2_sarah:
+    show sarah neutral at right_side with dissolve
+    "Sarah's face lights up when she sees you."
+    sarah happy "Marcy! I'm so glad you're here - I need your help!"
+    "Without another word, Sarah takes you by the wrist and excitedly leads you to the basement."
+    scene bg basement with fade
+    show marcy neutral at left_side with dissolve
+    show sarah happy at right_side with dissolve
+    "There, she brings you to a battered chaise longue, set in front of an easel holding a plain white canvas."
+    sarah happy "I asked around, and NO ONE wanted to be my reference for a painting today. You're my only hope! I promise it won't be a painting of you - I just need your form."
+    menu:
+        "You paint here? Does Eleanor allow this?":
+            sarah worried "I... I don't know, actually. But I found these supplies just collecting dust."
+            sarah happy "I think the Barn could use a new painting, don't you think? I used to paint a lot back in high school."
+            $ bad_choice_count += 1
+        "Yeah, I can be a reference for you. What are you trying to paint?":
+            sarah happy "Sweet! I'm trying to create a symbolic painting of sorts - something to appreciate Forever and her lovers."
+            sarah worried "Something better than just bread or flowers."
+            sarah happy "I think the Barn could use the spirit of an artist."
+            $ good_choice_count += 1
+    if good_day_count >= 1:
+        scene bg day2 sarah1 with dissolve
+    else:
+        scene bg day2 sarah2 with dissolve
+    "You take your seat on the chaise longue. It groans in protest, but endures your weight. Sarah sighs contentedly, an amusing contrast."
+    sarah happy "Thank you, I appreciate your help!"
+    "She begins to focus on you as she takes her seat on the opposite side of the canvas, beginning to brush away carefully."
+    menu:
+        "I don't have to take my clothes off, do I?":
+            sarah happy "Pfft! No, you are fine just the way you are. It would certainly improve this portrait, though..."
+            "Sarah laughs heartily, a musical sound that matches her perfectly."
+            $ good_choice_count += 1
+        "When do you think you'll finish? I don't want to get into trouble.":
+            sarah worried "Is it really that bad of an idea..? Let's just see, first. I can't go back now..."
+            sarah happy "But don't worry! I'll wrap this up soon. Thanks again for being here."
+            $ bad_choice_count += 1
+    show bg basement with dissolve
+    show marcy neutral at left_side with dissolve
+    show sarah happy at right_side with dissolve
+    "After putting the finishing touches to her painting, Sarah wipes off sweat from her brow."
+    sarah happy "Phew! It looks amazing! Thanks so much, Marcy! I'll go and show this to Ele-"
+    show sarah worried
+    "Sarah stops dead as she notices the glint of metal under one of the shelves."
+    "Curious, she searches the shelf, retrieving a large, ornate dagger."
+    "On closer inspection, you both spot flecks of dried blood on the hilt. Sarah looks at you, worried."
+    menu:
+        sarah worried "Do you think this is used often?"
+        "I... I don't know. Ask Eleanor?":
+            sarah terrified "But what if Eleanor is the one using this? I guess I could ask her..."
+            sarah worried "No, I'll put it back, I'm sure it's nothing crazy."
+            "Sarah sets the knife back cautiously, shaking off her unease."
+            $ good_choice_count += 1
+        "You should hold onto it just in case. Something doesn't feel right about it.":
+            sarah worried "Maybe I should. I don't know whose blood is on this, but I'll wipe it down. I hope no one is getting hurt."
+            "Sarah slips the knife into her pocket, despite her unease."
+            $ bad_choice_count += 1
+    sarah neutral "Let's not dwell on this - come on, I'm hungry! Let's go to get lunch."
+    "You go to the dining hall with Sarah and spend your dinner hour there, laughing with her."
+    "Tonight's menu is pot roast. It was slightly overcooked, a little under-seasoned - but it was warm and fragrant. It reminded you of home."
+    jump day2_end
+
+label day2_end:
+    scene bg dining with fade
+    "You eventually take a glass of wine as a routine end to the day."
+    scene bg hallway with fade
+    show marcy neutral at left_side with dissolve
+    "On the way to your bedroom, you hear the thudding of heavy footfalls approaching."
+    show sarah cry at right_side with dissolve
+    show sarah cry at offscreen_left with move
+    hide sarah with dissolve
+    show eleanor cold at right_side with dissolve
+    "Sarah barrels past you, sobbing loudly. She is followed soon after by Eleanor, walking briskly, wooden ruler in hand."
+    show eleanor cold at offscreen_left with move
+    hide eleanor with dissolve
+    "Even in this unnerving situation, her expression is still calm and collected, as if catching up with Sarah was inevitable."
+    "You stand still for a few agonizing moments, unsure of what to do."
+    "Pained cries ring out as Eleanor corners her prey."
+    "Your limbs twitch to follow and stop them, to see what is happening - what Sarah could have possibly done - but you are overcome by the fear of being involved."
+    scene bg bedroom with fade
+    "You've done nothing, yet can't help but feel you've managed to cause this somehow..."
+    "You rest the night."
+
+    if good_choice_count > bad_choice_count:
+        $ good_day_count += 1
+    else:
+        $ bad_day_count += 1
+    jump day3
