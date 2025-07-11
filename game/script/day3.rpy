@@ -74,12 +74,15 @@ label day3_eleanor:
     "And that smile tells you it's something she is excited about and very sure of."
     menu:
         eleanor happy "Working hard today, Marcy?"
-        "Very. And I'm looking forward to relax today - I could use it.":
+        "Very. And I'm looking forward to relaxing today - I could use it.":
             eleanor happy "I understand. You can relax later, I assure you. I wont take too much of your time."
+            $ bad_choice_count += 1
         "Not nearly hard enough - I feel like there is more I could do.":
             eleanor happy "There is more you can do. Let me show you."
+            $ good_choice_count += 1
         "I guess? I'm just doing what I need to.":
             eleanor happy "Thank you for that, Marcy."
+            $ bad_choice_count += 1
     "Eleanor takes your hand."
     eleanor happy "Come with me."
     "You can't help but follow her as she leads you on."
@@ -93,20 +96,39 @@ label day3_eleanor:
     "Eleanor has her hand at your shoulder again as she gestures to the room."
     eleanor "Look upon this, where my work is done. This is where we keep our bonds with Forever. This is where the magic is - where Her love is, in its purest form."
     eleanor "Where we drink of Her."
-    "She holds your hands in her own, turning to you - giving them a squeeze. A lean hunger glimmers in her crazed eyes, like the glint of knives in a dark alley."
-    eleanor "Join me. Become great with me. Let's meet Forever together, and be her Chosen."
-    "The fanatic edge in her voice is like diamond: cold, hard, and clear."
-    eleanor "You have this one chance, Marcy - your potential is unfathomable. Together, we'd be unstoppable."
-    eleanor "I feel so sure of myself when I see you - we were meant to be, Marcy. Imagine what we can bring."
+    menu:
+        "So that’s why the wine tastes so…divine.":
+            "Eleanor beams at you, perhaps the most genuine smile you’ve seen from her. She seems moved, proud even, as if she waited for this her whole life."
+            eleanor "Yes, Marcy! Yes! That taste… we could have it Forever. We just need to appease Her. And you know what She wants…"
+            $ good_choice_count += 1
+        "Her?":
+            "Eleanor, once again, laughs at an inappropriate time. She thinks you’re joking at a time like this."
+            eleanor "Yes, Marcy… Her. We all want to appease her, right?"
+            "Her eyes hold yours in a deadlock."
+            $ bad_choice_count += 1
+        "So all this time… the wine…":
+            "Eleanor shakes her head, clicking her tongue, though for once she’s not scolding you. She seems beyond her role as the leader at this point, and looks at you expectantly."
+            eleanor "The wine is just the start, Marcy."
+    "She holds your hands in her own, turning to you - giving them a squeeze. Her eyes light up, hungry, {i}craving{/i}."
+    eleanor "Join me. Become {i}great{/i} with me. Let's meet Forever together, and be her Chosen."
+    "Eleanor briefly turns to the altar, grabbing the dagger from the altar. When she turns, it cuts through the air audibly. Eleanor looks at you fanatically, almost trembling. You’ve never seen her ecstatic like this."
+    eleanor "You have this one chance, Marcy - your potential is unfathomable. I’ve known it since we met all those years ago."
+    "She lifts her hand up to touch your scarred cheek, and you swear you feel a searing burn."
+    "Images of Eleanor from when you and her were younger now flash in your mind. When your flesh was still raw and when Eleanor still had a semblance of a real smile on her face."
+    "You don’t exactly pull away. You’re not sure what’s happening when your eyes close and you hum. Eleanor has always had that effect on others, but on you? Before you can dwell on the feeling, Eleanor begins speaking unevenly again."
+    eleanor "Together, we’d be {i}unstoppable{/i}. I feel so sure of myself when I see you - we were meant to be, Marcy. {i}Imagine what we can bring{/i}."
     menu:
         "Eleanor, this is crazy! Are we sacrificing people and drinking their blood? That's insane!":
             eleanor "They sacrifice themselves, for Her. For our goddess and her love eternal. We drink their thanks in Her name."
+            $ bad_choice_count += 1
         "What are we doing with the altar? What's with the knife?":
             eleanor "I will show you later. We will do it together. Sarah, the hardworking and loving girl she is, will be perfect. Let me walk you through this."
+            $ bad_choice_count += 1
         "Let's do it.":
             "Purpose. The offer races through your veins, sparking a flame in your heart."
             eleanor "Marcy, I love you. I have looked forward to this - thank you."
             eleanor neutral "I'll make the announcement. We will drink to your promotion."
+            $ good_choice_count += 1
             jump day3_end
     menu:
         eleanor "Will you join me, Marcy? Can you trust me, please?"
