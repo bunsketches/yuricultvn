@@ -106,8 +106,8 @@ label day1_sarah:
             "She flashes her teeth at you, genuinely happy. You’d think she won the lottery, not doing manual labor."
             $ good_choice_count += 1
     scene bg river with fade
-    show marcy neutral
-    show sarah neutral
+    show marcy neutral at left_side with dissolve
+    show sarah neutral at right_side with dissolve
     "Sarah hums as she takes the vase back and brings herself to her feet with the vase of water."
     sarah happy "It was great talking to you, Marcy! I'm going to go ahead and bring this back to the dining hall. I'll see you later!"
     hide sarah with dissolve

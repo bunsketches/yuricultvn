@@ -2,6 +2,7 @@ label day2:
     # Reset good and bad choice counts to 0
     $ good_choice_count = 0
     $ bad_choice_count = 0
+    $ saw_knife = False
     scene bg sunrise with fade
     play sound "sfx/rooster.mp3"
     play music "sfx/forest.mp3" fadein 1.0
@@ -235,6 +236,7 @@ label day2_sarah:
             sarah terrified "But what if Eleanor is the one using this? I guess I could ask her..."
             sarah worried "No, I'll put it back, I'm sure it's nothing crazy."
             "Sarah sets the knife back cautiously, shaking off her unease."
+            $ saw_knife = True
             $ good_choice_count += 1
         "You should hold onto it just in case. Something doesn't feel right about it.":
             sarah worried "Maybe I should. I don't know whose blood is on this, but I'll wipe it down. I hope no one is getting hurt."

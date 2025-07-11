@@ -2,7 +2,11 @@ label day3:
     # Reset good and bad choice counts to 0
     $ good_choice_count = 0
     $ bad_choice_count = 0
+    $ eleanor_bad_day3 = False
+    $ sarah_bad_day3 = False
     scene bg sunrise with fade
+    play sound "sfx/rooster.mp3"
+    play music "sfx/forest.mp3" fadein 1.0
     "You wake up with a guilty lump in your throat. Dread sits at the bottom of your stomach."
     "The scar on half your body burns, your arm twitching in what registers to your body as pain, but what you know in your brain is not really there. The image of last night plays in your mind over and over and over again."
     "You can't shake the feeling of inevitable doom. You lay there for a while, with that terrible weight, before slipping out from the covers."
@@ -12,6 +16,7 @@ label day3:
         "Was it always cracked like this?"
     "Your face appears in the scrying mirror by the candlelight, as you gather your thoughts."
     show marcy neutral at left_side with dissolve
+    $ renpy.music.set_volume(0.25, 0.0)
     menu:
         marcy "What should I pray for?"
         "Offer your praise to the altar":
@@ -81,38 +86,41 @@ label day3_eleanor:
     "You arrive at the basement, where she opens a hidden door leading to a secret room."
     "In this hidden chamber, a large version of Forever's statue stands proudly. Before the statue waits an altar with a red altar cloth."
     "There is a silver, intricately engraved ornamental knife resting on top of it, which seems familiar."
-    # (If Marcy was with Sarah the day before and did good, add: You recognize this knife.) 
+    if saw_knife:
+        "You recognize this knife."
     "Barrels of wine decorate the room, and a row of silver chalices hang from a rack on the wall."
     "You drank from a chalice every night - didn't ask questions about the wine - but now that you're here, you force the thought out of your mind on what this implies."
     "Eleanor has her hand at your shoulder again as she gestures to the room."
-    eleanor happy "Look upon this, where my work is done. This is where we keep our bonds with Forever. This is where the magic is - where Her love is, in its purest form."
-    eleanor happy "Where we drink of Her."
+    eleanor "Look upon this, where my work is done. This is where we keep our bonds with Forever. This is where the magic is - where Her love is, in its purest form."
+    eleanor "Where we drink of Her."
     "She holds your hands in her own, turning to you - giving them a squeeze. A lean hunger glimmers in her crazed eyes, like the glint of knives in a dark alley."
-    eleanor happy "Join me. Become great with me. Let's meet Forever together, and be her Chosen."
+    eleanor "Join me. Become great with me. Let's meet Forever together, and be her Chosen."
     "The fanatic edge in her voice is like diamond: cold, hard, and clear."
-    eleanor happy "You have this one chance, Marcy - your potential is unfathomable. Together, we'd be unstoppable."
-    eleanor happy "I feel so sure of myself when I see you - we were meant to be, Marcy. Imagine what we can bring."
+    eleanor "You have this one chance, Marcy - your potential is unfathomable. Together, we'd be unstoppable."
+    eleanor "I feel so sure of myself when I see you - we were meant to be, Marcy. Imagine what we can bring."
     menu:
         "Eleanor, this is crazy! Are we sacrificing people and drinking their blood? That's insane!":
-            eleanor happy "They sacrifice themselves, for Her. For our goddess and her love eternal. We drink their thanks in Her name."
+            eleanor "They sacrifice themselves, for Her. For our goddess and her love eternal. We drink their thanks in Her name."
         "What are we doing with the altar? What's with the knife?":
-            eleanor happy "I will show you later. We will do it together. Sarah, the hardworking and loving girl she is, will be perfect. Let me walk you through this."
+            eleanor "I will show you later. We will do it together. Sarah, the hardworking and loving girl she is, will be perfect. Let me walk you through this."
         "Let's do it.":
             "Purpose. The offer races through your veins, sparking a flame in your heart."
-            eleanor happy "Marcy, I love you. I have looked forward to this - thank you."
+            eleanor "Marcy, I love you. I have looked forward to this - thank you."
             eleanor neutral "I'll make the announcement. We will drink to your promotion."
             jump day3_end
     menu:
-        eleanor happy "Will you join me, Marcy? Can you trust me, please?"
+        eleanor "Will you join me, Marcy? Can you trust me, please?"
         "Okay, I'll do it.":
             "You don't know what you're doing, but you close your eyes and breathe."
-            eleanor happy "Marcy, I love you. I have looked forward to this - thank you."
+            eleanor "Marcy, I love you. I have looked forward to this - thank you."
             eleanor neutral "I'll make the announcement. We will drink to your promotion."
         "There has to be a better way...":
             marcy neutral "I can't do this, Eleanor. I'm sorry. This isn't right."
             "Something snaps in Eleanor's eyes, and her face stills, emotion draining from it. She lets you go."
             eleanor neutral "So be it."
             "She then shoves you to the altar and grabs the knife in an attempt to stab you."
+    if good_choice_count > bad_choice_count:
+        $ eleanor_bad_day3 = True
     jump day3_end
 
 label day3_sarah:
@@ -143,6 +151,8 @@ label day3_sarah:
             marcy neutral "You should leave, tonight. This is not the place for you. I don't want you to get hurt by staying here."
             sarah neutral2 "Yeah... Maybe I should."
             sarah neutral "I hope you find the strength to leave this place someday, too."
+    if good_choice_count > bad_choice_count:
+        $ sarah_bad_day3 = True
     jump day3_end
 
 label day3_end:
