@@ -3,8 +3,11 @@ label day2:
     $ good_choice_count = 0
     $ bad_choice_count = 0
     scene bg sunrise with fade
-    "A rooster's crow pulls you into the waking world, the warmth of sunlight dispelling the fog of sleep as you slowly wake up."
+    play sound "sfx/rooster.mp3"
+    play music "sfx/forest.mp3" fadein 1.0
+    "You wake fully rested. You hesitate climbing out of the sheets into the cold morning. The bite of the air rushes into your lungs, clearing your mind, as you begin the day."
     "Your morning routine is a blur, and you soon find yourself before Forever's altar, ready for morning prayer."
+    $ renpy.music.set_volume(0.25, 0.0)
     if secret_end_progress >= 1:
         "It might be a trick of the light, but Forever's idol seems... larger than before, if not in physical size, then in presence at least."
     "Your face appears in the scrying mirror by the candlelight, as you gather your thoughts."
@@ -20,39 +23,40 @@ label day2:
             marcy neutral "Please help me get through this, even if it's just for today."
             $ secret_end_progress += 1
         "Do not pray":
-            "You shake your head with a sigh. It feels like something inside you has shifted as of late. Your arms hang lamely at your sides. While this statue may have filled you with a refreshing sense of hope just a year or two ago, lately you find yourself looking up at it with tired eyes, its presence looming above you."
-            marcy neutral "Why am I even here?"
+            "You shake your head with a sigh. It feels like something inside you has shifted as of late. Your arms hang lamely at your sides."
+            "While this statue may have filled you with a refreshing sense of hope just a year or two ago, lately you find yourself looking up at it with tired eyes, its presence looming above you."
+            marcy neutral "Why am I here?"
     show bg outside with dissolve
     "You exit the shed, and are greeted by a glorious new day. The wind whistles quietly through the tree branches."
     marcy neutral "All right, time to get to it, I guess."
     menu:
         marcy "What should I take care of today?"
-        "The garden":
+        "Tend Garden":
             scene bg garden2 with fade
             "As you go about your task, you run into Sarah."
             $ sarah_count += 1
             jump day2_sarah
-        "The river":
+        "Collect River Water":
             scene bg river with fade
             "As you go about your task, you run into Eleanor."
             $ eleanor_count += 1
             jump day2_eleanor
-        "The dining room":
+        "Prepare the Dining Room":
             scene bg dining with fade
             "As you go about your task, you run into Eleanor."
             $ eleanor_count += 1
             jump day2_eleanor
-        "The kitchen":
+        "Organize the Kitchen":
             scene bg kitchen with fade
             "As you go about your task, you run into Eleanor."
             $ eleanor_count += 1
             jump day2_eleanor
-        "The hallways":
+        "Mop the Hallway":
             scene bg hallway with fade
             "As you go about your task, you run into Sarah."
             $ sarah_count += 1
             jump day2_sarah
-        "The basement":
+        "Tidy the Basement":
             scene bg basement with fade
             "As you go about your task, you run into Sarah."
             $ sarah_count += 1
@@ -164,14 +168,14 @@ label day2_sarah:
     menu:
         "You paint here? Does Eleanor allow this?":
             sarah worried "I... I don't know, actually. But I found these supplies just collecting dust."
-            sarah happy "I think the Barn could use a new painting, don't you think? I used to paint a lot back in high school."
+            sarah happy "I think the Aeuternum could use a new painting, don't you think? I used to paint a lot back in high school."
             $ bad_choice_count += 1
         "Yeah, I can be a reference for you. What are you trying to paint?":
             sarah happy "Sweet! I'm trying to create a symbolic painting of sorts - something to appreciate Forever and her lovers."
             sarah worried "Something better than just bread or flowers."
-            sarah happy "I think the Barn could use the spirit of an artist."
+            sarah happy "I think Aeuternum could use the spirit of an artist."
             $ good_choice_count += 1
-    if good_day_count >= 1:
+    if sarah_count >= 1:
         scene bg day2 sarah1 with dissolve
     else:
         scene bg day2 sarah2 with dissolve

@@ -106,8 +106,8 @@ label day1_sarah:
             "She flashes her teeth at you, genuinely happy. You’d think she won the lottery, not doing manual labor."
             $ good_choice_count += 1
     scene bg river with fade
-    show marcy neutral at left_side with dissolve
-    show sarah neutral at right_side with dissolve
+    show marcy neutral
+    show sarah neutral
     "Sarah hums as she takes the vase back and brings herself to her feet with the vase of water."
     sarah happy "It was great talking to you, Marcy! I'm going to go ahead and bring this back to the dining hall. I'll see you later!"
     hide sarah with dissolve
@@ -121,50 +121,66 @@ label day1_sarah:
 
 label day1_eleanor:
     scene bg day1 eleanor1 with fade
-    "You join Eleanor in the garden. She picks a daisy from one of the flowerbeds, regarding it calmly while twirling it in her fingers."
-    "Softly, she asks you a question."
+    "Eleanor goes to pick a daisy from a lush bed of flowers. She watches it calmly as she twirls it in her fingers."
+    eleanor playful "Daisies… the flower of innocence, purity… does it remind you of anyone?"
+    "You’re caught a bit off guard, unsure of what to say. You’ve been at Aeuternum for years, and yet you’re still not used to the way Eleanor speaks. Everything that comes out of her mouth is spoken so sweetly, but still feels like some sort of trap."
+    "You keep your distress mostly clear off your face as always, in spite of the heat crawling up your neck."
+    "Eleanor, ever the keen eye, laughs before you can recover."
+    "Eleanor starts softly."
     eleanor neutral "Do you know why I brought you here, Marcy?"
     marcy neutral "I do not."
     "Eleanor looks out into the openness of the freshly watered garden, shimmering with vibrance. The smell of wet soil and dewy grass hangs in the air."
     show bg day1 eleanor2 with dissolve
     eleanor happy "To check in on you, my friend."
-    "Eleanor turns their gaze to you."
+    "Eleanor turns her gaze to you."
     menu:
         eleanor happy "The garden is beautiful, is it not?"
         "It has been growing so well, I agree.":
-            "Eleanor nods in agreement."
+            "Eleanor nods in agreement, seemingly delighted at your approval. Since when does she seek that from you?"
             eleanor happy "You've done great work here, Marcy."
             $ good_choice_count += 1
         "We could do better.":
             "Eleanor glances at you, surprised, then turns back."
             eleanor neutral "There is always room for improvement, Marcy - even when it all seems perfect."
+            "You look at her in your peripheral vision, humming in acknowledgement."
+            "Despite this, you can tell she is turned to you, her gaze fixed on your profile. Though her statement would sound like agreement from anyone else, from Eleanor it feels like scolding."
+            "Though the sunlight is harsh, you feel your body run a bit cold."
             $ bad_choice_count += 1
         "It looks awful.":
+            "Eleanor smiles, and though it is almost summer, there is no warmth behind it. If anything, you feel a slight chill come on around the two of you, and shiver."
             eleanor neutral "Nonsense."
+            "Though her statement would sound like quiet comfort from anyone else, from Eleanor it feels like scolding."
             $ bad_choice_count += 1
     menu:
-        eleanor happy "And how has the Barn been treating you, dear?"
+        eleanor happy "And how has Aeuternum been treating you all these years, dear?"
         "I... am still figuring it out.":
-            "Eleanor hands you the daisy."
-            eleanor happy "Take all of the time you need. Trust in Forever's guidance, and you'll find yourself when the time is right."
+            "Eleanor presses the daisy to her nose, the edges of her lips curling into a smile."
+            eleanor happy "Excellent, Marcy. Excellent. You owe no debts to me - it has been a pleasure having you with us."   
+            "You’re not sure what to say in response, so you don’t say anything."
+            "Your body has faced toward the flowerbeds this whole conversation, but Eleanor’s eyes still meet yours from the side. She can tell you’re waiting for her to say something more."
             $ bad_choice_count += 1
         "I have been finding myself here because of you. I am indebted.":
-            "Eleanor presses the daisy to their nose, the edges of her lips curling into a smile."
-            eleanor happy "Excellent, Marcy. Excellent. You owe no debts to me - it has been a pleasure having you with us."
+            "You reach your hand to scratch at your scar subconsciously. Before you can complete the compulsive action, Eleanor hands you a daisy."
+            eleanor happy "Take all of the time you need. Trust in Forever’s guidance, and you’ll find yourself when the time is right."
             $ good_choice_count += 1
         "It's nice, I guess.":
+            "Eleanor laughs a little. It’s light, and you can tell she finds real humor in an otherwise awkward and tense situation. Is she enjoying seeing you squirm?"
             eleanor neutral "It's unhealthy to be so unsure of yourself, Marcy. Relax a little. This is your home."
+            "You feel like she’s toying with you somehow. You squint up at the sun, trying to avoid her gaze, but find your eyes gravitating toward her anyways."
             $ bad_choice_count += 1
     menu:
         eleanor happy "Marcy... Keep up the good work. I am watching you."
         "Of course. I'll continue to work hard, Eleanor.":
-            "Eleanor chuckles at you, nodding approvingly."
+            "Eleanor chuckles toward you."
+            "She moves to leave, but not without reaching up to pat the top of your head. She’s quite a bit shorter than you, so as if moving on autopilot, you duck your head so that she can reach."
+            "You watch her saunter off, grace in every step."
+            "Stunned at the sudden act of what can only be confusingly described as affection, you now stand alone in the garden, sun beaming down, daisies not quite in full bloom."
             $ good_choice_count += 1
         "Please don't.":
-            "If your rebuke has any effect on Eleanor, it doesn't show. Eleanor gestures for you to leave."
+            "Eleanor gestures for you to leave. Her usual smile is not angry, but it’s certainly not satisfied."
             $ bad_choice_count += 1
         "...":
-            "Matching your silence, Eleanor gestures for you to leave."
+            "Eleanor gestures for you to leave. Her usual smile is not angry, but it’s certainly not satisfied."
             $ bad_choice_count += 1
     jump day1_end
 
@@ -189,8 +205,8 @@ label day1_end:
     "The wine is heavy on your tongue, an oddly savory taste that took some getting used to when you first came here."
     "But now you welcome the hint of spice and that warming feeling, as the aches and pains of the day's work melt away."
     "As you unwind, you hear murmurs behind you..."
-    "Person A" "She seems jealous."
-    "Person B" "Of what? That's unusual."
+    "Gossiping Devotee" "She seems jealous."
+    "Fellow Devotee" "Of what? That's unusual."
     marcy uneasy "..."
     "You never cared for those who talk as if no one can hear them. You finish your drink, and rise silently. Your feet drag back to your quarters for the night, the chatter fading with distance."
     scene bg bedroom with fade
