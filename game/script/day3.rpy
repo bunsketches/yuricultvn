@@ -4,6 +4,7 @@ label day3:
     $ bad_choice_count = 0
     scene bg sunrise with fade
     "You wake up with a guilty lump in your throat. Dread sits at the bottom of your stomach."
+    "The scar on half your body burns, your arm twitching in what registers to your body as pain, but what you know in your brain is not really there. The image of last night plays in your mind over and over and over again."
     "You can't shake the feeling of inevitable doom. You lay there for a while, with that terrible weight, before slipping out from the covers."
     "Your morning routine passes without issue, clockwork as usual. As always, you stand before Forever for morning prayer."
     if secret_end_progress >= 2:
