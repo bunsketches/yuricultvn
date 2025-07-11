@@ -23,14 +23,7 @@ label day1:
     "You look up, the glare blinding you for a moment. Above is the open blue sky and sunshine, bright and warm. Birdsong hangs in the air."
     "It takes a moment of setting in with the beauty of the painfully vibrant day before you decide what to do for the day."
     show bg outside with dissolve
-    menu: 
-        marcy "Hm, where should I head to first?"
-        "The garden":
-            "I'll head to the garden, then."
-        "The river":
-            "I'll head to the river, then."
-        "The dining hall":
-            "I'll head to the dining hall, then."
+    "Here at Aeuternum, everyone must do their part. Today, your part is to fetch water."
     show sarah worried at right_side with dissolve
     "You bump into a tall, soft girl with preppy hair. Her strong arms release something large - a clay vase."
     "There is a loud splash as water spills from the vase, dousing the girl and pooling on the ground."
@@ -40,6 +33,7 @@ label day1:
     eleanor happy "This is Sarah, our newest member and an absolutely lovely addition to our family."
     show sarah neutral
     eleanor neutral "That being said, could I steal you for a moment?"
+    "You look at Sarah, who is exasperatedly fumbling with vases."
     menu:
         marcy "Who should I go with?"
         "Go help Sarah":
@@ -78,8 +72,10 @@ label day1_sarah:
             sarah happy "Me too! I went to school with Eleanor and..."
             sarah worried "I had to run from home."
             sarah happy "Eleanor made an offer when that happened, so here I am."
+            "Sarah pauses for a moment while she reminisces, smiling fondly at the running river water below her.\nYou then watch her shake her head, seemingly snapping out of whatever daydream she was in, facing you again."
             $ good_choice_count += 1
-        "What's it to you?":
+        "It's private.":
+            "Sarah jumps a bit, surprised at the blunt remark. You see her fumble with her vase, almost dropping it before laughing nervously."
             sarah worried "Oh - I'm sorry, I didn't mean to make you uncomfortable."
             sarah worried "It's just that, I swear that everyone here's got a similar story to tell..."
             $ bad_choice_count += 1
@@ -87,27 +83,40 @@ label day1_sarah:
         sarah neutral "So... Are you a day or a night person?"
         "Day.":
             sarah neutral "Huh. Well, suit yourself! But, the day is truly glorious in its own way."
+            "Sarah continues filling a vase with water. The air around you two thickens, and not just because of the oncoming summer heat. Silence fills the air, but Sarah doesn’t seem to mind, humming a random tune all the while. You turn to look at the sky just as she clears her throat, prompting you with another question."
             $ bad_choice_count += 1
         "Night.":
             sarah happy "Hey, that makes two of us! I just love the sky when it clears, and seeing all of the stars shine."
             sarah happy "That is something that I do like here... We're far away from all the light pollution."
+            "You cock your head at Sarah. Clouds move and clear away to beam light directly onto where the pair of you are, warming your skin."
+            marcy neutral "Light pollution?"
+            sarah happy "You’ve never heard it? Hmm, it’s like when lights from buildings and stuff are too bright to see the stars at night."
+            "You shake your head. You’ve lived here for almost as long as you can remember. The terminology doesn’t ring a bell."
+            marcy neutral "I guess we don’t have that problem here, no."
             $ good_choice_count += 1
     menu:
         sarah neutral "How is it, getting used to the Barn? Any tips you can give a new friend?"
-        "Skipping ahead, aren't we? I just met you.":
+        "Friend? I just met you.":
             sarah worried "Oh, right - I guess I am getting ahead of myself."
             sarah neutral "Well, you're my friend now!"
+            "You tilt your head at her, half-scowl on your face, but she doesn’t miss a beat."
             $ bad_choice_count += 1
         "Yeah - do your prayers and always contribute. That's kept me out of trouble.":
             sarah happy "Thanks! I'll keep that in mind. I'm so nervous! I want to do my best to fit in and feel at home."
+            "She flashes her teeth at you, genuinely happy. You’d think she won the lottery, not doing manual labor."
             $ good_choice_count += 1
     scene bg river with fade
     show marcy neutral at left_side with dissolve
     show sarah neutral at right_side with dissolve
-    "Sarah starts humming as she takes the vase back and brings herself to her feet with the vase of water."
+    "Sarah hums as she takes the vase back and brings herself to her feet with the vase of water."
     sarah happy "It was great talking to you, Marcy! I'm going to go ahead and bring this back to the dining hall. I'll see you later!"
     hide sarah with dissolve
-    "Sarah walks off with the heavy vase, leaving you at the river."
+    "Sarah walks off with the heavy vase, giving you one last bright smile before leaving you at the river."
+    marcy neutral "Interesting girl…"
+    "You look at your feet, and listen to the sounds of the forest and river around you."
+    marcy neutral "I guess a fresh face wouldn’t hurt."
+    "Deciding you’ve spent enough time dilly-dallying, you trudge in the direction back to  Aeuternum. More chores are to be done for the day."
+    
     jump day1_end
 
 label day1_eleanor:
@@ -182,6 +191,8 @@ label day1_end:
     "As you unwind, you hear murmurs behind you..."
     "Person A" "She seems jealous."
     "Person B" "Of what? That's unusual."
+    marcy uneasy "..."
+    "You never cared for those who talk as if no one can hear them. You finish your drink, and rise silently. Your feet drag back to your quarters for the night, the chatter fading with distance."
     scene bg bedroom with fade
     "With the day coming to an end, you climb into bed, soft bedding at odds with the rough matress. The bedding wins, most nights."
     "The springs creak under your weight, and your eyes grow heavy once their face hits the cool side of the pillow. You drift into a dull, numbing slumber."
