@@ -359,38 +359,38 @@ screen main_menu():
         align(0.5, 0.5)
         spacing gui.navigation_spacing
 
-        image "gui/title.png"
+        image "gui/title_logo.png"
 
         imagebutton:
             xalign 0.5
-            auto "gui/button/start_%s.png"
+            auto "gui/button/title_start_%s.png"
             action Start()
 
         imagebutton:
             xalign 0.5
-            auto "gui/button/load_%s.png"
+            auto "gui/button/title_load_%s.png"
             action ShowMenu("load")
 
         imagebutton:
             xalign 0.5
-            auto "gui/button/options_%s.png"
+            auto "gui/button/title_options_%s.png"
             action ShowMenu("preferences")
 
         imagebutton:
             xalign 0.5
-            auto "gui/button/credits_%s.png"
+            auto "gui/button/title_credits_%s.png"
             action ShowMenu("credits")
 
         imagebutton:
             xalign 0.5
-            auto "gui/button/warnings_%s.png"
+            auto "gui/button/title_warnings_%s.png"
             action ShowMenu("warnings")
 
         if renpy.variant("pc"):
             ## The quit button is banned on iOS and unnecessary on Android and Web.
             imagebutton:
                 xalign 0.5
-                auto "gui/button/quit_%s.png"
+                auto "gui/button/title_quit_%s.png"
                 action Quit(confirm=not main_menu)
 
     if gui.show_name:
