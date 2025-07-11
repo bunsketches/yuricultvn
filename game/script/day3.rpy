@@ -4,6 +4,7 @@ label day3:
     $ bad_choice_count = 0
     $ eleanor_bad_day3 = False
     $ sarah_bad_day3 = False
+    $ sarah_day3 = False
     scene bg sunrise with fade
     play sound "sfx/rooster.mp3"
     play music "sfx/forest.mp3" fadein 1.0
@@ -146,6 +147,7 @@ label day3_eleanor:
     jump day3_end
 
 label day3_sarah:
+    $ sarah_day3 = True
     scene bg background2
     "You approach Sarah, finding her in distress. Bags hang from under her eyes - her hair disheveled."
     marcy neutral "Sarah?"
@@ -179,9 +181,6 @@ label day3_sarah:
             show sarah worried at right_side with dissolve
             "Sarah looks at you, deadpan, for once her expression is hard to read, but only for a moment. Upon closer inspection, you see bags forming under her eyes that weren’t there before."
             "Something is there."
-            # sarah happy "Come with me."
-            # "Sarah takes you to the Garden - holding your wrist the same way she had dragged you playfully the other day."
-            # "You feel warm inside - like you've found something worth holding onto, that's beyond Forever and this toxic place."
             $ good_choice_count += 1
         "You need to get out of here.":
             show sarah worried at right_side with dissolve

@@ -55,27 +55,50 @@ label sarah_good:
         show sarah happy at right_side with dissolve
         "Soon enough elation overtakes her and she smiles, grabbing your wrist."
         sarah "Come on, then!"
-    scene bg background1
-    "Sarah takes you to a bench. You sit together, watching as the stars come out."
-    show marcy neutral at left_side with dissolve
-    sarah "The stars are comforting for me."
+    scene bg garden3
+    show marcy concern at left_side with dissolve
+    show sarah happy at right_side with dissolve
+    "Sarah takes you to a bench, patting the spot beside her.  You sit together, watching as the stars come out."
+    show sarah neutral at right_side with dissolve
+    "You watch together in silence for a moment. It’s peaceful in a way that  Aeuternum has never been before. Sarah opens her mouth to speak, her voice smaller than her usual tone."
+    sarah "I’ve always liked stars. They’re…comforting for me."
+    show sarah happy at right_side with dissolve
+    "You turn your head, looking at her while her eyes are still fixed on the twinkling lights above."
     marcy "Is there anything else comforting you?"
-    sarah "Of course, silly..."
+    "Sarah tears her eyes away from the night sky for the first time since sitting down. She looks at you fondly, hope behind her eyes."
     sarah "You."
-    "Without further words, you lean into each other - a moment without thinking."
-    "You catch the gleam of something shiny as your eyes close."
-    "You kiss. Although you are losing yourself in the moment, you can feel something warm spattering against you."
+    "Without thinking, you silently lean in toward Sarah, and you briefly get a glimpse of Sarah doing the same."
+    "You catch the gleam of something shiny before your eyes close."
+    "You share a tender but brief kiss under the stars. You’re still pressed against Sarah when you feel something warm sputter at your side."
+    show marcy uneasy at left_side with dissolve
     "You look down to find blood - frightening amounts of it. So much. Too much."
-    "Under the moonlight, you watch as Sarah holds up her severed forearm to you - eyes welling up with tears of love, pain and ecstasy."
-    sarah "Eat of me..."
-    sarah "Make me a part of you, for Her. I won't face this world without being a part of you."
+    "Under the moonlight, you watch as Sarah holds up her severed forearm to you - her eyes welled up with tears inextricably mixed with love, pain and ecstasy."
+    sarah "Eat it."
+    sarah "Make me a part of you, for Her. I won’t face this world without being a part of you."
     sarah "I will feel the love that you feel, so I can receive Her blessing. So I can be seen by Her."
+    "You are stunned into silence, so when you don’t respond, Sarah continues rambling on."
+    sarah "Please, Marcy. I want you to, I promise."
+    sarah "I think this is what Eleanor wanted. I can feel it. This is it."
+    sarah "This is what she taught me last night, do you remember? You ran, but I knew you just wanted me to learn."
+    sarah "My Ultimatum."
+    sarah "My Love."
+    sarah "For Her, for Forever, for you, Marcy."
+    sarah "It’s only been a few days, but I want you to see me. More than anything. So please… Eat it."
+    "You gulp, though your throat is still dry. Before you can even process what’s happening, you blurt out—"
     marcy "I love you, Sarah."
-    sarah "Thank you." 
-    "You watch as she drifts with the arm in her right hand. She cries as you take it, gripping your shirt to soothe herself from the pain."
-    "You take her arm, and slowly... for Forever's sake, start biting into it."
-    "Just one swallow of her, as you cradle the rest of Sarah in your arms while she dies."
-    "Sarah passes from the world with her tears drying and a smile of relief on her face."
+    "Sarah smiles, her eyes flooding with joy."
+    sarah "{i}Thank you{/i}."
+    "You watch as she drifts with the arm in her right hand."
+    "For a moment, it seems like she might fall over, but she quickly corrects her posture."
+    "She cries as you take it delicately, gripping your shirt to soothe herself from the pain."
+    "You can hear her wince, and you think to yourself that the sound was a bit cute."
+    scene bg garden3 with fade
+    "You take her arm, and slowly… for Forever’s sake, sink your first bite into it."
+    "Your teeth tear through it as if it was your regular dinners that you would’ve shared with Sarah just a few hours ago. Bile starts to build in your throat as you chew."
+    "After what seems like Forever, you swallow as you cradle the rest of Sarah in your arms feeling her body go cold."
+    "Sarah passes from the world with her tears drying and a smile of relief on her face, below her beloved starry night sky."
+    "As you watch the warmth drain from your lover, you take another look at the dismembered arm in your grasp."
+    "The bile in your throat turns into desire, and before you can have second thoughts, you bite down."
     return
 
 label sarah_bad:
@@ -88,7 +111,29 @@ label sarah_bad:
         "You try to find the words, but Sarah speaks up before you can."
         sarah cry "I… think I understand."
     scene bg background1
+    "Sarah begins to turn for the woods. The moonlight is a spotlight for her form before the gaping cavern created by the looming trees. She looks beautiful."
+    if sarah_day3:
+        sarah "Thanks for watching the stars with me, Marcy."
+    "You look at Sarah’s back turned toward you, but Sarah turns her head to look at you one last time. For once, she has no words."
+    "You want to say something, say that you wished you could’ve helped her, beg to go with her."
+    "But again, you feel stuck in place, your feet refuse to step forward, and your mouth is dry."
+    "And again, your throat is dry. You know she is going to leave and that you’re never going to see her again."
     "Sarah begins to turn for the woods."
-    sarah neutral "Goodbye, Marcy."
-    "She walks away, leaving you, Aeuternum, and Forever behind."
+    marcy concern "Goodbye, Sarah."
+    "Sarah looks shocked for a moment, as if she didn’t expect you to let go that easily."
+    "Still, she fixes her smile as always. You hope, so deeply, that she says something. That she’ll laugh again and say she’s kidding, skipping back to you. But nothing comes."
+    "With that, Sarah finally walks off into the dark woods."
+    scene bg sunrise with fade
+    "You are left to wonder what “it” is forever as you live out your days in Aeuternum without Sarah."
+    scene bg house2 with fade
+    "Your days are filled with the same monotonous cycle again."
+    scene bg dining with fade
+    "Wake up, chores, eat, and drink until you pass out and do it all over again."
+    scene bg garden3 with fade
+    "Sometimes, you wander off to the garden again at night, hoping to see the stars just one more time."
+    "They’re never there, though, and neither is Sarah."
+    scene bg bedroom with fade
+    "A few weeks later, you overhear Eleanor in her quarters as you’re about to go to bed. She’s on the phone, seemingly questioned about local disappearing people, and Eleanor replies so calmly, so trained."
+    scene bg black with fade
+    "So collected, so independent. So unlike Sarah."
     return
