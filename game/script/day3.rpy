@@ -21,51 +21,78 @@ label day3:
     menu:
         marcy "What should I pray for?"
         "Offer your praise to the altar":
+            show marcy smile at left_side with dissolve
             "You kneel before the altar again. You rest your head into your lap before the statue."
-            marcy neutral "I will always be with you, Forever. Take me when you are ready. I am here, and I will continue to be here for you."
+            marcy "I will always be with you, Forever. Take me when you are ready. I am here, and I will continue to be here for you."
         "Pray for yourself":
-            marcy neutral "If you are there... I have a feeling, deep down, that something will happen today. I'm not sure what, but please protect me."
+            show marcy uneasy at left_side with dissolve
+            "You clasp your hands together tightly and bow your head down."
+            marcy "If you are there… I feel it in me that something will happen today. I’m not sure what, but please protect me."
+            "You linger for a moment before opening your eyes and running a hand down your face."
             $ secret_end_progress += 1
         "Do not pray":
-            marcy neutral "This place is so fucked, I know it is."
+            show marcy uneasy at left_side with dissolve
+            "You look up, scowling at the statue’s face."
+            "You never noticed the small cracks adorning it, an imperfect surface as the object of everyone’s unquestioning adoration."
+            marcy "This place is so fucked, I know it is."
     scene bg outside with fade
+    "As you move to walk away, you can’t shake the feeling that something is wrong."
+    "The statue’s shadow looms over you even as you make a good bit of distance from it."
     show marcy neutral at left_side with dissolve
-    "You exit the shed, to be greeted by the day, muted by heavy clouds. Something else hangs heavy in the air, a feeling that something is wrong."
     marcy "All right, time to get to it then."
     menu:
         marcy "What should I take care of today?"
-        "The garden":
+        "Trim the Garden":
+            scene bg garden1 with fade
             "You spend the afternoon trimming roses, picking weeds, and occasionally taking breaks and taking in the breeze from standing under a hot sun."
-            "You watch as the other members shape the hedges or water the plants. As the sun fell below the trees, you catch the silhouette of Sarah walking by."
+            "You watch as the other members shape the hedges or water the plants."
+            "As the sun falls below the trees, you catch the silhouette of Sarah walking by."
             $ sarah_count += 1
             jump day3_sarah
-        "The river":
-            "You spend the afternoon leaning by the river, making an attempt at catching fish but failing horribly. You're soon content to watch others spearing rainbow trout with effortless skill."
-            "You wrap up the day by packing the fish into a large cooler. While securing the cooler with straps, you catch the silhouette of Sarah in the distance - alone, pacing."
-            "You find yourself gravitating toward her across the river."
+        "Catch Fish at the River":
+            scene bg river with fade
+            "You spend the afternoon leaning by the river, attempting to catch fish but failing horribly. You watch as the others nail rainbow trout under their stakes."
+            "You wrap up the day by tying the fish up in a large cloth, and placing them into a chest."
+            "While buckling the chest of fish, you catch the silhouette of Sarah in the distance - alone, pacing."
+            "You find yourself gravitating toward her across the River."
             $ sarah_count += 1
             jump day3_sarah
-        "The dining hall":
-            "You are wiping the tables and mopping the floors of the dining hall after the lunch rush."
-            "Suddenly, Eleanor suddenly appears, taking a seat at the bench beside you. She addresses you coolly, with the hard edge of command."
-            eleanor happy "Come, sit."
+        "Mop the Dining Room":
+            scene bg dining with fade
+            "After the lunch rush, you begin wiping down the tops and mopping the Dining Room floor."
+            "After an hour or so of labor, you decide to sit down for a brief break, sighing."
+            show eleanor cold at right_side, flip with dissolve
+            "Suddenly, Eleanor appears. You hadn’t even heard her footsteps."
+            "You look up at her, unsure of what to say. She isn’t normally seen out of her quarters at these hours."
+            eleanor "Stand."
             $ eleanor_count += 1
             jump day3_eleanor
-        "The kitchen":
-            "You do ingredient prep and cook dishes all day. Sarah serves food out front - too engaged with the hungry crowd for you to interact."
-            "When the lunch rush wraps up, you step out - splashing water into your face at a nearby bucket."
-            "As you pat your face dry with your shirt, you catch the silhouette of Sarah briskly walking out of the back door."
+        "Prep Meals in the Butcher Room":
+            scene bg kitchen with fade
+            "You do ingredient prep and dishes all day. Sarah serves food at the front - too engaged with the hungry crowd to interact."
+            "When the lunch rush wrapped up in the evening, you step out - splashing water into your face at a nearby bucket."
+            "You pat it dry with your shirt, catching the dark shape of Sarah briskly walking out of the backdoor."
             $ sarah_count += 1
             jump day3_sarah
-        "The hallways":
-            "You dust the halls for hours. You concentrate on a bookshelf when a hand snakes up onto your shoulder. You whirl around, finding Eleanor with her lips curled gently."
+        "Dust the Hallway":
+            scene bg hallway with fade
+            "You dust the halls for hours. You concentrate on a bookshelf when a hand snakes up onto your shoulder."
+            show eleanor cold at right_side, flip with dissolve
+            "You whirl around, finding Eleanor with her lips curled gently."
             $ eleanor_count += 1
             jump day3_eleanor
-        "The basement":
+        "Fix the Basement Lights":
+            scene bg basement with fade
             "You are changing a lightbulb in the Basement, perched precariously on a rickety stool, screwing in the new bulb into the light fixture."
-            "As the light flickers back to life, it suddenly reveals Eleanor standing before you."
-            "Startled, you stumble off the stool, but Eleanor is there to catch you."
-            "She sets you down onto your feet, a dark shade filling her eyes as she locks them into yours - the knowing look of a predator, and you are her prey."
+            "You are changing the Basement lightbulb in the afternoon."
+            "With no one around, the darkness, and this stool you stand atop of - you balance it intently while screwing in a new bulb."
+            "The light flickers back on, and in front of you stood Eleanor."
+            show marcy uneasy at left_side with dissolve
+            show eleanor cold at right_side, flip with dissolve
+            "You flinch and topple off, bracing for impact."
+            "It never comes as you feel Eleanor’s arms wrap around you, catching you before you can hurt yourself."
+            "She sets you down onto your feet, and fixes you a look—"
+            "—That of the predator, and you are her prey."
             $ eleanor_count += 1
             jump day3_eleanor
 
