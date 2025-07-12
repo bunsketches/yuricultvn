@@ -2,7 +2,6 @@
 define marcy = Character("Marcy", image="marcy", window_background=Image("gui/textbox_left.png", xalign=0.5, yalign=1.0))
 define sarah = Character("Sarah", image="sarah", window_background=Image("gui/textbox_right.png", xalign=0.5, yalign=1.0))
 define eleanor = Character("Eleanor", image="eleanor", window_background=Image("gui/textbox_right.png", xalign=0.5, yalign=1.0))
-define forever = Character("Forever", image="forever", window_background=Image("gui/textbox_right.png", xalign=0.5, yalign=1.0))
 
 image bg black = Solid('#000000')
 
@@ -44,16 +43,6 @@ default bad_choice_count = 0
 default secret_end_progress = 0
 
 label start:
-#    scene bg background3
-#    show marcy neutral at left_side
-#    marcy "Marcy sprite test"
-#    marcy smile "Marcy happy test"
-#    show sarah neutral at right_side
-#    sarah "Sarah sprite test"
-#    sarah happy "Sarah happy test"
-#    show eleanor neutral at center
-#    eleanor "Eleanor sprite test"
-#    eleanor happy "Eleanor happy test"
     menu:
         "Debug day skip"
         "Day 1.":
