@@ -10,7 +10,7 @@ label day2:
     scene bg sunrise with dissolve
     "A rooster's crow pulls you into the waking world, the warmth of sunlight dispelling the fog of sleep as you slowly wake up."
     "Your morning routine is a blur, and you soon find yourself before Forever's altar, ready for morning prayer."
-    $ renpy.music.set_volume(0.25, 0.0)
+    play music "music/general_theme.wav" fadein 1.0
     if secret_end_progress >= 1:
         "It might be a trick of the light, but Forever's idol seems... larger than before, if not in physical size, then in presence at least."
     "Your face appears in the scrying mirror by the candlelight, as you gather your thoughts."
@@ -60,6 +60,7 @@ label day2:
             jump day2_sarah
 
 label day2_eleanor:
+    play music "music/sarah_theme_day2.wav"
     show eleanor neutral at right_side, flip with dissolve
     eleanor happy "Marcy! Come join me in the kitchen. We need your help."
     "As she speaks to you, you see the glimmer of some unknown intent in her calculating gaze, partially masked by her inviting smile."
