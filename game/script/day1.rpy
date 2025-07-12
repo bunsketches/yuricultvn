@@ -56,6 +56,7 @@ label day1:
             jump day1_eleanor
 
 label day1_sarah:
+    play music "music/sarah_theme_day1.wav"
     scene bg river with dissolve
     "Once you reach the river with Sarah, she dips the vase into the cool waters beside you."
     show marcy neutral at left_side with dissolve
@@ -123,6 +124,7 @@ label day1_sarah:
     jump day1_end
 
 label day1_eleanor:
+    play music "music/eleanor_theme_day1.mp3"
     scene bg garden1 with dissolve
     show marcy neutral at left_side with dissolve
     show eleanor neutral at right_side with dissolve
