@@ -246,11 +246,12 @@ screen quick_menu():
             spacing 32
             pos(0.95, 0.05)
             anchor(1.0, 0.0)
-            imagebutton auto "gui/button/btn_hide_%s.png" action HideInterface()
-            imagebutton auto "gui/button/btn_save_%s.png" action ShowMenu('save')
-            imagebutton auto "gui/button/btn_auto_%s.png" action Preference("auto-forward", "toggle")
-            imagebutton auto "gui/button/btn_load_%s.png" action ShowMenu('load')
-            imagebutton auto "gui/button/btn_settings_%s.png" action ShowMenu('preferences')
+            box_align 1.0
+            imagebutton auto "gui/button/hide_button_%s.png" action HideInterface()
+            imagebutton auto "gui/button/save_button_%s.png" action ShowMenu('save')
+            imagebutton auto "gui/button/auto_button_%s.png" action Preference("auto-forward", "toggle")
+            imagebutton auto "gui/button/load_button_%s.png" action ShowMenu('load')
+            imagebutton auto "gui/button/gear_button_%s.png" action ShowMenu('preferences')
             # Removed buttons
             # textbutton _("Back") action Rollback()
             # textbutton _("History") action ShowMenu('history')
