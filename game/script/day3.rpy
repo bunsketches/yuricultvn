@@ -18,7 +18,7 @@ label day3:
         "Was it always cracked like this?"
     "Your face appears in the scrying mirror by the candlelight, as you gather your thoughts."
     show marcy neutral at left_side with dissolve
-    play music "music/goddess_ambient.wav" fadein 1.0
+    play music "music/goddess_ambient.mp3" fadein 1.0
     menu:
         marcy "What should I pray for?"
         "Offer your praise to the altar":
@@ -44,14 +44,14 @@ label day3:
     menu:
         marcy "What should I take care of today?"
         "Trim the garden":
-            scene bg garden1 with fade
+            scene bg garden1 with dissolve
             "You spend the afternoon trimming roses, picking weeds, and occasionally taking breaks and taking in the breeze from standing under a hot sun."
             "You watch as the other members shape the hedges or water the plants."
             "As the sun falls below the trees, you catch the silhouette of Sarah walking by."
             $ sarah_count += 1
             jump day3_sarah
         "Catch fish by the river":
-            scene bg river with fade
+            scene bg river with dissolve
             "You spend the afternoon leaning by the river, attempting to catch fish but failing horribly. You watch as the others nail rainbow trout under their stakes."
             "You wrap up the day by tying the fish up in a large cloth, and placing them into a chest."
             "While buckling the chest of fish, you catch the silhouette of Sarah in the distance - alone, pacing."
@@ -59,7 +59,7 @@ label day3:
             $ sarah_count += 1
             jump day3_sarah
         "Mop the dining hall":
-            scene bg dining with fade
+            scene bg dining with dissolve
             "After the lunch rush, you begin wiping down the table tops and mopping the dining hall floor."
             "After an hour or so of labor, you decide to sit down for a brief break, sighing."
             show eleanor cold at right_side, flip with dissolve
@@ -69,26 +69,26 @@ label day3:
             $ eleanor_count += 1
             jump day3_eleanor
         "Meal prep in the kitchen":
-            scene bg kitchen with fade
+            scene bg kitchen with dissolve
             "You do ingredient prep and dishes all day. Sarah serves food at the front - too engaged with the hungry crowd to interact."
             "When the lunch rush wrapped up in the evening, you step out - splashing water into your face at a nearby bucket."
             "You pat it dry with your shirt, catching the dark shape of Sarah briskly walking out of the backdoor."
             $ sarah_count += 1
             jump day3_sarah
         "Dust the hallways":
-            scene bg hallway with fade
+            scene bg hallway with dissolve
             "You dust the halls for hours. You concentrate on a bookshelf when a hand snakes up onto your shoulder."
             show eleanor cold at right_side, flip with dissolve
             "You whirl around, finding Eleanor with her lips curled gently."
             $ eleanor_count += 1
             jump day3_eleanor
         "Fix the basement lights":
-            scene bg basement with fade
+            scene bg basement with dissolve
+            show marcy neutral at left_side with dissolve
             "You are changing a lightbulb in the Basement, perched precariously on a rickety stool, screwing in the new bulb into the light fixture."
-            "With no one around, the darkness, and this stool you stand atop of - you balance it intently while screwing in a new bulb."
-            "The light flickers back on, and in front of you stood Eleanor."
-            show marcy uneasy at left_side with dissolve
-            show eleanor cold at right_side, flip with dissolve
+            "The light flickers back on, revealing Eleanor standing in front of you. Watching."
+            show marcy uneasy
+            show eleanor cold at right_side, flip
             "You flinch and topple off, bracing for impact."
             "It never comes as you feel Eleanor's arms wrap around you, catching you before you can hurt yourself."
             "She sets you down onto your feet, and fixes you a look—"
