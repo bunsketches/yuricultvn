@@ -89,7 +89,7 @@ label day2:
 label day2_eleanor:
     play music "music/eleanor_theme_day2.mp3" fadein 1.0 fadeout 1.0
     show eleanor happy at right_side with dissolve
-    eleanor happy "Marcy! Come join me['' if same_loc else 'in the kitchen']. We need your help."
+    eleanor happy "Marcy! Come join me['' if same_loc else ' in the kitchen']. We need your help."
     "As she speaks to you, you see the glimmer of some unknown intent in her calculating gaze, partially masked by her inviting smile."
     scene bg kitchen with dissolve
     show marcy neutral at left_side with dissolve
