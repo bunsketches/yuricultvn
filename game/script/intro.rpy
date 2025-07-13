@@ -55,10 +55,11 @@ label start:
 #    eleanor "Eleanor sprite test"
 #    eleanor happy "Eleanor happy test"
     menu:
-        "Debug day skip"
-        "Day 1.":
-            jump day1
-        "Day 2.":
-            jump day2
-        "Day 3.":
-            jump day3
+        jump day1
+        #"Debug day skip"
+        #"Day 1.":
+        #    jump day1
+        #"Day 2.":
+        #    jump day2
+        #"Day 3.":
+        #    jump day3
