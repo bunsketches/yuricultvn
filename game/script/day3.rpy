@@ -8,7 +8,6 @@ label day3:
     $ eleanor_day3 = False
 
     scene bg sunrise with fade
-    play music "music/general_theme.mp3" fadein 1.0 fadeout 1.0
     "You wake up with a guilty lump in your throat. Dread sits at the bottom of your stomach."
     play sound "sfx/rooster.mp3"
     play sound "sfx/forest.mp3" fadein 0.5 loop
@@ -28,18 +27,18 @@ label day3:
         "Offer your praise to the altar":
             scene bg pray respects
             "You kneel before the altar again. You rest your head into your lap before the statue."
-            marcy "I will always be with you, Forever. Take me when you are ready. I am here, and I will continue to be here for you."
+            marcy smile"I will always be with you, Forever. Take me when you are ready. I am here, and I will continue to be here for you."
         "Pray for yourself":
             scene bg pray yourself
             "You clasp your hands together tightly and bow your head down."
-            marcy "If you are there... I feel it in me that something will happen today. I'm not sure what, but please protect me."
+            marcy uneasy "If you are there... I feel it in me that something will happen today. I'm not sure what, but please protect me."
             "You linger for a moment before opening your eyes and running a hand down your face."
             $ secret_end_progress += 1
         "Do not pray":
             scene bg pray nothing
             "You look up, scowling at the statue's face."
             "You never noticed the small cracks adorning it, an imperfect surface as the object of everyone's unquestioning adoration."
-            marcy "This place is so fucked, I know it is."
+            marcy uneasy "This place is so fucked, I know it is."
 
     scene bg outside with dissolve
     "As you move to walk away, you can't shake the feeling that something is wrong."
@@ -124,12 +123,14 @@ label day3_eleanor:
     "You can't help but follow her as she leads you on."
     play sound "sfx/door_open.sfx"
     "You arrive at the basement, where she opens a hidden door leading to a secret room."
+    play sound "sfx/door_open.mp3"
+    show bg basement2
     "In this hidden chamber, a large version of Forever's statue stands proudly. Before the statue waits an altar with a white altar cloth."
     "There is a silver, intricately engraved ornamental knife resting on top of it, which seems familiar."
     if saw_knife:
-        "You recognize this knife."
+        "You recognize this knife, from when you and Sarah were in the basement."
     play sound "sfx/heels_walk.mp3"
-    "Barrels of wine decorate the room, and a row of silver chalices hangs from a rack on the wall."
+    "Barrels of wine line the room, and a row of silver chalices hangs from a rack on the wall."
     "You drank from a chalice every night - didn't ask questions about the wine - but now that you're here, you force the thought out of your mind on what this implies."
     "Eleanor has her hand at your shoulder again as she gestures to the room."
     eleanor "Look upon this, where my work is done. This is where we keep our bonds with Forever. This is where the magic is - where Her love is, in its purest form."
@@ -147,10 +148,11 @@ label day3_eleanor:
         "So all this time... the wine...":
             "Eleanor shakes her head, clicking her tongue, though for once she's not scolding you. She seems beyond her role as the leader at this point, and looks at you expectantly."
             eleanor "The wine is just the start, Marcy."
-    "She holds your hands in her own, turning to you - giving them a squeeze. Her eyes light up, hungry, {i}craving{/i}."
+    show eleanor psychotic
+    "She holds your hands in her own, turning to you - her grip is painfully tight. Her eyes light up, hungry, {i}craving{/i}."
     eleanor "Join me. Become {i}great{/i} with me. Let's meet Forever together, and be her Chosen."
     play sound "sfx/knife_pull.mp3"
-    "Eleanor briefly turns to the altar, grabbing the dagger from the altar. When she turns, it cuts through the air audibly. Eleanor looks at you fanatically, almost trembling. You've never seen her ecstatic like this."
+    "Eleanor briefly turns to the altar to grab the dagger. When she turns, it cuts through the air audibly. Eleanor looks at you fanatically, almost trembling. You've never seen her ecstatic like this."
     eleanor "You have this one chance, Marcy - your potential is unfathomable. I've known it since we met all those years ago."
     "She lifts her hand up to touch your scarred cheek, and you swear you feel a searing burn."
     "Images of Eleanor from when you and her were younger now flash in your mind. When your flesh was still raw and when Eleanor still had a semblance of a real smile on her face."
@@ -169,17 +171,6 @@ label day3_eleanor:
             eleanor neutral "I'll make the announcement. We will drink to your promotion."
             $ good_choice_count += 1
             jump day3_end
-    eleanor "Will you join me, Marcy? Can you trust me, please?"
-    menu:
-        "Okay, I'll do it.":
-            "You don't know what you're doing, but you close your eyes and breathe."
-            eleanor "Marcy, I love you. I have looked forward to this - thank you."
-            eleanor neutral "I'll make the announcement. We will drink to your promotion."
-        "There has to be a better way...":
-            marcy neutral "I can't do this, Eleanor. I'm sorry. This isn't right."
-            "Something snaps in Eleanor's eyes, and her face stills, emotion draining from it. She lets you go."
-            eleanor neutral "So be it."
-            "She then shoves you to the altar and grabs the knife in an attempt to stab you."
     if good_choice_count > bad_choice_count:
         $ eleanor_bad_day3 = True
     jump day3_end

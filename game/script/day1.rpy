@@ -7,7 +7,7 @@ label day1:
     play sound "sfx/forest.mp3" fadein 0.5 loop
     "A lighter clicks, a flame blossoms."
     "There is a circle, drawn into the dirt, with a small stone statue of a mysterious woman in the center."
-    play music "music/general_theme.mp3" fadein 1.0 fadeout 1.0
+    play music "music/goddess_ambient.mp3" fadein 1.0 fadeout 1.0
     "She is dimmed by candlelight. Wisps of incense smoke waft behind her from a myrrh stick."
     "An obsidian scrying mirror reflects your face from the shadows as you approach the circle."
     stop sound fadeout 0.5
@@ -35,11 +35,12 @@ label day1:
     show marcy neutral at left_side with dissolve
     "Here at Aeternum, everyone must do their part. Today, your part is to fetch water."
     show sarah worried at right_side with dissolve
-    "On your way to the river, you bump into a tall, soft girl with preppy hair. Her strong arms release something large - a clay vase. You haven’t seen her around before, and she certainly seems a bit in over her head."
+    "On your way to the river, you bump into a tall, soft girl with preppy hair. Her strong arms release something large - a clay vase."
+    "You haven’t seen her around before, and she certainly seems a bit in over her head."
     play sound "sfx/water_spill.mp3"
     "There is a loud splash as water spills from the vase, dousing the girl and pooling on the ground."
     show eleanor neutral at center with dissolve
-    "A blonde woman arrives soon after, her expression calm and inscrutable. Out of habit, you sit up a bit straighter at the latter’s arrival."
+    "A blonde woman arrives soon after, her expression calm and inscrutable. Out of habit, you sit up a bit straighter at her arrival."
     eleanor neutral "Ah - good morning, Marcy. It appears I've come at a bad time..."
     eleanor happy "This is Sarah, our newest member and an absolutely lovely addition to our family."
     show sarah neutral with dissolve
@@ -88,10 +89,11 @@ label day1_sarah:
             sarah happy "Me too! I went to school with Eleanor and..."
             sarah worried "I had to run from home."
             sarah happy "Eleanor made an offer when that happened, so here I am."
-            "Sarah pauses for a moment while she reminisces, smiling fondly at the running river water below her.\nYou then watch her shake her head, seemingly snapping out of whatever daydream she was in, facing you again."
+            "Sarah pauses for a moment while she reminisces, smiling fondly at the running river water below her."
+            "You then watch her shake her head, seemingly snapping out of whatever daydream she was in, facing you again."
             $ good_choice_count += 1
         "It's private.":
-            show sarah worried
+            play sound "sfx/water_spill.mp3"
             "Sarah jumps a bit, surprised at the blunt remark. You see her fumble with her vase, almost dropping it before laughing nervously."
             sarah worried "Oh - I'm sorry, I didn't mean to make you uncomfortable."
             sarah worried "It's just that, I swear that everyone here's got a similar story to tell..."
@@ -100,7 +102,8 @@ label day1_sarah:
     menu:
         "Day.":
             sarah neutral "Huh. Well, suit yourself! I prefer nighttime, but I suppose the day is glorious in its own way."
-            "Sarah continues filling a vase with water. The air around you two thickens, and not just because of the oncoming summer heat. Silence fills the air, but Sarah doesn't seem to mind, humming a random tune all the while. You turn to look at the sky just as she clears her throat, prompting you with another question."
+            "Sarah continues filling a vase with water. The air around you two thickens, and not just because of the oncoming summer heat."
+            "Silence fills the air, but Sarah doesn't seem to mind, humming a random tune all the while. You turn to look at the sky just as she clears her throat, prompting you with another question."
             $ bad_choice_count += 1
         "Night.":
             sarah happy "Hey, that makes two of us! I just love the sky when it clears, and seeing all of the stars shine."
@@ -224,7 +227,8 @@ label day1_end:
         "Dust the basement.":
             show bg basement with dissolve
             "You spend the rest of your time in the dark of the basement, a lantern lighting your way as you clear just a few specks of dust."
-            "It surprised you how tidy this place was when you first got assigned this task. Now, you regard it as a bit of a \"get out of jail\" chore to seem busy. Really it’s a bit… calming down here."
+            "It surprised you how tidy this place was when you first got assigned this task. Now, you regard it as a bit of a \"get out of jail\" chore to seem busy."
+            "Really it’s a bit… calming down here."
     show bg dining with dissolve
     "You wrap up your chores and join everyone in the dining hall for dinner."
     "At the end of the meal, everyone receives a chalice of wine, a sacrament of sorts."
@@ -235,12 +239,13 @@ label day1_end:
     "Fellow Devotee" "Of what? That's unusual."
     marcy uneasy "..."
     "You never cared for those who talk as if no one can hear them. You finish your drink, and rise silently. Your feet drag back to your quarters for the night, the chatter fading with distance."
-    show bg bedroom with dissolve
-    show marcy neutral with dissolve
+    play sound "sfx/cricket_chirp.mp3"
+    scene bg bedroom with dissolve
+    show marcy neutral at left_side with dissolve
     "With the day coming to an end, you climb into bed, soft bedding at odds with the rough matress. The bedding wins, most nights."
     play sound "sfx/bed_creak.mp3"
     "The springs creak under your weight, and your eyes grow heavy once their face hits the cool side of the pillow. You drift into a dull, numbing slumber."
-    show bg black with dissolve
+    scene bg black with dissolve
 
     if good_choice_count > bad_choice_count:
         $ good_day_count += 1
