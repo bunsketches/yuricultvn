@@ -8,9 +8,10 @@ label day3:
     $ eleanor_day3 = False
 
     scene bg sunrise with fade
+    play music "music/general_theme.mp3" fadein 1.0
     "You wake up with a guilty lump in your throat. Dread sits at the bottom of your stomach."
     play sound "sfx/rooster.mp3"
-    play music "sfx/forest.mp3" fadein 1.0
+    play sound "sfx/forest.mp3" fadein 0.5 loop
     "The scar on half your body burns, your arm twitching in what registers to your body as pain, but what you know in your brain is not really there. The image of last night plays in your mind over and over and over again."
     "You can't shake the feeling of inevitable doom. You lay there for a while, with that terrible weight, before slipping out from the covers."
     "Your morning routine passes without issue, clockwork as usual. As always, you stand before Forever for morning prayer."
@@ -18,11 +19,11 @@ label day3:
         "A spiderweb of hairline cracks run all over the idol, with a particularly large crack slashing Forever's serene visage, revealing the hollow interior."
         "Was it always cracked like this?"
     "Your face appears in the scrying mirror by the candlelight, as you gather your thoughts."
+    stop sound fadeout 0.5
     
     scene bg pray start
-    play music "music/goddess_ambient.mp3" fadein 1.0
+    marcy "What should I pray for?"
     menu:
-        marcy "What should I pray for?"
         "Offer your praise to the altar":
             scene bg pray respects
             "You kneel before the altar again. You rest your head into your lap before the statue."
@@ -39,14 +40,13 @@ label day3:
             "You never noticed the small cracks adorning it, an imperfect surface as the object of everyone's unquestioning adoration."
             marcy "This place is so fucked, I know it is."
 
-    play music "music/general_theme.mp3"
     scene bg outside with dissolve
     "As you move to walk away, you can't shake the feeling that something is wrong."
     "The statue's shadow looms over you even as you make a good bit of distance from it."
     show marcy neutral at left_side with dissolve
     marcy "All right, time to get to it then."
+    marcy "What should I take care of today?"
     menu:
-        marcy "What should I take care of today?"
         "Trim the garden":
             show bg garden1 with dissolve
             "You spend the afternoon trimming roses, picking weeds, and occasionally taking breaks and taking in the breeze from standing under a hot sun."
@@ -101,13 +101,13 @@ label day3:
             jump day3_eleanor
 
 label day3_eleanor:
-    play music "music/eleanor_theme_day3.mp3"
+    play music "music/eleanor_theme_day3.mp3" fadein 1.0
     show marcy concern at left_side with dissolve
     $ eleanor_day3 = True
     "You've known Eleanor long enough to know that look, those dark eyes, the scheme lurking behind them."
     "And that smile tells you it's something she is excited about and very sure of."
+    eleanor delighted "Working hard today, Marcy?"
     menu:
-        eleanor delighted "Working hard today, Marcy?"
         "Very. And I'm looking forward to relaxing today - I could use it.":
             eleanor happy "I understand. You can relax later, I assure you. I wont take too much of your time."
             $ bad_choice_count += 1
@@ -164,8 +164,8 @@ label day3_eleanor:
             eleanor neutral "I'll make the announcement. We will drink to your promotion."
             $ good_choice_count += 1
             jump day3_end
+    eleanor "Will you join me, Marcy? Can you trust me, please?"
     menu:
-        eleanor "Will you join me, Marcy? Can you trust me, please?"
         "Okay, I'll do it.":
             "You don't know what you're doing, but you close your eyes and breathe."
             eleanor "Marcy, I love you. I have looked forward to this - thank you."
@@ -180,7 +180,7 @@ label day3_eleanor:
     jump day3_end
 
 label day3_sarah:
-    play music "music/sarah_theme_day3.mp3"
+    play music "music/sarah_theme_day3.mp3" fadein 1.0
     $ sarah_day3 = True
     show marcy concern at left_side with dissolve
     show sarah terrified at right_side with dissolve

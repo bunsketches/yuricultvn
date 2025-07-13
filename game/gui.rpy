@@ -66,7 +66,7 @@ define gui.name_text_font = "gui/fonts/EBGaramond08-Regular.otf"
 define gui.interface_text_font = "gui/fonts/EBGaramond08-Regular.otf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 33
+define gui.text_size = 36
 
 ## The size of character names.
 define gui.name_text_size = 45
@@ -105,7 +105,7 @@ define gui.textbox_yalign = 1.0
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = 380
+define gui.name_xpos = 480
 define gui.name_ypos = 16
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
