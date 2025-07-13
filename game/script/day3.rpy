@@ -8,7 +8,7 @@ label day3:
     $ eleanor_day3 = False
 
     scene bg sunrise with fade
-    play music "music/general_theme.mp3" fadein 1.0
+    play music "music/general_theme.mp3" fadein 1.0 fadeout 1.0
     "You wake up with a guilty lump in your throat. Dread sits at the bottom of your stomach."
     play sound "sfx/rooster.mp3"
     play sound "sfx/forest.mp3" fadein 0.5 loop
@@ -101,7 +101,7 @@ label day3:
             jump day3_eleanor
 
 label day3_eleanor:
-    play music "music/eleanor_theme_day3.mp3" fadein 1.0
+    play music "music/eleanor_theme_day3.mp3" fadein 1.0 fadeout 1.0
     show marcy concern at left_side with dissolve
     $ eleanor_day3 = True
     "You've known Eleanor long enough to know that look, those dark eyes, the scheme lurking behind them."
@@ -180,7 +180,7 @@ label day3_eleanor:
     jump day3_end
 
 label day3_sarah:
-    play music "music/sarah_theme_day3.mp3" fadein 1.0
+    play music "music/sarah_theme_day3.mp3" fadein 1.0 fadeout 1.0
     $ sarah_day3 = True
     show marcy concern at left_side with dissolve
     show sarah terrified at right_side with dissolve
@@ -244,7 +244,7 @@ label day3_sarah:
             show bg garden1 with fade
             show sarah happy at right_side with dissolve
             show marcy smile at left_side with dissolve
-            "You feel warm inside, like you've found something worth holding onto, that's beyond Forever, beyond Aeuternum."
+            "You feel warm inside, like you've found something worth holding onto, that's beyond Forever, beyond Aeternum."
             "You don't remember that 'beyond' part too well, but you feel you could probably get closer to that with Sarah. At least, you hope so."
         "I don't think I can.":
             show sarah cry at right_side with dissolve

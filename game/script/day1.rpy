@@ -7,6 +7,7 @@ label day1:
     play sound "sfx/forest.mp3" fadein 0.5 loop
     "A lighter clicks, a flame blossoms."
     "There is a circle, drawn into the dirt, with a small stone statue of a mysterious woman in the center."
+    play music "music/eleanor_theme_day1.mp3" fadein 1.0 fadeout 1.0
     "She is dimmed by candlelight. Wisps of incense smoke waft behind her from a myrrh stick."
     "An obsidian scrying mirror reflects your face from the shadows as you approach the circle."
     stop sound fadeout 0.5
@@ -32,7 +33,7 @@ label day1:
 
     scene bg outside with dissolve
     show marcy neutral at left_side with dissolve
-    "Here at Aeuternum, everyone must do their part. Today, your part is to fetch water."
+    "Here at Aeternum, everyone must do their part. Today, your part is to fetch water."
     show sarah worried at right_side with dissolve
     "On your way to the river, you bump into a tall, soft girl with preppy hair. Her strong arms release something large - a clay vase."
     "There is a loud splash as water spills from the vase, dousing the girl and pooling on the ground."
@@ -65,7 +66,7 @@ label day1:
             jump day1_eleanor
 
 label day1_sarah:
-    play music "music/sarah_theme_day1.mp3" fadein 1.0
+    play music "music/sarah_theme_day1.mp3" fadein 1.0 fadeout 1.0
     scene bg river with dissolve
     "Once you reach the river with Sarah, she dips the vase into the cool waters beside you."
     show marcy neutral at left_side with dissolve
@@ -79,7 +80,7 @@ label day1_sarah:
     marcy neutral "Uh huh."
     scene bg day1 sarah with dissolve
     "Sarah continues filling water and trades the vase off with you for you to fill it."
-    sarah neutral "So, how did you join Aeuternum?"
+    sarah neutral "So, how did you join Aeternum?"
     menu:
         "I left my life behind when Eleanor met me. She took me in.":
             sarah happy "Me too! I went to school with Eleanor and..."
@@ -96,7 +97,7 @@ label day1_sarah:
     sarah neutral "So... Are you a day or a night person?"
     menu:
         "Day.":
-            sarah neutral "Huh. Well, suit yourself! But, the day is truly glorious in its own way."
+            sarah neutral "Huh. Well, suit yourself! I prefer nighttime, but I suppose the day is glorious in its own way."
             "Sarah continues filling a vase with water. The air around you two thickens, and not just because of the oncoming summer heat. Silence fills the air, but Sarah doesn't seem to mind, humming a random tune all the while. You turn to look at the sky just as she clears her throat, prompting you with another question."
             $ bad_choice_count += 1
         "Night.":
@@ -108,7 +109,7 @@ label day1_sarah:
             "You shake your head. You've lived here for almost as long as you can remember. The terminology doesn't ring a bell."
             marcy neutral "I guess we don't have that problem here, no."
             $ good_choice_count += 1
-    sarah neutral "How is it, getting used to Aeuternum? Any tips you can give a new friend?"
+    sarah neutral "How is it, getting used to Aeternum? Any tips you can give a new friend?"
     menu:
         "Friend? I just met you.":
             sarah worried "Oh, right - I guess I am getting ahead of myself."
@@ -129,11 +130,11 @@ label day1_sarah:
     marcy neutral "Interesting girl..."
     "You look at your feet, and listen to the sounds of the forest and river around you."
     marcy neutral "I guess a fresh face wouldn't hurt."
-    "Deciding you've spent enough time dilly-dallying, you trudge in the direction back to  Aeuternum. More chores are to be done for the day."
+    "Deciding you've spent enough time dilly-dallying, you trudge in the direction back to  Aeternum. More chores are to be done for the day."
     jump day1_end
 
 label day1_eleanor:
-    play music "music/eleanor_theme_day1.mp3" fadein 1.0
+    play music "music/eleanor_theme_day1.mp3" fadein 1.0 fadeout 1.0
     scene bg garden1 with dissolve
     show marcy neutral at left_side with dissolve
     show eleanor neutral at right_side, flip with dissolve
@@ -141,7 +142,7 @@ label day1_eleanor:
     eleanor playful "Daisies... the flower of innocence, purity... does it remind you of anyone?"
     show marcy uneasy
     show eleanor delighted
-    "You're caught a bit off guard, unsure of what to say. You've been at Aeuternum for years, and yet you're still not used to the way Eleanor speaks."
+    "You're caught a bit off guard, unsure of what to say. You've been at Aeternum for years, and yet you're still not used to the way Eleanor speaks."
     "Everything that comes out of her mouth is spoken so sweetly, but still feels like some sort of trap."
     "You keep your distress mostly clear off your face as always, in spite of the heat crawling up your neck. Eleanor, keen-eyed as always, laughs before you can recover."
     "Softly, she asks you a question."
@@ -171,7 +172,7 @@ label day1_eleanor:
             eleanor neutral "Nonsense."
             "From anyone else, it would have been a gentle reassurance. From Eleanor though, it feels like scolding."
             $ bad_choice_count += 1
-    eleanor happy "And how has Aeuternum been treating you all these years, dear?"
+    eleanor happy "And how has Aeternum been treating you all these years, dear?"
     menu:
         "I... am still figuring it out.":
             "Eleanor presses the daisy to their nose, the edges of her lips curling into a smile."
@@ -206,7 +207,7 @@ label day1_eleanor:
     jump day1_end
 
 label day1_end:
-    play music "music/general_theme.mp3" fadein 1.0
+    play music "music/general_theme.mp3" fadein 1.0 fadeout 1.0
     scene bg house1 with dissolve
     show marcy neutral at left_side with dissolve
     marcy neutral "Well, that sure was... something."

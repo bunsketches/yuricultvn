@@ -3,7 +3,7 @@ define marcy = Character("Marcy", image="marcy", window_background=Image("gui/te
 define sarah = Character("Sarah", image="sarah", window_background=Image("gui/textbox_right.png", xalign=0.5, yalign=1.0))
 define eleanor = Character("Eleanor", image="eleanor", window_background=Image("gui/textbox_right.png", xalign=0.5, yalign=1.0))
 
-image bg black = Solid('#000000')
+#image bg black = Solid('#000000')
 
 # Transform definitions
 transform left_side:

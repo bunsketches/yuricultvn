@@ -110,7 +110,7 @@ label eleanor_bad:
     "Kicking open the door of Eleanor's ranch, you see that it's already morning again."
     "Normally, this would be your cue to pray, but not today."
     "You pause for a moment to catch your breath."
-    "You don't know where exactly you're going to go, and your memories of before Aeuternum are hazy, but for once you act before you think."
+    "You don't know where exactly you're going to go, and your memories of before Aeternum are hazy, but for once you act before you think."
     "Puffing out one last breath, you run, ignoring the desire for one last sip of wine."
     return
 
@@ -129,7 +129,7 @@ label sarah_good:
     show sarah happy at right_side with dissolve
     "Sarah takes you to a bench, patting the spot beside her.  You sit together, watching as the stars come out."
     show sarah neutral at right_side with dissolve
-    "You watch together in silence for a moment. It's peaceful in a way that  Aeuternum has never been before. Sarah opens her mouth to speak, her voice smaller than her usual tone."
+    "You watch together in silence for a moment. It's peaceful in a way that  Aeternum has never been before. Sarah opens her mouth to speak, her voice smaller than her usual tone."
     sarah "I've always liked stars. They're...comforting for me."
     show sarah happy at right_side with dissolve
     "You turn your head, looking at her while her eyes are still fixed on the twinkling lights above."
@@ -194,7 +194,7 @@ label sarah_bad:
     "Still, she fixes her smile as always. You hope, so deeply, that she says something. That she'll laugh again and say she's kidding, skipping back to you. But nothing comes."
     "With that, Sarah finally walks off into the dark woods."
     scene bg sunrise with fade
-    "You are left to wonder what 'it' is forever, as you live out your days in Aeuternum without Sarah."
+    "You are left to wonder what 'it' is forever, as you live out your days in Aeternum without Sarah."
     scene bg house2 with fade
     "Your days are filled with the same monotonous cycle again."
     scene bg dining with fade
