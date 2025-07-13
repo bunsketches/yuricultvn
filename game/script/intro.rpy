@@ -42,6 +42,8 @@ default bad_choice_count = 0
 # Track progression of Forever ending
 default secret_end_progress = 0
 
+$ renpy.music.register_channel('loop_sound', 'sfx', loop=True)
+
 label start:
     jump day1
     #menu:

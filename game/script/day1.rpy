@@ -7,7 +7,7 @@ label day1:
     play sound "sfx/forest.mp3" fadein 0.5 loop
     "A lighter clicks, a flame blossoms."
     "There is a circle, drawn into the dirt, with a small stone statue of a mysterious woman in the center."
-    play music "music/eleanor_theme_day1.mp3" fadein 1.0 fadeout 1.0
+    play music "music/general_theme.mp3" fadein 1.0 fadeout 1.0
     "She is dimmed by candlelight. Wisps of incense smoke waft behind her from a myrrh stick."
     "An obsidian scrying mirror reflects your face from the shadows as you approach the circle."
     stop sound fadeout 0.5
@@ -35,20 +35,22 @@ label day1:
     show marcy neutral at left_side with dissolve
     "Here at Aeternum, everyone must do their part. Today, your part is to fetch water."
     show sarah worried at right_side with dissolve
-    "On your way to the river, you bump into a tall, soft girl with preppy hair. Her strong arms release something large - a clay vase."
+    "On your way to the river, you bump into a tall, soft girl with preppy hair. Her strong arms release something large - a clay vase. You haven’t seen her around before, and she certainly seems a bit in over her head."
+    play sound "sfx/water_spill.mp3"
     "There is a loud splash as water spills from the vase, dousing the girl and pooling on the ground."
     show eleanor neutral at center with dissolve
-    "A blonde woman arrives soon after, her expression calm and inscrutable."
+    "A blonde woman arrives soon after, her expression calm and inscrutable. Out of habit, you sit up a bit straighter at the latter’s arrival."
     eleanor neutral "Ah - good morning, Marcy. It appears I've come at a bad time..."
     eleanor happy "This is Sarah, our newest member and an absolutely lovely addition to our family."
-    show sarah neutral
+    show sarah neutral with dissolve
     eleanor neutral "That being said, could I steal you for a moment?"
-    show sarah worried
+    show sarah worried with dissolve
     "You look at Sarah, who is exasperatedly fumbling with vases."
     marcy "Who should I go with?"
     menu:
         "Go help Sarah":
             marcy "Eleanor, I knocked over all this water Sarah was carrying. I should help her refill it. Can we talk another time?"
+            show eleanor delighted with dissolve
             "Eleanor beams that soft, serene smile of hers, one you've seen many times."
             hide eleanor with dissolve
             "With a nod, she turns to leave respectfully. In turn, you and Sarah head for the river."
@@ -56,10 +58,10 @@ label day1:
             jump day1_sarah
         "Follow Eleanor":
             marcy concern "Of course, Eleanor. Lead the way."
-            show sarah neutral
+            show sarah neutral with dissolve
             "Off to the side, Sarah gathers herself, picking up the vase and carrying it back to the river."
             hide sarah with dissolve
-            show marcy neutral
+            show marcy neutral with dissolve
             "Eleanor smiles, calm and collected as always."
             eleanor happy "Good. This way."
             $ eleanor_count += 1
@@ -137,7 +139,7 @@ label day1_eleanor:
     play music "music/eleanor_theme_day1.mp3" fadein 1.0 fadeout 1.0
     scene bg garden1 with dissolve
     show marcy neutral at left_side with dissolve
-    show eleanor neutral at right_side, flip with dissolve
+    show eleanor neutral at right_side with dissolve
     "You join Eleanor in the garden. She picks a daisy from one of the flowerbeds, regarding it calmly while twirling it in her fingers."
     eleanor playful "Daisies... the flower of innocence, purity... does it remind you of anyone?"
     show marcy uneasy
@@ -175,7 +177,7 @@ label day1_eleanor:
     eleanor happy "And how has Aeternum been treating you all these years, dear?"
     menu:
         "I... am still figuring it out.":
-            "Eleanor presses the daisy to their nose, the edges of her lips curling into a smile."
+            "Eleanor presses the daisy to her nose, the edges of her lips curling into a smile."
             eleanor happy "Excellent, Marcy. Excellent. You owe no debts to me - it has been a pleasure having you with us."
             "You're not sure what to say in response, so you don't say anything. Your body has faced toward the flowerbeds this whole conversation, but Eleanor's eyes still meet yours from the side."
             "She can tell you're waiting for her to say something more."
@@ -221,7 +223,8 @@ label day1_end:
             "You walk into the kitchen, tying an apron around your waist. You spend the hour chopping, slicing, and peeling like nobody's business. The repetitive, mechanical motions are strangely relaxing, putting you in an almost meditative state."
         "Dust the basement.":
             show bg basement with dissolve
-            "You spend the rest of your time in the dark of the basement, a lantern lighting your way as you clear away the dust and cobwebs. When you finish, the air feels a lot less musty, a very welcome burst of freshness."
+            "You spend the rest of your time in the dark of the basement, a lantern lighting your way as you clear just a few specks of dust."
+            "It surprised you how tidy this place was when you first got assigned this task. Now, you regard it as a bit of a \"get out of jail\" chore to seem busy. Really it’s a bit… calming down here."
     show bg dining with dissolve
     "You wrap up your chores and join everyone in the dining hall for dinner."
     "At the end of the meal, everyone receives a chalice of wine, a sacrament of sorts."
@@ -233,7 +236,9 @@ label day1_end:
     marcy uneasy "..."
     "You never cared for those who talk as if no one can hear them. You finish your drink, and rise silently. Your feet drag back to your quarters for the night, the chatter fading with distance."
     show bg bedroom with dissolve
+    show marcy neutral with dissolve
     "With the day coming to an end, you climb into bed, soft bedding at odds with the rough matress. The bedding wins, most nights."
+    play sound "sfx/bed_creak.mp3"
     "The springs creak under your weight, and your eyes grow heavy once their face hits the cool side of the pillow. You drift into a dull, numbing slumber."
     show bg black with dissolve
 

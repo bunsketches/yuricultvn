@@ -20,6 +20,7 @@ label day3:
         "Was it always cracked like this?"
     "Your face appears in the scrying mirror by the candlelight, as you gather your thoughts."
     stop sound fadeout 0.5
+    play music "music/goddess_ambient.mp3" fadein 1.0 fadeout 1.0
     
     scene bg pray start
     marcy "What should I pray for?"
@@ -44,6 +45,7 @@ label day3:
     "As you move to walk away, you can't shake the feeling that something is wrong."
     "The statue's shadow looms over you even as you make a good bit of distance from it."
     show marcy neutral at left_side with dissolve
+    play music "music/general_theme.mp3" fadein 1.0 fadeout 1.0
     marcy "All right, time to get to it then."
     marcy "What should I take care of today?"
     menu:
@@ -120,11 +122,13 @@ label day3_eleanor:
     "Eleanor takes your hand."
     eleanor happy "Come with me."
     "You can't help but follow her as she leads you on."
+    play sound "sfx/door_open.sfx"
     "You arrive at the basement, where she opens a hidden door leading to a secret room."
-    "In this hidden chamber, a large version of Forever's statue stands proudly. Before the statue waits an altar with a red altar cloth."
+    "In this hidden chamber, a large version of Forever's statue stands proudly. Before the statue waits an altar with a white altar cloth."
     "There is a silver, intricately engraved ornamental knife resting on top of it, which seems familiar."
     if saw_knife:
         "You recognize this knife."
+    play sound "sfx/heels_walk.mp3"
     "Barrels of wine decorate the room, and a row of silver chalices hangs from a rack on the wall."
     "You drank from a chalice every night - didn't ask questions about the wine - but now that you're here, you force the thought out of your mind on what this implies."
     "Eleanor has her hand at your shoulder again as she gestures to the room."
@@ -133,7 +137,7 @@ label day3_eleanor:
     menu:
         "So that's why the wine tastes so...divine.":
             "Eleanor beams at you, perhaps the most genuine smile you've seen from her. She seems moved, proud even, as if she waited for this her whole life."
-            eleanor "Yes, Marcy! Yes! That taste... we could have it {i}Forever.{/i} We just need to appease Her, and you know what She wants..."
+            eleanor psychotic "Yes, Marcy! Yes! That taste... we could have it {i}Forever.{/i} We just need to appease Her, and you know what She wants..."
             $ good_choice_count += 1
         "Her?":
             "Eleanor, once again, laughs at an inappropriate time. She thinks you're joking at a time like this."
@@ -145,6 +149,7 @@ label day3_eleanor:
             eleanor "The wine is just the start, Marcy."
     "She holds your hands in her own, turning to you - giving them a squeeze. Her eyes light up, hungry, {i}craving{/i}."
     eleanor "Join me. Become {i}great{/i} with me. Let's meet Forever together, and be her Chosen."
+    play sound "sfx/knife_pull.mp3"
     "Eleanor briefly turns to the altar, grabbing the dagger from the altar. When she turns, it cuts through the air audibly. Eleanor looks at you fanatically, almost trembling. You've never seen her ecstatic like this."
     eleanor "You have this one chance, Marcy - your potential is unfathomable. I've known it since we met all those years ago."
     "She lifts her hand up to touch your scarred cheek, and you swear you feel a searing burn."
