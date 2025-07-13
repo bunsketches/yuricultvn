@@ -37,6 +37,7 @@ label end:
             play sound "sfx/running.mp3"
             "You hurriedly make your way out of the basement, running - not daring to look at the danger that is behind you."
             "You hear shouts and footsteps behind you, but by quick movements and carefully hiding when necessary, you soon make it outside."
+            play sound "sfx/grassy_footsteps.mp3"
             "You find yourself in the garden, and find the exact person you were looking for."
             show sarah worried at right_side with dissolve
             marcy "Sarah?"
