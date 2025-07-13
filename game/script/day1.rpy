@@ -4,16 +4,18 @@ label day1:
     $ bad_choice_count = 0
 
     scene bg sunrise with fade
+    play sound "sfx/forest.mp3" fadein 0.5 loop
     "A lighter clicks, a flame blossoms."
     "There is a circle, drawn into the dirt, with a small stone statue of a mysterious woman in the center."
+    play music "music/eleanor_theme_day1.mp3" fadein 1.0 fadeout 1.0
     "She is dimmed by candlelight. Wisps of incense smoke waft behind her from a myrrh stick."
     "An obsidian scrying mirror reflects your face from the shadows as you approach the circle."
+    stop sound fadeout 0.5
 
     scene bg pray start
-    play music "music/goddess_ambient.mp3" fadein 1.0
     marcy neutral "Time for morning prayer. Just like every other day..."
+    marcy neutral "What should I pray for?"
     menu:
-        marcy neutral "What should I pray for?"
         "Offer your praise to the altar":
             scene bg pray respects
             "You place cut flowers onto the altar, reciting the usual litany."
@@ -31,22 +33,24 @@ label day1:
 
     scene bg outside with dissolve
     show marcy neutral at left_side with dissolve
-    "Here at Aeuternum, everyone must do their part. Today, your part is to fetch water."
+    "Here at Aeternum, everyone must do their part. Today, your part is to fetch water."
     show sarah worried at right_side with dissolve
     "On your way to the river, you bump into a tall, soft girl with preppy hair. Her strong arms release something large - a clay vase."
+    "You haven't seen her around before, and she certainly seems a bit in over her head."
     "There is a loud splash as water spills from the vase, dousing the girl and pooling on the ground."
     show eleanor neutral at center with dissolve
-    "A blonde woman arrives soon after, her expression calm and inscrutable."
+    "A blonde woman arrives soon after, her expression calm and inscrutable. Out of habit, you sit up a bit straighter at her arrival."
     eleanor neutral "Ah - good morning, Marcy. It appears I've come at a bad time..."
     eleanor happy "This is Sarah, our newest member and an absolutely lovely addition to our family."
     show sarah neutral
     eleanor neutral "That being said, could I steal you for a moment?"
     show sarah worried
     "You look at Sarah, who is exasperatedly fumbling with vases."
+    marcy "Who should I go with?"
     menu:
-        marcy "Who should I go with?"
         "Go help Sarah":
             marcy "Eleanor, I knocked over all this water Sarah was carrying. I should help her refill it. Can we talk another time?"
+            show eleanor delighted
             "Eleanor beams that soft, serene smile of hers, one you've seen many times."
             hide eleanor with dissolve
             "With a nod, she turns to leave respectfully. In turn, you and Sarah head for the river."
@@ -64,7 +68,7 @@ label day1:
             jump day1_eleanor
 
 label day1_sarah:
-    play music "music/sarah_theme_day1.mp3"
+    play music "music/sarah_theme_day1.mp3" fadein 1.0 fadeout 1.0
     scene bg river with dissolve
     "Once you reach the river with Sarah, she dips the vase into the cool waters beside you."
     show marcy neutral at left_side with dissolve
@@ -78,25 +82,26 @@ label day1_sarah:
     marcy neutral "Uh huh."
     scene bg day1 sarah with dissolve
     "Sarah continues filling water and trades the vase off with you for you to fill it."
+    sarah neutral "So, how did you join Aeternum?"
     menu:
-        sarah neutral "So, how did you join Aeuternum?"
         "I left my life behind when Eleanor met me. She took me in.":
             sarah happy "Me too! I went to school with Eleanor and..."
             sarah worried "I had to run from home."
             sarah happy "Eleanor made an offer when that happened, so here I am."
-            "Sarah pauses for a moment while she reminisces, smiling fondly at the running river water below her.\nYou then watch her shake her head, seemingly snapping out of whatever daydream she was in, facing you again."
+            "Sarah pauses for a moment while she reminisces, smiling fondly at the running river water below her."
+            "You then watch her shake her head, seemingly snapping out of whatever daydream she was in, facing you again."
             $ good_choice_count += 1
         "It's private.":
-            show sarah worried
             "Sarah jumps a bit, surprised at the blunt remark. You see her fumble with her vase, almost dropping it before laughing nervously."
             sarah worried "Oh - I'm sorry, I didn't mean to make you uncomfortable."
             sarah worried "It's just that, I swear that everyone here's got a similar story to tell..."
             $ bad_choice_count += 1
+    sarah neutral "So... Are you a day or a night person?"
     menu:
-        sarah neutral "So... Are you a day or a night person?"
         "Day.":
-            sarah neutral "Huh. Well, suit yourself! But, the day is truly glorious in its own way."
-            "Sarah continues filling a vase with water. The air around you two thickens, and not just because of the oncoming summer heat. Silence fills the air, but Sarah doesn't seem to mind, humming a random tune all the while. You turn to look at the sky just as she clears her throat, prompting you with another question."
+            sarah neutral "Huh. Well, suit yourself! I prefer nighttime, but I suppose the day is glorious in its own way."
+            "Sarah continues filling a vase with water. The air around you two thickens, and not just because of the oncoming summer heat."
+            "Silence fills the air, but Sarah doesn't seem to mind, humming a random tune all the while. You turn to look at the sky just as she clears her throat, prompting you with another question."
             $ bad_choice_count += 1
         "Night.":
             sarah happy "Hey, that makes two of us! I just love the sky when it clears, and seeing all of the stars shine."
@@ -107,8 +112,8 @@ label day1_sarah:
             "You shake your head. You've lived here for almost as long as you can remember. The terminology doesn't ring a bell."
             marcy neutral "I guess we don't have that problem here, no."
             $ good_choice_count += 1
+    sarah neutral "How is it, getting used to Aeternum? Any tips you can give a new friend?"
     menu:
-        sarah neutral "How is it, getting used to Aeuternum? Any tips you can give a new friend?"
         "Friend? I just met you.":
             sarah worried "Oh, right - I guess I am getting ahead of myself."
             sarah neutral "Well, you're my friend now!"
@@ -128,11 +133,11 @@ label day1_sarah:
     marcy neutral "Interesting girl..."
     "You look at your feet, and listen to the sounds of the forest and river around you."
     marcy neutral "I guess a fresh face wouldn't hurt."
-    "Deciding you've spent enough time dilly-dallying, you trudge in the direction back to  Aeuternum. More chores are to be done for the day."
+    "Deciding you've spent enough time dilly-dallying, you trudge in the direction back to  Aeternum. More chores are to be done for the day."
     jump day1_end
 
 label day1_eleanor:
-    play music "music/eleanor_theme_day1.mp3"
+    play music "music/eleanor_theme_day1.mp3" fadein 1.0 fadeout 1.0
     scene bg garden1 with dissolve
     show marcy neutral at left_side with dissolve
     show eleanor neutral at right_side, flip with dissolve
@@ -140,7 +145,7 @@ label day1_eleanor:
     eleanor playful "Daisies... the flower of innocence, purity... does it remind you of anyone?"
     show marcy uneasy
     show eleanor delighted
-    "You're caught a bit off guard, unsure of what to say. You've been at Aeuternum for years, and yet you're still not used to the way Eleanor speaks."
+    "You're caught a bit off guard, unsure of what to say. You've been at Aeternum for years, and yet you're still not used to the way Eleanor speaks."
     "Everything that comes out of her mouth is spoken so sweetly, but still feels like some sort of trap."
     "You keep your distress mostly clear off your face as always, in spite of the heat crawling up your neck. Eleanor, keen-eyed as always, laughs before you can recover."
     "Softly, she asks you a question."
@@ -151,8 +156,8 @@ label day1_eleanor:
     eleanor happy "To check in on you, my friend."
     "Eleanor turns her gaze to you."
     show bg day1 eleanor2 with dissolve
+    eleanor happy "The garden is beautiful, is it not?"
     menu:
-        eleanor happy "The garden is beautiful, is it not?"
         "It has been growing so well, I agree.":
             "Eleanor nods in agreement, seemingly delighted at your approval."
             "The thought of Eleanor, of all people, seeking the approval of anyone, seems ridiculous."
@@ -170,8 +175,8 @@ label day1_eleanor:
             eleanor neutral "Nonsense."
             "From anyone else, it would have been a gentle reassurance. From Eleanor though, it feels like scolding."
             $ bad_choice_count += 1
+    eleanor happy "And how has Aeternum been treating you all these years, dear?"
     menu:
-        eleanor happy "And how has Aeuternum been treating you all these years, dear?"
         "I... am still figuring it out.":
             "Eleanor presses the daisy to their nose, the edges of her lips curling into a smile."
             eleanor happy "Excellent, Marcy. Excellent. You owe no debts to me - it has been a pleasure having you with us."
@@ -187,8 +192,8 @@ label day1_eleanor:
             eleanor neutral "It's unhealthy to be so unsure of yourself, Marcy. Relax a little. This is your home."
             "You feel like she's toying with you somehow. You squint up at the sun, trying to avoid her gaze, but find your eyes gravitating toward her anyway."
             $ bad_choice_count += 1
+    eleanor happy "Marcy... Keep up the good work. I am watching you."
     menu:
-        eleanor happy "Marcy... Keep up the good work. I am watching you."
         "Of course. I'll continue to work hard, Eleanor.":
             "Eleanor chuckles at you, nodding approvingly. She moves to leave, but not without reaching up to pat the top of your head."
             "She's quite a bit shorter than you, so as if moving on autopilot, you duck your head so that she can reach. You watch her saunter off, grace in every step." 
@@ -205,12 +210,12 @@ label day1_eleanor:
     jump day1_end
 
 label day1_end:
-    play music "music/general_theme.mp3"
+    play music "music/general_theme.mp3" fadein 1.0 fadeout 1.0
     scene bg house1 with dissolve
     show marcy neutral at left_side with dissolve
     marcy neutral "Well, that sure was... something."
+    marcy neutral "Wonder what I should do for the rest of the day?"
     menu:
-        marcy neutral "Wonder what I should do for the rest of the day?"
         "Mop the floors.":
             show bg hallway with dissolve
             "You spend the rest of the evening grabbing a bucket and a mop, trailing suds as you work across the floor. After an hour, the floors are spotless, with a near-mirror shine."
@@ -219,7 +224,9 @@ label day1_end:
             "You walk into the kitchen, tying an apron around your waist. You spend the hour chopping, slicing, and peeling like nobody's business. The repetitive, mechanical motions are strangely relaxing, putting you in an almost meditative state."
         "Dust the basement.":
             show bg basement with dissolve
-            "You spend the rest of your time in the dark of the basement, a lantern lighting your way as you clear away the dust and cobwebs. When you finish, the air feels a lot less musty, a very welcome burst of freshness."
+            "You spend the rest of your time in the dark of the basement, a lantern lighting your way as you clear just a few specks of dust."
+            "It surprised you how tidy this place was when you first got assigned this task. Now, you regard it as a bit of a 'get out of jail free' chore to look busy."
+            "Weirdly enough, it's actually kind of... calming down here."
     show bg dining with dissolve
     "You wrap up your chores and join everyone in the dining hall for dinner."
     "At the end of the meal, everyone receives a chalice of wine, a sacrament of sorts."
@@ -230,10 +237,13 @@ label day1_end:
     "Fellow Devotee" "Of what? That's unusual."
     marcy uneasy "..."
     "You never cared for those who talk as if no one can hear them. You finish your drink, and rise silently. Your feet drag back to your quarters for the night, the chatter fading with distance."
-    show bg bedroom with dissolve
+    play sound "sfx/cricket_chirp.mp3"
+    scene bg bedroom with dissolve
+    show marcy neutral at left_side with dissolve
     "With the day coming to an end, you climb into bed, soft bedding at odds with the rough matress. The bedding wins, most nights."
+    play sound "sfx/bed_creak.mp3"
     "The springs creak under your weight, and your eyes grow heavy once their face hits the cool side of the pillow. You drift into a dull, numbing slumber."
-    show bg black with dissolve
+    scene bg black with dissolve
 
     if good_choice_count > bad_choice_count:
         $ good_day_count += 1

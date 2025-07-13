@@ -49,6 +49,9 @@ define config.has_sound = True
 define config.has_music = True
 define config.has_voice = True
 
+renpy.music.register_channel("sfx1", "sfx")
+renpy.music.register_channel("sfx2", "sfx")
+
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.
 

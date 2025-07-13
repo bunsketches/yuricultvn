@@ -5,20 +5,20 @@ label day2:
     $ saw_knife = False
 
     scene bg sunrise with fade
+    play music "music/general_theme.mp3" fadein 1.0 fadeout 1.0
     "You wake fully rested. You hesitate climbing out of the sheets into the cold morning. The bite of the air rushes into your lungs, clearing your mind, as you begin the day."
     play sound "sfx/rooster.mp3"
     "A rooster's crow pulls you into the waking world, the warmth of sunlight dispelling the fog of sleep as you slowly wake up."
-    play music "sfx/forest.mp3" fadein 1.0
+    play sound "sfx/forest.mp3" fadein 0.5 loop
     "Your morning routine is a blur, and you soon find yourself before Forever's altar, ready for morning prayer."
-    play music "music/general_theme.mp3" fadein 1.0
     if secret_end_progress >= 1:
         "It might be a trick of the light, but Forever's idol seems... larger than before, if not in physical size, then in presence at least."
     "Your face appears in the scrying mirror by the candlelight, as you gather your thoughts."
+    stop sound fadeout 0.5
 
     scene bg pray start
-    play music "music/goddess_ambient.mp3" fadein 1.0
+    marcy neutral "What should I pray for?"
     menu:
-        marcy neutral "What should I pray for?"
         "Offer your praise to the altar":
             scene bg pray respects
             "You went and picked up a piece of bread from the dining hall in the morning to offer to the altar, next to the other offerings the others had laid out before."
@@ -36,59 +36,80 @@ label day2:
             marcy neutral "Why am I even here?"
 
     show bg outside with dissolve
+    show marcy neutral at left_side with dissolve
     "You exit the shed, and are greeted by a glorious new day. The wind whistles quietly through the tree branches."
     marcy neutral "All right, time to get to it, I guess."
+    marcy "What should I take care of today?"
     menu:
-        marcy "What should I take care of today?"
         "Tend to the garden.":
             show bg garden1 with dissolve
+            "The garden is peaceful this morning, and since it's early the heat isn't quite overbearing just yet. If not for chores, it'd be a good day to just laze in the grass."
+            "You are on your knees picking at weeds, when you hear someone skipping by. A warm voice calls out to you."
             $ sarah_count += 1
             jump day2_sarah
         "Collect river water.":
             show bg river with dissolve
+            "Your shoe almost slips on a damp rock as you walk to a clearing in the river. You never liked this task all that much."
+            "It's not hard, but the feeling of damp clothes sticking to your skin on the trek back to Aeternum is unbearable."
+            "Luckily, just as you're about to start, a familiar voice calls out to you."
             $ eleanor_count += 1
             jump day2_eleanor
         "Prepare the dining room.":
             show bg dining with dissolve
+            "Setting the tables in the dining room is always easy. There's actually not that many community members in Aeternum, maybe a few dozen."
+            "Even then, that number has only gone down in recent times..."
+            "Unsure of what to do next, you lounge on one of the chairs until you notice a familiar figure peek out from the entrance."
             $ eleanor_count += 1
             jump day2_eleanor
         "Organize the kitchen":
             show bg kitchen with dissolve
+            "You curse to yourself as you rummage through the kitchen cabinets. The members of Aeternum are not nearly as cleanly as they are devout."
+            "Though it might not seem like a big deal, the way they leave spices and knives in a different spots than how they found it always bothered you."
+            "Before you can question how a paring knife ended up on a shelf of bowls, you feel a light tap on your shoulder."
             $ eleanor_count += 1
             jump day2_eleanor
         "Mop the hallways":
             show bg hallway with dissolve
+            "There are much worse tasks to do on Aeternum than mopping, especially during the summer. The hallway of the ranch is cool, if not a bit dim."
+            "Eleanor likes to cut down on what she calls an 'excessive reliance on electricity' wherever possible."
+            "You're about halfway done wiping down when you run into Sarah."
             $ sarah_count += 1
             jump day2_sarah
         "Tidy the basement":
             show bg basement with dissolve
+            "You don't really know why cleaning the basement is even on the chore list at Aeternum. No one really comes down here aside from Eleanor and a few other trusted devout."
+            "Even you only come here every so often. In spite of this, it's never all that dirty, just a bit cluttered."
+            "You're just about done when you turn around to a familiar smile."
             $ sarah_count += 1
             jump day2_sarah
 
 label day2_eleanor:
-    play music "music/eleanor_theme_day2.mp3"
-    show eleanor neutral at right_side with dissolve
+    play music "music/eleanor_theme_day2.mp3" fadein 1.0 fadeout 1.0
+    show eleanor happy at right_side with dissolve
     eleanor happy "Marcy! Come join me in the kitchen. We need your help."
     "As she speaks to you, you see the glimmer of some unknown intent in her calculating gaze, partially masked by her inviting smile."
     scene bg kitchen with fade
     show marcy neutral at left_side with dissolve
     show eleanor neutral at right_side with dissolve
     "Eleanor tasks you with cutting meat and ingredient prep in the kitchen. For reasons known only to her, she follows you there."
-    "Eleanor fills the silence with remarks about you, comparing you to herself when she got started at Aeuternum."
+    "Eleanor fills the silence with remarks about you, comparing you to herself when she got started at Aeternum."
     "The otherwise innocent small talk is barbed with occasional questions about Sarah, laced with a bitter edge of jealousy."
     "Eleanor lays a leg of ham on the butcher block and gestures at it."
     eleanor "Be a dear and portion out the ham, would you, Marcy?"
     scene bg day2 eleanor1 with fade
+    $ renpy.music.play("sfx/pork_chop.wav", channel="sfx1", loop=True)
+    $ renpy.music.play("sfx/boil_loop.wav", channel="sfx2", loop=True)
     "As you get to hacking the large cut of meat into more manageable pieces, Eleanor stands beside you, patiently stirring a large pot of broth."
     eleanor "You know, I started off without a goal. Did you know that?"
     "You listen while chopping the meat into rough, ragged chunks. Eleanor smiles."
     eleanor happy "There was just something about my life back then that was... lacking."
     "Eleanor glances at you, still stirring the pot. You hear it bubble faintly as you work."
     "The kitchen doesn't have as many windows as it really should. In combination with the summer heat, you feel your skin become a bit sticky."
-    "An... acceptable aroma fills the air. The food at Aeuternum has never been particularly notable."
+    "An... acceptable aroma fills the air. The food at Aeternum has never been particularly notable."
     "Eleanor is still looking at you as you tug at your collar, waiting for a breezy reprieve that won't come. She hums thoughtfully before speaking again."
+    $ renpy.music.stop(channel="sfx1")
+    eleanor "What is your purpose here, Marcy?"
     menu:
-        eleanor "What is your purpose here, Marcy?"
         "To be loved, and to learn to love. To be Forever's Chosen, of course.":
             eleanor "Good girl. I've seen you pray to Her every morning, and I am sure the goddess has noticed your efforts."
             eleanor "It is our duty as her lovers to show our loyalty."
@@ -108,11 +129,11 @@ label day2_eleanor:
     "Eleanor looks down at her reflection in the simmering broth. As she stirs over the flame, you notice that she's barely tall enough to comfortably stir such a large stockpot."
     "You almost chuckle a bit at the mental image of Eleanor needing a step stool to reach the burners."
     "Before you can entertain the thought further, Eleanor begins speaking again. Her tone is airily pleasant as always, yet still cautious and calculated."
+    eleanor happy "And how is Sarah fitting in?"
     menu:
-        eleanor happy "And how is Sarah fitting in?"
         "Sarah does her best, from what I can tell.":
             eleanor neutral "Hm. I'll watch her."
-            "You don't doubt that Eleanor means that. She keeps tabs on everyone at Aeuternum, and always seems to know more about people than they do themselves."
+            "You don't doubt that Eleanor means that. She keeps tabs on everyone at Aeternum, and always seems to know more about people than they do themselves."
             "Some find it comforting, others find it disconcerting. The latter usually don't stay here too long. You have no opinion of it. That's just... Eleanor."
             $ bad_choice_count += 1
         "Sarah is a bit clumsy. How did you two meet?":
@@ -134,15 +155,14 @@ label day2_eleanor:
             "Where Eleanor can see past pretty much anyone, sometimes you think you're one of the only ones who can catch even a glimpse of her."
             $ good_choice_count += 1
     "Eleanor taps the spoon against the pot, leaving the broth to simmer. She sets the stirring spoon aside on a cloth and appraises your work."
-    "The action startles you out of your thoughts and you tense up a bit. Noticing this, Eleanor attempts to shrug your shoulders back down, smoothing her hands down from your collar."
     show bg day2 eleanor2 with dissolve
     "The action startles you out of your thoughts and you tense up a bit. Noticing this, Eleanor attempts to shrug your shoulders back down, smoothing her hands down from your collar."
     eleanor happy "I have enjoyed seeing how you've grown with us, Marcy. I enjoy this time I share with you, seeing how far you've come since the day I brought you here."
     "Eleanor places a clean hand on your arm, the touch electric even after all this time."
     eleanor happy "And now that we are sharing this moment, I have a proposal for you."
     marcy neutral "A proposal?"
+    eleanor happy "Be my Second, my right hand in all things. For Forever, for our lovers. I want you to guide them by my side, and feel closer to Her. Together."
     menu:
-        eleanor happy "Be my Second, my right hand in all things. For Forever, for our lovers. I want you to guide them by my side, and feel closer to Her. Together."
         "Eleanor... This feels so sudden. I don't know if I am ready. I'm sorry.":
             eleanor neutral "Of course you are ready, Marcy. But I understand that this is sudden for you. You can take your time to think about it, if you'd like."
             "Eleanor responds calmly, as if her desired outcome is inevitable. She was born into affluence, after all."
@@ -153,7 +173,7 @@ label day2_eleanor:
         "I can't. You should look for someone more qualified.":
             "Eleanor's response is already on the tip of her tongue before you can finish your sentence. Still, she patiently waits until you finish."
             eleanor neutral "Your aim is lacking, Marcy."
-            "True to her word, you look down and notice a small cut on your knuckle where you've cut yourself having cut the ham absentmindedly."
+            "True to her word, you look down and notice a small nick on your knuckle where you've cut yourself while slicing the ham absentmindedly."
             "You wince a bit, bringing your hand to your mouth to suck on the wound briefly. Eleanor seems to watch the action with great interest."
             $ bad_choice_count += 1
         "Really? Beside you? This is an honor...":
@@ -177,16 +197,11 @@ label day2_eleanor:
     sarah happy "Thank you!"
     show sarah worried
     "As she moves away, Sarah's gaze falls once more, the joy draining from her face. Did something happen?"
-    "You're still thinking about it as you take your daily sacrament."
-    "You swish the wine around in the chalice, examining its contents. Something is... different about it lately."
-    "This happens every so often, with the flavor of the wine changing suddenly with no mention."
-    "Normally, you'd brush it off, but lately you've been oddly more sensitive to this kind of thing."
     jump day2_end
 
 label day2_sarah:
-    "As you go about your task, you run into Sarah."
-    show marcy neutral at left_side with dissolve
-    show sarah neutral at right_side with dissolve
+    play music "music/sarah_theme_day2.mp3" fadein 1.0 fadeout 1.0
+    show sarah happy at right_side with dissolve
     "Sarah beams with joy when she sees you."
     sarah happy "Marcy! I'm so glad you're here - I need your help!"
     "She takes you by the wrist and brings you to the basement with her without further say."
@@ -205,6 +220,7 @@ label day2_sarah:
     sarah happy "I asked around and NO ONE wanted to be my reference for a painting today. You are my only hope! I promise it won't be a painting of you - I just need your form."
     menu:
         "You paint here? Does Eleanor allow this?":
+            show marcy concern
             sarah neutral2 "I... I don't know, actually. But I found these supplies just collecting dust."
             "She claps her hands together, the sound echoing throughout the basement. Despite it being so messy, there is notably not a speck of dust to be moved by such a motion."
             sarah happy "I think the Barn could use a new painting, don't you think? I used to paint a lot back in high school."
@@ -212,7 +228,7 @@ label day2_sarah:
         "Yeah, I can be a reference for you. What are you trying to paint?":
             sarah happy "Sweet! I'm trying to create a symbolic painting of sorts - something to appreciate Forever and her lovers."
             sarah worried "Something better than just bread or flowers."
-            sarah happy "I think Aeuternum could use the spirit of an artist."
+            sarah happy "I think Aeternum could use the spirit of an artist."
             $ good_choice_count += 1
     if sarah_count >= 1:
         scene bg day2 sarah1 with dissolve
@@ -246,15 +262,15 @@ label day2_sarah:
     "After putting the finishing touches to her painting, Sarah wipes off sweat from her brow."
     sarah happy "Phew! It looks amazing! Thanks so much, Marcy! I'll go and show this to Ele—"
     show sarah worried
-    "Sarah stops dead as she notices the glint of metal under one of the shelves."
+    "Suddenly, Sarah stops as she notices the glint of metal under one of the shelves."
     "Searching through the shelves, she retrieves an ornate dagger, with what looks like flecks of dried blood on the hilt."
-    "She and looks at you, unsure of what to make of this find."
+    "She looks at you, unsure of what to make of this find."
     sarah worried "What... is this?"
     show marcy uneasy
     "You falter, taking a half step back. The object seems familiar, like you've seen it in passing before, but your memory is hazy."
     "Your head pulses in pain as you try to jog your memory, but Sarah is looking at you expectantly, clearly disturbed. You notice her hands shake, and you want to snatch the dagger from her hand, but your body stills."
+    sarah worried "The blood is dry but... it can't be too old. Do you think this is used often?"
     menu:
-        sarah worried "The blood is dry but... it can't be too old. Do you think this is used often?"
         "I... I don't know. Ask Eleanor?":
             sarah terrified "Eleanor?!"
             "You watch as Sarah's hands almost fly to her face, forgetting the blade in her hand, but she stops right before she drops it."
@@ -286,33 +302,38 @@ label day2_sarah:
     jump day2_end
 
 label day2_end:
-    play music "music/general_theme.mp3"
+    play music "music/general_theme.mp3" fadein 1.0 fadeout 1.0
     scene bg dining with dissolve
     "You eventually take a glass of wine as a routine end to the day."
-    "You swish the dark drink around in the cup, examining its contents."
-    "Something is... different about it lately. This happens every so often, the flavor of the wine changing suddenly with no mention. You would normally brush it off but you feel more attuned than usual lately."
-    play music "music/uneasy_ambience.mp3"
+    "You swish the wine around in the chalice, examining its contents. Something is... different about it lately."
+    "This happens every so often, with the flavor of the wine changing suddenly with no mention."
+    "Normally, you'd brush it off, but lately you've been oddly more sensitive to this kind of thing."
+
     scene bg hallway with fade
+    play music "music/goddess_ambient.mp3" fadein 1.0 fadeout 1.0
     show marcy neutral at left_side with dissolve
-    "On the way to your bedroom, you hear the thudding of heavy footfalls approaching."
+    "On the way to your bedroom, you hear the thudding of heavy footfalls approaching. Sarah barrels past you, sobbing loudly."
     show marcy uneasy
     show sarah cry at right_side with dissolve
+    play sound "sfx/running.mp3"
     show sarah cry at offscreen_left with move
     hide sarah with dissolve
+    "You see Eleanor striding in her direction soon after, carrying a ruler in one hand."
     show eleanor cold at right_side with dissolve
-    "The day ends with you on your way to the bedroom when you hear the sound of thumping, catching Sarah trying to run past you in a cry."
-    show marcy uneasy at left_side with dissolve
-    "You see Eleanor striding in her direction soon after, carrying a ruler in one hand. You hear the distant cries of Sarah as, presumably, Eleanor catches up with her nonchalantly."
-    "Your limbs twitch to follow and stop them, to see what is happening - what Sarah could have possibly done - but you are overcome by the fear of being involved."
+    play sound "sfx/heels_walk.mp3"
     show eleanor cold at offscreen_left with MoveTransition(3.0)
     hide eleanor with dissolve
+    "You hear the distant cries of Sarah as Eleanor catches up with her prey."
+    "Your limbs twitch to follow and stop them, to see what is happening - what Sarah could have possibly done - but you are overcome by the fear of being involved."
+
+    play music "music/general_theme.mp3" fadein 1.0 fadeout 1.0
     scene bg black with dissolve
     "Before you even realize it, you've carried yourself back to your room."
+    play sound "sfx/cricket_chirp.mp3"
     scene bg bedroom with dissolve
     "You've done nothing, yet can't help but feel you've managed to cause this somehow..."
     "You rest the night."
-    stop music fadeout 1.0
-
+    
     if good_choice_count > bad_choice_count:
         $ good_day_count += 1
     else:

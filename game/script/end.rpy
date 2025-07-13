@@ -8,19 +8,19 @@ label end:
             marcy "I'm sorry, I forgot Eleanor needed something from me..."
             hide sarah with dissolve
             "You turn away and hurry inside."
-            show bg house1 with fade
+            show bg house1 with dissolve
             "You feel a pull to the basement."
             "She is calling you."
-            show bg hallway with fade
+            show bg hallway with dissolve
             "After searching the dark halls of the dimly lit ranch, you stumble into the cold embrace of the Basement where Eleanor awaited you patiently."
-            show bg basement with fade
+            show bg basement with dissolve
             show eleanor happy at right_side with dissolve
             "She smiles knowingly and takes your hand."
             "She then opens a secret door for you, welcoming you into her secret worship."
     else:
         $ end_string = "sarah"
         if eleanor_day3:
-            scene bg black with fade
+            scene bg black with dissolve
             "Eleanor and the worshipers are closing in on you. The air is tense, and you need to get out. You grunt before telling what you feel is the truth."
             show marcy uneasy at left_side with dissolve
             marcy "I'm sorry. I need to speak with someone."
@@ -43,7 +43,7 @@ label end:
 
 label eleanor_good:
     if eleanor_bad_day3:
-        scene bg black with fade
+        scene bg black with dissolve
         "Your heart beats wildly in your chest, from what you tell yourself is... fear? You're not sure where Sarah is, and while you hope she escaped, given the situation you assume the worst."
         show marcy devastated at left_side with dissolve
         show eleanor psychotic at right_side with dissolve
@@ -52,9 +52,9 @@ label eleanor_good:
         "Eleanor laughs; Though you wanted to be genuine in your warnings, your own voice betrays you, and Eleanor is very aware of this."
         marcy uneasy "P-Please..."
         "Eleanor steps even closer, and suddenly she fills your space. All you can see is Eleanor. All you can think about is Eleanor, {i}Forever{/i}. You feel your inhibitions slip away as the tenseness from your body fades, replaced by want."
-        scene bg black with fade
+        scene bg black with dissolve
         "You want to give in."
-    scene bg day3 eleanor1a with dissolve
+    scene bg day3 eleanor1b with dissolve
     "Eleanor kisses you beside another statue of Forever as you sacrifice Sarah together with the silver, intricately engraved ornamental sacrificial knife over an altar in the Basement."
     "You both wield it together by its hilt as if you are a married couple. You're sure somewhere in your mind you distantly hear Sarah cry out, but you tell yourself you don't mind."
     "You are cheered on by surrounding cloaked cult followers, eagerly holding up chalices for Sarah's blood."
@@ -74,7 +74,7 @@ label eleanor_good:
 
 label eleanor_bad:
     if eleanor_bad_day3:
-        scene bg black with fade
+        scene bg black with dissolve
         "Your heart beats wildly in your chest, from what you tell yourself is... arousal?"
         show marcy uneasy at left_side with dissolve
         show eleanor happy at right_side with dissolve
@@ -95,28 +95,28 @@ label eleanor_bad:
     scene bg day3 eleanor2a
     "Finally, you plunge the knife into her leg."
     "Though you wanted her to scream, she somehow only hisses. The sound snaps you out of your haze."
-    show bg basement with dissolve
+    show bg basement2 with dissolve
     show marcy angry at left_side with dissolve
     show eleanor psychotic at right_side with dissolve
     "With her incapacitated, you quickly get off her, taking the dagger with you as a warning to any devotees who dare get in your way."
     "While everyone else is still stunned in shock, you run out the basement, locking the door behind you to buy yourself some time."
-    scene bg hallway with fade
+    scene bg hallway with dissolve
     show marcy uneasy at left_side with dissolve
     "You run through the hallway, not bothering to look back."
     "Surely, the rest of the devotees have gone about pounding against the basement door or tending to Eleanor's wound. If you do not get out soon, they will catch up to you."
     "You move to make as much distance as possible, the cool steel of the dagger still in hand."
-    scene bg sunrise with fade
+    scene bg sunrise with dissolve
     show marcy uneasy at left_side with dissolve
     "Kicking open the door of Eleanor's ranch, you see that it's already morning again."
     "Normally, this would be your cue to pray, but not today."
     "You pause for a moment to catch your breath."
-    "You don't know where exactly you're going to go, and your memories of before Aeuternum are hazy, but for once you act before you think."
+    "You don't know where exactly you're going to go, and your memories of before Aeternum are hazy, but for once you act before you think."
     "Puffing out one last breath, you run, ignoring the desire for one last sip of wine."
     return
 
 label sarah_good:
     if sarah_bad_day3:
-        scene bg black with fade
+        scene bg black with dissolve
         "You watch as Sarah begins to walk off again. Images of Sarah's terrified look as she runs through the hallway flash in your mind. It's not right for Sarah's smile to be tarnished like that. You  won't let it happen again."
         marcy uneasy "Wait!"
         show sarah neutral2 at right_side with dissolve
@@ -129,7 +129,7 @@ label sarah_good:
     show sarah happy at right_side with dissolve
     "Sarah takes you to a bench, patting the spot beside her.  You sit together, watching as the stars come out."
     show sarah neutral at right_side with dissolve
-    "You watch together in silence for a moment. It's peaceful in a way that  Aeuternum has never been before. Sarah opens her mouth to speak, her voice smaller than her usual tone."
+    "You watch together in silence for a moment. It's peaceful in a way that  Aeternum has never been before. Sarah opens her mouth to speak, her voice smaller than her usual tone."
     sarah "I've always liked stars. They're...comforting for me."
     show sarah happy at right_side with dissolve
     "You turn your head, looking at her while her eyes are still fixed on the twinkling lights above."
@@ -138,9 +138,11 @@ label sarah_good:
     sarah "You."
     "Without thinking, you silently lean in toward Sarah, and you briefly get a glimpse of Sarah doing the same."
     "You catch the gleam of something shiny before your eyes close."
-    "You share a tender but brief kiss under the stars. You're still pressed against Sarah when you feel something warm sputter at your side."
+    play sound "sfx/knife_pull.mp3"
+    "You share a tender but brief kiss under the stars. You're still pressed against Sarah when you feel something warm spatter against you."
+    play sound "sfx/knife_stab.mp3"
     show marcy uneasy at left_side with dissolve
-    "You look down to find blood - frightening amounts of it. So much. Too much."
+    "You look down to find blood - a frightening amount of it. So much. Too much."
     scene bg day3 sarah1b with dissolve
     "Under the moonlight, you watch as Sarah holds up her severed forearm to you - her eyes welled up with tears inextricably mixed with love, pain and ecstasy."
     sarah "Eat it."
@@ -166,6 +168,7 @@ label sarah_good:
     "You take her arm, and slowly... for {i}Forever's{/i} sake, sink your first bite into it."
     "Your teeth tear through it as if it was a regular dinner, like you would've shared with Sarah just a few hours ago. Bile starts to build in your throat as you chew."
     "After what seems like {i}Forever{/i}, you swallow as you cradle the rest of Sarah in your arms, feeling her body go cold."
+    scene bg black with dissolve
     "Sarah passes from the world with her tears drying and a smile of relief on her face, below her beloved starry night sky."
     "As you watch the warmth drain from your lover, you take another look at the dismembered arm in your grasp."
     "The bile in your throat turns into desire, and before you can have second thoughts, you bite down."
@@ -173,7 +176,7 @@ label sarah_good:
 
 label sarah_bad:
     if sarah_bad_day3:
-        scene bg black with fade
+        scene bg black with dissolve
         "As you approach a bench in the garden, you feel a painful headache come on. Images of Eleanor, her voice, her footsteps as she chases Sarah all cloy at your head."
         "Your ears begin to ring. Your legs begin to feel like they're trudging through mud."
         show sarah worried at right_side with dissolve
@@ -193,17 +196,17 @@ label sarah_bad:
     "Sarah looks shocked for a moment, as if she didn't expect you to let go that easily."
     "Still, she fixes her smile as always. You hope, so deeply, that she says something. That she'll laugh again and say she's kidding, skipping back to you. But nothing comes."
     "With that, Sarah finally walks off into the dark woods."
-    scene bg sunrise with fade
-    "You are left to wonder what 'it' is forever, as you live out your days in Aeuternum without Sarah."
-    scene bg house2 with fade
+    scene bg sunrise with dissolve
+    "You are left to wonder what 'it' is forever, as you live out your days in Aeternum without Sarah."
+    scene bg house2 with dissolve
     "Your days are filled with the same monotonous cycle again."
-    scene bg dining with fade
+    scene bg dining with dissolve
     "Wake up, chores, eat, and drink until you pass out and do it all over again."
-    scene bg garden3 with fade
+    scene bg garden3 with dissolve
     "Sometimes, you wander off to the garden again at night, hoping to see the stars just one more time."
     "They're never there, though, and neither is Sarah."
-    scene bg bedroom with fade
+    scene bg bedroom with dissolve
     "A few weeks later, you overhear Eleanor in her quarters as you're about to go to bed. She's on the phone, seemingly questioned about local disappearing people, and Eleanor replies so calmly, so trained."
-    scene bg black with fade
+    scene bg black with dissolve
     "So collected, so independent. So unlike Sarah."
     return

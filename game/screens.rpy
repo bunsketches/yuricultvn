@@ -159,6 +159,8 @@ style say_dialogue:
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
 
+    line_spacing 8
+
     adjust_spacing False
 
 ## Input screen ################################################################

@@ -10,7 +10,7 @@ label day3:
     scene bg sunrise with fade
     "You wake up with a guilty lump in your throat. Dread sits at the bottom of your stomach."
     play sound "sfx/rooster.mp3"
-    play music "sfx/forest.mp3" fadein 1.0
+    play sound "sfx/forest.mp3" fadein 0.5 loop
     "The scar on half your body burns, your arm twitching in what registers to your body as pain, but what you know in your brain is not really there. The image of last night plays in your mind over and over and over again."
     "You can't shake the feeling of inevitable doom. You lay there for a while, with that terrible weight, before slipping out from the covers."
     "Your morning routine passes without issue, clockwork as usual. As always, you stand before Forever for morning prayer."
@@ -18,35 +18,34 @@ label day3:
         "A spiderweb of hairline cracks run all over the idol, with a particularly large crack slashing Forever's serene visage, revealing the hollow interior."
         "Was it always cracked like this?"
     "Your face appears in the scrying mirror by the candlelight, as you gather your thoughts."
+    stop sound fadeout 0.5
     
     scene bg pray start
-    play music "music/goddess_ambient.mp3" fadein 1.0
+    marcy "What should I pray for?"
     menu:
-        marcy "What should I pray for?"
         "Offer your praise to the altar":
             scene bg pray respects
             "You kneel before the altar again. You rest your head into your lap before the statue."
-            marcy "I will always be with you, Forever. Take me when you are ready. I am here, and I will continue to be here for you."
+            marcy smile"I will always be with you, Forever. Take me when you are ready. I am here, and I will continue to be here for you."
         "Pray for yourself":
             scene bg pray yourself
             "You clasp your hands together tightly and bow your head down."
-            marcy "If you are there... I feel it in me that something will happen today. I'm not sure what, but please protect me."
+            marcy uneasy "If you are there... I feel it in me that something will happen today. I'm not sure what, but please protect me."
             "You linger for a moment before opening your eyes and running a hand down your face."
             $ secret_end_progress += 1
         "Do not pray":
             scene bg pray nothing
             "You look up, scowling at the statue's face."
             "You never noticed the small cracks adorning it, an imperfect surface as the object of everyone's unquestioning adoration."
-            marcy "This place is so fucked, I know it is."
+            marcy uneasy "This place is so fucked, I know it is."
 
-    play music "music/general_theme.mp3"
     scene bg outside with dissolve
     "As you move to walk away, you can't shake the feeling that something is wrong."
     "The statue's shadow looms over you even as you make a good bit of distance from it."
     show marcy neutral at left_side with dissolve
     marcy "All right, time to get to it then."
+    marcy "What should I take care of today?"
     menu:
-        marcy "What should I take care of today?"
         "Trim the garden":
             show bg garden1 with dissolve
             "You spend the afternoon trimming roses, picking weeds, and occasionally taking breaks and taking in the breeze from standing under a hot sun."
@@ -101,13 +100,13 @@ label day3:
             jump day3_eleanor
 
 label day3_eleanor:
-    play music "music/eleanor_theme_day3.mp3"
+    play music "music/eleanor_theme_day3.mp3" fadein 1.0 fadeout 1.0
     show marcy concern at left_side with dissolve
     $ eleanor_day3 = True
     "You've known Eleanor long enough to know that look, those dark eyes, the scheme lurking behind them."
     "And that smile tells you it's something she is excited about and very sure of."
+    eleanor delighted "Working hard today, Marcy?"
     menu:
-        eleanor delighted "Working hard today, Marcy?"
         "Very. And I'm looking forward to relaxing today - I could use it.":
             eleanor happy "I understand. You can relax later, I assure you. I wont take too much of your time."
             $ bad_choice_count += 1
@@ -121,11 +120,13 @@ label day3_eleanor:
     eleanor happy "Come with me."
     "You can't help but follow her as she leads you on."
     "You arrive at the basement, where she opens a hidden door leading to a secret room."
-    "In this hidden chamber, a large version of Forever's statue stands proudly. Before the statue waits an altar with a red altar cloth."
+    play sound "sfx/door_open.mp3"
+    show bg basement2
+    "In this hidden chamber, a large version of Forever's statue stands proudly. Before the statue waits an altar with a white altar cloth."
     "There is a silver, intricately engraved ornamental knife resting on top of it, which seems familiar."
     if saw_knife:
-        "You recognize this knife."
-    "Barrels of wine decorate the room, and a row of silver chalices hangs from a rack on the wall."
+        "You recognize this knife, from when you and Sarah were in the basement."
+    "Barrels of wine line the room, and a row of silver chalices hangs from a rack on the wall."
     "You drank from a chalice every night - didn't ask questions about the wine - but now that you're here, you force the thought out of your mind on what this implies."
     "Eleanor has her hand at your shoulder again as she gestures to the room."
     eleanor "Look upon this, where my work is done. This is where we keep our bonds with Forever. This is where the magic is - where Her love is, in its purest form."
@@ -133,7 +134,7 @@ label day3_eleanor:
     menu:
         "So that's why the wine tastes so...divine.":
             "Eleanor beams at you, perhaps the most genuine smile you've seen from her. She seems moved, proud even, as if she waited for this her whole life."
-            eleanor "Yes, Marcy! Yes! That taste... we could have it {i}Forever.{/i} We just need to appease Her, and you know what She wants..."
+            eleanor psychotic "Yes, Marcy! Yes! That taste... we could have it {i}Forever.{/i} We just need to appease Her, and you know what She wants..."
             $ good_choice_count += 1
         "Her?":
             "Eleanor, once again, laughs at an inappropriate time. She thinks you're joking at a time like this."
@@ -143,9 +144,10 @@ label day3_eleanor:
         "So all this time... the wine...":
             "Eleanor shakes her head, clicking her tongue, though for once she's not scolding you. She seems beyond her role as the leader at this point, and looks at you expectantly."
             eleanor "The wine is just the start, Marcy."
-    "She holds your hands in her own, turning to you - giving them a squeeze. Her eyes light up, hungry, {i}craving{/i}."
+    show eleanor psychotic
+    "She holds your hands in her own, turning to you - her grip is painfully tight. Her eyes light up, hungry, {i}craving{/i}."
     eleanor "Join me. Become {i}great{/i} with me. Let's meet Forever together, and be her Chosen."
-    "Eleanor briefly turns to the altar, grabbing the dagger from the altar. When she turns, it cuts through the air audibly. Eleanor looks at you fanatically, almost trembling. You've never seen her ecstatic like this."
+    "Eleanor briefly turns to the altar to grab the dagger. When she turns, it cuts through the air audibly. Eleanor looks at you fanatically, almost trembling. You've never seen her ecstatic like this."
     eleanor "You have this one chance, Marcy - your potential is unfathomable. I've known it since we met all those years ago."
     "She lifts her hand up to touch your scarred cheek, and you swear you feel a searing burn."
     "Images of Eleanor from when you and her were younger now flash in your mind. When your flesh was still raw and when Eleanor still had a semblance of a real smile on her face."
@@ -164,23 +166,12 @@ label day3_eleanor:
             eleanor neutral "I'll make the announcement. We will drink to your promotion."
             $ good_choice_count += 1
             jump day3_end
-    menu:
-        eleanor "Will you join me, Marcy? Can you trust me, please?"
-        "Okay, I'll do it.":
-            "You don't know what you're doing, but you close your eyes and breathe."
-            eleanor "Marcy, I love you. I have looked forward to this - thank you."
-            eleanor neutral "I'll make the announcement. We will drink to your promotion."
-        "There has to be a better way...":
-            marcy neutral "I can't do this, Eleanor. I'm sorry. This isn't right."
-            "Something snaps in Eleanor's eyes, and her face stills, emotion draining from it. She lets you go."
-            eleanor neutral "So be it."
-            "She then shoves you to the altar and grabs the knife in an attempt to stab you."
     if good_choice_count > bad_choice_count:
         $ eleanor_bad_day3 = True
     jump day3_end
 
 label day3_sarah:
-    play music "music/sarah_theme_day3.mp3"
+    play music "music/sarah_theme_day3.mp3" fadein 1.0 fadeout 1.0
     $ sarah_day3 = True
     show marcy concern at left_side with dissolve
     show sarah terrified at right_side with dissolve
@@ -244,7 +235,7 @@ label day3_sarah:
             show bg garden1 with fade
             show sarah happy at right_side with dissolve
             show marcy smile at left_side with dissolve
-            "You feel warm inside, like you've found something worth holding onto, that's beyond Forever, beyond Aeuternum."
+            "You feel warm inside, like you've found something worth holding onto, that's beyond Forever, beyond Aeternum."
             "You don't remember that 'beyond' part too well, but you feel you could probably get closer to that with Sarah. At least, you hope so."
         "I don't think I can.":
             show sarah cry at right_side with dissolve
