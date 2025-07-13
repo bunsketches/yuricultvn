@@ -3,32 +3,38 @@ label day2:
     $ good_choice_count = 0
     $ bad_choice_count = 0
     $ saw_knife = False
+
     scene bg sunrise with fade
-    play sound "sfx/rooster.mp3"
-    play music "sfx/forest.mp3" fadein 1.0
     "You wake fully rested. You hesitate climbing out of the sheets into the cold morning. The bite of the air rushes into your lungs, clearing your mind, as you begin the day."
-    scene bg sunrise with dissolve
+    play sound "sfx/rooster.mp3"
     "A rooster's crow pulls you into the waking world, the warmth of sunlight dispelling the fog of sleep as you slowly wake up."
+    play music "sfx/forest.mp3" fadein 1.0
     "Your morning routine is a blur, and you soon find yourself before Forever's altar, ready for morning prayer."
     play music "music/general_theme.mp3" fadein 1.0
     if secret_end_progress >= 1:
         "It might be a trick of the light, but Forever's idol seems... larger than before, if not in physical size, then in presence at least."
     "Your face appears in the scrying mirror by the candlelight, as you gather your thoughts."
-    show marcy neutral at left_side with dissolve
+
+    scene bg pray start
+    play music "music/goddess_ambient.mp3" fadein 1.0
     menu:
         marcy neutral "What should I pray for?"
         "Offer your praise to the altar":
+            scene bg pray respects
             "You went and picked up a piece of bread from the dining hall in the morning to offer to the altar, next to the other offerings the others had laid out before."
             marcy neutral "Good morning. Just my way of saying, 'Thanks'. Hope you like it. I'll see you again tomorrow."
         "Pray for yourself":
+            scene bg pray yourself
             "You clasp your hands together, shutting your eyes tight. It feels like something in you is slipping away, and you are desperately trying to get it back."
             marcy neutral "Are you real? I've prayed to you every morning, and I still feel the same..."
             marcy neutral "Please help me get through this, even if it's just for today."
             $ secret_end_progress += 1
         "Do not pray":
+            scene bg pray nothing
             "You shake your head with a sigh. It feels like something inside you has shifted as of late. Your arms hang limply at your sides."
             "While this statue may have filled you with a refreshing sense of hope just a year or two ago, lately you find yourself looking up at it with tired eyes, its presence looming above you."
             marcy neutral "Why am I even here?"
+
     show bg outside with dissolve
     "You exit the shed, and are greeted by a glorious new day. The wind whistles quietly through the tree branches."
     marcy neutral "All right, time to get to it, I guess."
@@ -61,12 +67,12 @@ label day2:
 
 label day2_eleanor:
     play music "music/eleanor_theme_day2.mp3"
-    show eleanor neutral at right_side, flip with dissolve
+    show eleanor neutral at right_side with dissolve
     eleanor happy "Marcy! Come join me in the kitchen. We need your help."
     "As she speaks to you, you see the glimmer of some unknown intent in her calculating gaze, partially masked by her inviting smile."
     scene bg kitchen with fade
     show marcy neutral at left_side with dissolve
-    show eleanor neutral at right_side, flip with dissolve
+    show eleanor neutral at right_side with dissolve
     "Eleanor tasks you with cutting meat and ingredient prep in the kitchen. For reasons known only to her, she follows you there."
     "Eleanor fills the silence with remarks about you, comparing you to herself when she got started at Aeuternum."
     "The otherwise innocent small talk is barbed with occasional questions about Sarah, laced with a bitter edge of jealousy."
@@ -158,7 +164,7 @@ label day2_eleanor:
             $ good_choice_count += 1
     show bg kitchen with dissolve
     show marcy neutral at left_side with dissolve
-    show eleanor neutral at right_side, flip with dissolve
+    show eleanor neutral at right_side with dissolve
     "Eleanor pats you on the back."
     eleanor playful "Cook and serve in the dining hall this afternoon. I will be seeing you, Marcy."
     "Eleanor leaves without another word."
@@ -293,12 +299,12 @@ label day2_end:
     show sarah cry at right_side with dissolve
     show sarah cry at offscreen_left with move
     hide sarah with dissolve
-    show eleanor cold at right_side, flip with dissolve
+    show eleanor cold at right_side with dissolve
     "The day ends with you on your way to the bedroom when you hear the sound of thumping, catching Sarah trying to run past you in a cry."
     show marcy uneasy at left_side with dissolve
     "You see Eleanor striding in her direction soon after, carrying a ruler in one hand. You hear the distant cries of Sarah as, presumably, Eleanor catches up with her nonchalantly."
     "Your limbs twitch to follow and stop them, to see what is happening - what Sarah could have possibly done - but you are overcome by the fear of being involved."
-    show eleanor cold at offscreen_left, flip with MoveTransition(3.0)
+    show eleanor cold at offscreen_left with MoveTransition(3.0)
     hide eleanor with dissolve
     scene bg black with dissolve
     "Before you even realize it, you've carried yourself back to your room."

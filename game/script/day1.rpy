@@ -2,32 +2,40 @@ label day1:
     # Reset good and bad choice counts to 0
     $ good_choice_count = 0
     $ bad_choice_count = 0
+
     scene bg sunrise with fade
     "A lighter clicks, a flame blossoms."
     "There is a circle, drawn into the dirt, with a small stone statue of a mysterious woman in the center."
     "She is dimmed by candlelight. Wisps of incense smoke waft behind her from a myrrh stick."
     "An obsidian scrying mirror reflects your face from the shadows as you approach the circle."
-    show marcy neutral at left_side with dissolve
+
+    scene bg pray start
+    play music "music/goddess_ambient.mp3" fadein 1.0
     marcy neutral "Time for morning prayer. Just like every other day..."
     menu:
         marcy neutral "What should I pray for?"
         "Offer your praise to the altar":
+            scene bg pray respects
             "You place cut flowers onto the altar, reciting the usual litany."
             marcy neutral "I love Forever, as Forever loves me."
         "Pray for yourself":
+            scene bg pray yourself
             marcy neutral "I've known your embrace for almost my entire life. Yet even now... I feel nothing."
             marcy neutral "I don't know if I know how to... never mind. Good morning."
             $ secret_end_progress += 1
         "Do not pray":
+            scene bg pray nothing
             marcy neutral "Forget about it."
     "You look up, the glare blinding you for a moment. Above is the open blue sky and sunshine, bright and warm. Birdsong hangs in the air."
     "It takes a moment of settling in with the beauty of the painfully vibrant day before you start on your chores."
-    show bg outside with dissolve
+
+    scene bg outside with dissolve
+    show marcy neutral at left_side with dissolve
     "Here at Aeuternum, everyone must do their part. Today, your part is to fetch water."
     show sarah worried at right_side with dissolve
     "On your way to the river, you bump into a tall, soft girl with preppy hair. Her strong arms release something large - a clay vase."
     "There is a loud splash as water spills from the vase, dousing the girl and pooling on the ground."
-    show eleanor neutral at center, flip with dissolve
+    show eleanor neutral at center with dissolve
     "A blonde woman arrives soon after, her expression calm and inscrutable."
     eleanor neutral "Ah - good morning, Marcy. It appears I've come at a bad time..."
     eleanor happy "This is Sarah, our newest member and an absolutely lovely addition to our family."
@@ -127,7 +135,7 @@ label day1_eleanor:
     play music "music/eleanor_theme_day1.mp3"
     scene bg garden1 with dissolve
     show marcy neutral at left_side with dissolve
-    show eleanor neutral at right_side with dissolve
+    show eleanor neutral at right_side, flip with dissolve
     "You join Eleanor in the garden. She picks a daisy from one of the flowerbeds, regarding it calmly while twirling it in her fingers."
     eleanor playful "Daisies... the flower of innocence, purity... does it remind you of anyone?"
     show marcy uneasy
