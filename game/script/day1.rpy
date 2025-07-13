@@ -36,7 +36,7 @@ label day1:
     "Here at Aeternum, everyone must do their part. Today, your part is to fetch water."
     show sarah worried at right_side with dissolve
     "On your way to the river, you bump into a tall, soft girl with preppy hair. Her strong arms release something large - a clay vase."
-    "You haven’t seen her around before, and she certainly seems a bit in over her head."
+    "You haven't seen her around before, and she certainly seems a bit in over her head."
     play sound "sfx/water_spill.mp3"
     "There is a loud splash as water spills from the vase, dousing the girl and pooling on the ground."
     show eleanor neutral at center with dissolve
@@ -228,7 +228,7 @@ label day1_end:
             show bg basement with dissolve
             "You spend the rest of your time in the dark of the basement, a lantern lighting your way as you clear just a few specks of dust."
             "It surprised you how tidy this place was when you first got assigned this task. Now, you regard it as a bit of a \"get out of jail\" chore to seem busy."
-            "Really it’s a bit… calming down here."
+            "Really it's a bit… calming down here."
     show bg dining with dissolve
     "You wrap up your chores and join everyone in the dining hall for dinner."
     "At the end of the meal, everyone receives a chalice of wine, a sacrament of sorts."
