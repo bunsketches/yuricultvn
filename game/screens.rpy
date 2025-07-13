@@ -823,13 +823,13 @@ screen preferences():
                             text _( "{:.0f}%".format(GetMixer("music") * 100) )
                     label _("Text Speed")
                     vbox:
-                        bar value FieldValue(_preferences, "text_cps", range=100, offset=50, force_step=True, style="slider", step=50)
+                        bar value FieldValue(_preferences, "text_cps", range=50, offset=25, force_step=True, style="slider", step=25)
                         # label str(_preferences.text_cps)
-                        if _preferences.text_cps == 150:
+                        if _preferences.text_cps == 75:
                             label "Fast"
-                        elif _preferences.text_cps == 100:
-                            label "Medium"
                         elif _preferences.text_cps == 50:
+                            label "Medium"
+                        elif _preferences.text_cps == 25:
                             label "Slow"
                         
                     # label _("Auto-Forward Time")

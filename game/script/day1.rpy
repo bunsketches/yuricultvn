@@ -197,6 +197,7 @@ label day1_eleanor:
     jump day1_end
 
 label day1_end:
+    play music "music/general_theme.mp3"
     scene bg house1 with dissolve
     show marcy neutral at left_side with dissolve
     marcy neutral "Well, that sure was... something."

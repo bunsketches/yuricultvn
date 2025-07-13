@@ -60,7 +60,7 @@ label day2:
             jump day2_sarah
 
 label day2_eleanor:
-    play music "music/sarah_theme_day2.mp3"
+    play music "music/eleanor_theme_day2.mp3"
     show eleanor neutral at right_side, flip with dissolve
     eleanor happy "Marcy! Come join me in the kitchen. We need your help."
     "As she speaks to you, you see the glimmer of some unknown intent in her calculating gaze, partially masked by her inviting smile."
@@ -280,10 +280,11 @@ label day2_sarah:
     jump day2_end
 
 label day2_end:
+    play music "music/general_theme.mp3"
     scene bg dining with dissolve
     "You eventually take a glass of wine as a routine end to the day."
     "You swish the dark drink around in the cup, examining its contents."
-    "Something is… different about it lately. This happens every so often, the flavor of the wine changing suddenly with no mention. You would normally brush it off but you feel more attuned than usual lately."
+    "Something is... different about it lately. This happens every so often, the flavor of the wine changing suddenly with no mention. You would normally brush it off but you feel more attuned than usual lately."
     play music "music/uneasy_ambience.mp3"
     scene bg hallway with fade
     show marcy neutral at left_side with dissolve
