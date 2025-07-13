@@ -54,11 +54,11 @@ label eleanor_good:
         "Eleanor steps even closer, and suddenly she fills your space. All you can see is Eleanor. All you can think about is Eleanor, {i}Forever{/i}. You feel your inhibitions slip away as the tenseness from your body fades, replaced by want."
         scene bg black with fade
         "You want to give in."
-    scene bg background1
-    # i'm kind of assuming there's going to be a CG here so i don't need to do sprites
+    scene bg day3 eleanor1 with dissolve
     "Eleanor kisses you beside another statue of Forever as you sacrifice Sarah together with the silver, intricately engraved ornamental sacrificial knife over an altar in the Basement."
     "You both wield it together by its hilt as if you are a married couple. You’re sure somewhere in your mind you distantly hear Sarah cry out, but you tell yourself you don’t mind."
     "You are cheered on by surrounding cloaked cult followers, eagerly holding up chalices for Sarah’s blood."
+    scene bg day3 eleanor2 with dissolve
     eleanor "Please, please, one at a time! You’ll all get your share, after Her and my Beloved, of course!"
     marcy "Beloved… is that me?"
     "Eleanor turns and lovingly gives you another kiss on the cheek."
@@ -139,6 +139,7 @@ label sarah_good:
     "You share a tender but brief kiss under the stars. You’re still pressed against Sarah when you feel something warm sputter at your side."
     show marcy uneasy at left_side with dissolve
     "You look down to find blood - frightening amounts of it. So much. Too much."
+    scene bg day3 sarah1b with dissolve
     "Under the moonlight, you watch as Sarah holds up her severed forearm to you - her eyes welled up with tears inextricably mixed with love, pain and ecstasy."
     sarah "Eat it."
     sarah "Make me a part of you, for Her. I won’t face this world without being a part of you."
@@ -159,7 +160,7 @@ label sarah_good:
     "For a moment, it seems like she might fall over, but she quickly corrects her posture."
     "She cries as you take it delicately, gripping your shirt to soothe herself from the pain."
     "You can hear her wince, and you think to yourself that the sound was a bit cute."
-    scene bg garden3 with fade
+    scene bg day3 sarah2b with dissolve
     "You take her arm, and slowly… for Forever’s sake, sink your first bite into it."
     "Your teeth tear through it as if it was your regular dinners that you would’ve shared with Sarah just a few hours ago. Bile starts to build in your throat as you chew."
     "After what seems like Forever, you swallow as you cradle the rest of Sarah in your arms feeling her body go cold."
@@ -177,7 +178,7 @@ label sarah_bad:
         "Sarah notices your change in pace, and turns to look at you."
         "You try to find the words, but Sarah speaks up before you can."
         sarah cry "I… think I understand."
-    scene bg background1
+    scene bg day3 sarah1a
     "Sarah begins to turn for the woods. The moonlight is a spotlight for her form before the gaping cavern created by the looming trees. She looks beautiful."
     if sarah_day3:
         sarah "Thanks for watching the stars with me, Marcy."
