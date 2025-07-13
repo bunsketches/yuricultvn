@@ -44,12 +44,14 @@ label day2:
     menu:
         "Tend to the garden.":
             show bg garden1 with dissolve
+            play sound "sfx/grassy_footsteps.mp3"
             "The garden is peaceful this morning, and since it's early the heat isn't quite overbearing just yet. If not for chores, it'd be a good day to just laze in the grass."
             "You are on your knees picking at weeds, when you hear someone skipping by. A warm voice calls out to you."
             $ sarah_count += 1
             jump day2_sarah
         "Collect river water.":
             show bg river with dissolve
+            play sound "sfx/stone_footsteps.mp3"
             "Your shoe almost slips on a damp rock as you walk to a clearing in the river. You never liked this task all that much."
             "It's not hard, but the feeling of damp clothes sticking to your skin on the trek back to Aeternum is unbearable."
             "Luckily, just as you're about to start, a familiar voice calls out to you."
@@ -64,6 +66,7 @@ label day2:
             jump day2_eleanor
         "Organize the kitchen":
             show bg kitchen with dissolve
+            play sound "sfx/stone_footsteps.mp3"
             "You curse to yourself as you rummage through the kitchen cabinets. The members of Aeternum are not nearly as cleanly as they are devout."
             "Though it might not seem like a big deal, the way they leave spices and knives in a different spots than how they found it always bothered you."
             "Before you can question how a paring knife ended up on a shelf of bowls, you feel a light tap on your shoulder."
@@ -79,6 +82,7 @@ label day2:
             jump day2_sarah
         "Tidy the basement":
             show bg basement with dissolve
+            play sound "sfx/stone_footsteps.mp3"
             "You don't really know why cleaning the basement is even on the chore list at Aeternum. No one really comes down here aside from Eleanor and a few other trusted devout."
             "Even you only come here every so often. In spite of this, it's never all that dirty, just a bit cluttered."
             "You're just about done when you turn around to a familiar smile."

@@ -50,6 +50,7 @@ label day3:
     menu:
         "Trim the garden":
             show bg garden1 with dissolve
+            play sound "sfx/grassy_footsteps.mp3"
             "You spend the afternoon trimming roses, picking weeds, and occasionally taking breaks and taking in the breeze from standing under a hot sun."
             "You watch as the other members shape the hedges or water the plants."
             "As the sun falls below the trees, you catch the silhouette of Sarah walking by."
@@ -57,6 +58,7 @@ label day3:
             jump day3_sarah
         "Catch fish by the river":
             show bg river with dissolve
+            play sound "sfx/stone_footsteps.mp3"
             "You spend the afternoon leaning by the river, attempting to catch fish but failing horribly. You watch as the others nail rainbow trout under their stakes."
             "You wrap up the day by tying the fish up in a large cloth, and placing them into a chest."
             "While buckling the chest of fish, you catch the silhouette of Sarah in the distance - alone, pacing."
@@ -75,6 +77,7 @@ label day3:
             jump day3_eleanor
         "Meal prep in the kitchen":
             show bg kitchen with dissolve
+            play sound "sfx/stone_footsteps.mp3"
             "You do ingredient prep and dishes all day. Sarah serves food at the front - too engaged with the hungry crowd to interact."
             "When the lunch rush wrapped up in the evening, you step out - splashing water into your face at a nearby bucket."
             "You pat it dry with your shirt, catching the dark shape of Sarah briskly walking out of the backdoor."
@@ -90,6 +93,7 @@ label day3:
         "Fix the basement lights":
             show bg basement with dissolve
             show marcy neutral at left_side with dissolve
+            play sound "sfx/stone_footsteps.mp3"
             "You are changing a lightbulb in the Basement, perched precariously on a rickety stool, screwing in the new bulb into the light fixture."
             "The light flickers back on, revealing Eleanor standing in front of you. Watching."
             show marcy uneasy

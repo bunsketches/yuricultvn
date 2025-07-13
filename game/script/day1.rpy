@@ -40,6 +40,7 @@ label day1:
     play sound "sfx/water_spill.mp3"
     "There is a loud splash as water spills from the vase, dousing the girl and pooling on the ground."
     show eleanor neutral at center with dissolve
+    play sound "sfx/grassy_footsteps.mp3"
     "A blonde woman arrives soon after, her expression calm and inscrutable. Out of habit, you sit up a bit straighter at her arrival."
     eleanor neutral "Ah - good morning, Marcy. It appears I've come at a bad time..."
     eleanor happy "This is Sarah, our newest member and an absolutely lovely addition to our family."
@@ -65,6 +66,7 @@ label day1:
             show marcy neutral with dissolve
             "Eleanor smiles, calm and collected as always."
             eleanor happy "Good. This way."
+            play sound "sfx/grassy_footsteps.mp3"
             $ eleanor_count += 1
             jump day1_eleanor
 
@@ -209,6 +211,7 @@ label day1_eleanor:
             "Matching your silence, Eleanor gestures for you to leave."
             "Her usual smile is not angry, but it's certainly not satisfied."
             $ bad_choice_count += 1
+        play sound "sfx/grassy_footsteps.mp3"
     jump day1_end
 
 label day1_end:
