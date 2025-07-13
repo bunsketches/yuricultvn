@@ -5,6 +5,7 @@ label end:
         if sarah_day3:
             "The summer night is warm, but something about the air is chilling. Something isn't right."
             show marcy concern at left_side with dissolve
+            play sound "sfx/heartbeat.mp3"
             marcy "I'm sorry, I forgot Eleanor needed something from me..."
             hide sarah with dissolve
             "You turn away and hurry inside."
@@ -12,6 +13,8 @@ label end:
             "You feel a pull to the basement."
             "She is calling you."
             show bg hallway with dissolve
+            play sound "sfx/running.mp3"
+            play sound "sfx/door_open.mp3"
             "After searching the dark halls of the dimly lit ranch, you stumble into the cold embrace of the Basement where Eleanor awaited you patiently."
             show bg basement with dissolve
             show eleanor happy at right_side with dissolve
@@ -26,11 +29,15 @@ label end:
             marcy "I'm sorry. I need to speak with someone."
             show marcy devastated at left_side with dissolve
             show eleanor psychotic at right_side with dissolve
-            "As you turn away, Eleanor grabs your arm - erratic over what she has shown you, desperate and hungry for you to stay. With a strong tug, you rip yourself out of her grasp."
-            show marcy uneasy at left_side with dissolve
+            "As you turn away, Eleanor grabs your arm - erratic over what she has shown you, desperate and hungry for you to stay."
+            play sound "sfx/push.mp3"
+            "With a strong tug, you rip yourself out of her grasp."
             hide eleanor with dissolve
+            show marcy uneasy at left_side with dissolve
+            play sound "sfx/running.mp3"
             "You hurriedly make your way out of the basement, running - not daring to look at the danger that is behind you."
             "You hear shouts and footsteps behind you, but by quick movements and carefully hiding when necessary, you soon make it outside."
+            play sound "sfx/grassy_footsteps.mp3"
             "You find yourself in the garden, and find the exact person you were looking for."
             show sarah worried at right_side with dissolve
             marcy "Sarah?"
@@ -44,19 +51,25 @@ label end:
 label eleanor_good:
     if eleanor_bad_day3:
         scene bg black with dissolve
+        play sound "sfx/heartbeat.mp3"
         "Your heart beats wildly in your chest, from what you tell yourself is... fear? You're not sure where Sarah is, and while you hope she escaped, given the situation you assume the worst."
         show marcy devastated at left_side with dissolve
         show eleanor psychotic at right_side with dissolve
+        play sound "sfx/heels_walk.mp3"
         "Eleanor slowly walks toward you, a crazed look on her face. Everything in you tells you to run, to fight, to scream, to do something."
         marcy angry "G-Get away! S-Stop this!"
         "Eleanor laughs; Though you wanted to be genuine in your warnings, your own voice betrays you, and Eleanor is very aware of this."
         marcy uneasy "P-Please..."
+        play sound "sfx/heels_walk.mp3"
         "Eleanor steps even closer, and suddenly she fills your space. All you can see is Eleanor. All you can think about is Eleanor, {i}Forever{/i}. You feel your inhibitions slip away as the tenseness from your body fades, replaced by want."
         scene bg black with dissolve
         "You want to give in."
     scene bg day3 eleanor1b with dissolve
+    play sound "sfx/knife_pull.mp3"
     "Eleanor kisses you beside another statue of Forever as you sacrifice Sarah together with the silver, intricately engraved ornamental sacrificial knife over an altar in the Basement."
+    play sound "sfx/knife_stab.mp3"
     "You both wield it together by its hilt as if you are a married couple. You're sure somewhere in your mind you distantly hear Sarah cry out, but you tell yourself you don't mind."
+    play sound "sfx/cheer.mp3"
     "You are cheered on by surrounding cloaked cult followers, eagerly holding up chalices for Sarah's blood."
     scene bg day3 eleanor2b with dissolve
     eleanor "Please, please, one at a time! You'll all get your share, after Her and my Beloved, of course!"
@@ -75,6 +88,7 @@ label eleanor_good:
 label eleanor_bad:
     if eleanor_bad_day3:
         scene bg black with dissolve
+        play sound "sfx/heartbeat.mp3"
         "Your heart beats wildly in your chest, from what you tell yourself is... arousal?"
         show marcy uneasy at left_side with dissolve
         show eleanor happy at right_side with dissolve
@@ -82,33 +96,43 @@ label eleanor_bad:
         "Though you wait eagerly, as soon as the taste of it finally registers as iron after all this time, you cough."
         show marcy devastated at left_side with dissolve
         show eleanor psychotic at right_side with dissolve
+        play sound "sfx/push.mp3"
         "Sputtering, you shove her away."
     scene bg day3 eleanor1a
     "This is wrong. Seeing an opportunity, you move quickly to wrestle with Eleanor over the altar - and pin her."
     "You see anger flash across Eleanor's features."
     "She's never let her anger show like that before, and you find the revelation exciting."
+    play sound "sfx/heartbeat.mp3"
     "It doesn't last long before it's replaced by fear, as Eleanor follows your line of sight to the knife."
+    play sound "sfx/knife_pull.mp3"
     "In a blur, you grab it, holding it to her thigh. For the first time in her silver-spoon life, Eleanor begs."
     eleanor "Marcy, wait—you can't!"
     "You want to hear it again, to draw this moment out longer."
     eleanor "We can still fix this, please! I need you to! To find Forever—"
     scene bg day3 eleanor2a
+    play sound "sfx/knife_stab.mp3"
     "Finally, you plunge the knife into her leg."
     "Though you wanted her to scream, she somehow only hisses. The sound snaps you out of your haze."
     show bg basement2 with dissolve
     show marcy angry at left_side with dissolve
     show eleanor psychotic at right_side with dissolve
+    play sound "sfx/knife_pull.mp3"
     "With her incapacitated, you quickly get off her, taking the dagger with you as a warning to any devotees who dare get in your way."
-    "While everyone else is still stunned in shock, you run out the basement, locking the door behind you to buy yourself some time."
+    play sound "sfx/running.mp3"
+    "While everyone else is still stunned in shock, you run out of the basement, locking the door behind you to buy yourself some time."
+    play sound "sfx/door_slam.mp3"
     scene bg hallway with dissolve
     show marcy uneasy at left_side with dissolve
+    play sound "sfx/runnning.mp3"
     "You run through the hallway, not bothering to look back."
     "Surely, the rest of the devotees have gone about pounding against the basement door or tending to Eleanor's wound. If you do not get out soon, they will catch up to you."
     "You move to make as much distance as possible, the cool steel of the dagger still in hand."
     scene bg sunrise with dissolve
     show marcy uneasy at left_side with dissolve
+    play sound "sfx/push.mp3"
     "Kicking open the door of Eleanor's ranch, you see that it's already morning again."
     "Normally, this would be your cue to pray, but not today."
+    play sound "sfx/heartbeat.mp3"
     "You pause for a moment to catch your breath."
     "You don't know where exactly you're going to go, and your memories of before Aeternum are hazy, but for once you act before you think."
     "Puffing out one last breath, you run, ignoring the desire for one last sip of wine."
@@ -128,6 +152,7 @@ label sarah_good:
     show marcy concern at left_side with dissolve
     show sarah happy at right_side with dissolve
     "Sarah takes you to a bench, patting the spot beside her.  You sit together, watching as the stars come out."
+    show marcy neutral at left_side with dissolve
     show sarah neutral at right_side with dissolve
     "You watch together in silence for a moment. It's peaceful in a way that  Aeternum has never been before. Sarah opens her mouth to speak, her voice smaller than her usual tone."
     sarah "I've always liked stars. They're...comforting for me."
@@ -137,13 +162,15 @@ label sarah_good:
     "Sarah tears her eyes away from the night sky for the first time since sitting down. She looks at you fondly, hope behind her eyes."
     sarah "You."
     "Without thinking, you silently lean in toward Sarah, and you briefly get a glimpse of Sarah doing the same."
-    "You catch the gleam of something shiny before your eyes close."
     play sound "sfx/knife_pull.mp3"
-    "You share a tender but brief kiss under the stars. You're still pressed against Sarah when you feel something warm spatter against you."
+    "You catch the gleam of something shiny before your eyes close."
+    "You share a tender but brief kiss under the stars."
     play sound "sfx/knife_stab.mp3"
+    "You're still pressed against Sarah when you feel something warm sputter at your side."
     show marcy uneasy at left_side with dissolve
     "You look down to find blood - a frightening amount of it. So much. Too much."
     scene bg day3 sarah1b with dissolve
+    play sound "sfx/heartbeat.mp3"
     "Under the moonlight, you watch as Sarah holds up her severed forearm to you - her eyes welled up with tears inextricably mixed with love, pain and ecstasy."
     sarah "Eat it."
     sarah "Make me a part of you, for Her. I won't face this world without being a part of you."
@@ -160,6 +187,7 @@ label sarah_good:
     marcy "I love you, Sarah."
     "Sarah smiles, her eyes flooding with joy."
     sarah "{i}Thank you{/i}."
+    play loop_sound "sfx/ambient_breeze.mp3" fadeout 1.0
     "You watch as she drifts with the arm in her right hand."
     "For a moment, it seems like she might fall over, but she quickly corrects her posture."
     "She cries as you take it delicately, gripping your shirt to soothe herself from the pain."
@@ -184,6 +212,7 @@ label sarah_bad:
         "You try to find the words, but Sarah speaks up before you can."
         sarah cry "I... think I understand."
     scene bg day3 sarah1a
+    play sound "sfx/ambient_breeze.mp3" fadeout 1.0
     "Sarah begins to turn for the woods. The moonlight is a spotlight for her form before the gaping cavern created by the looming trees. She looks beautiful."
     if sarah_day3:
         sarah "Thanks for watching the stars with me, Marcy."

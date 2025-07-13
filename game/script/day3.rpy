@@ -19,6 +19,7 @@ label day3:
         "Was it always cracked like this?"
     "Your face appears in the scrying mirror by the candlelight, as you gather your thoughts."
     stop sound fadeout 0.5
+    play music "music/goddess_ambient.mp3" fadein 1.0 fadeout 1.0
     
     scene bg pray start
     marcy "What should I pray for?"
@@ -43,11 +44,13 @@ label day3:
     "As you move to walk away, you can't shake the feeling that something is wrong."
     "The statue's shadow looms over you even as you make a good bit of distance from it."
     show marcy neutral at left_side with dissolve
+    play music "music/general_theme.mp3" fadein 1.0 fadeout 1.0
     marcy "All right, time to get to it then."
     marcy "What should I take care of today?"
     menu:
         "Trim the garden":
             show bg garden1 with dissolve
+            play sound "sfx/grassy_footsteps.mp3"
             "You spend the afternoon trimming roses, picking weeds, and occasionally taking breaks and taking in the breeze from standing under a hot sun."
             "You watch as the other members shape the hedges or water the plants."
             "As the sun falls below the trees, you catch the silhouette of Sarah walking by."
@@ -55,6 +58,7 @@ label day3:
             jump day3_sarah
         "Catch fish by the river":
             show bg river with dissolve
+            play sound "sfx/stone_footsteps.mp3"
             "You spend the afternoon leaning by the river, attempting to catch fish but failing horribly. You watch as the others nail rainbow trout under their stakes."
             "You wrap up the day by tying the fish up in a large cloth, and placing them into a chest."
             "While buckling the chest of fish, you catch the silhouette of Sarah in the distance - alone, pacing."
@@ -73,6 +77,7 @@ label day3:
             jump day3_eleanor
         "Meal prep in the kitchen":
             show bg kitchen with dissolve
+            play sound "sfx/stone_footsteps.mp3"
             "You do ingredient prep and dishes all day. Sarah serves food at the front - too engaged with the hungry crowd to interact."
             "When the lunch rush wrapped up in the evening, you step out - splashing water into your face at a nearby bucket."
             "You pat it dry with your shirt, catching the dark shape of Sarah briskly walking out of the backdoor."
@@ -88,6 +93,7 @@ label day3:
         "Fix the basement lights":
             show bg basement with dissolve
             show marcy neutral at left_side with dissolve
+            play sound "sfx/stone_footsteps.mp3"
             "You are changing a lightbulb in the Basement, perched precariously on a rickety stool, screwing in the new bulb into the light fixture."
             "The light flickers back on, revealing Eleanor standing in front of you. Watching."
             show marcy uneasy
@@ -119,6 +125,7 @@ label day3_eleanor:
     "Eleanor takes your hand."
     eleanor happy "Come with me."
     "You can't help but follow her as she leads you on."
+    play sound "sfx/door_open.sfx"
     "You arrive at the basement, where she opens a hidden door leading to a secret room."
     play sound "sfx/door_open.mp3"
     show bg basement2
@@ -126,6 +133,7 @@ label day3_eleanor:
     "There is a silver, intricately engraved ornamental knife resting on top of it, which seems familiar."
     if saw_knife:
         "You recognize this knife, from when you and Sarah were in the basement."
+    play sound "sfx/heels_walk.mp3"
     "Barrels of wine line the room, and a row of silver chalices hangs from a rack on the wall."
     "You drank from a chalice every night - didn't ask questions about the wine - but now that you're here, you force the thought out of your mind on what this implies."
     "Eleanor has her hand at your shoulder again as she gestures to the room."
@@ -147,6 +155,7 @@ label day3_eleanor:
     show eleanor psychotic
     "She holds your hands in her own, turning to you - her grip is painfully tight. Her eyes light up, hungry, {i}craving{/i}."
     eleanor "Join me. Become {i}great{/i} with me. Let's meet Forever together, and be her Chosen."
+    play sound "sfx/knife_pull.mp3"
     "Eleanor briefly turns to the altar to grab the dagger. When she turns, it cuts through the air audibly. Eleanor looks at you fanatically, almost trembling. You've never seen her ecstatic like this."
     eleanor "You have this one chance, Marcy - your potential is unfathomable. I've known it since we met all those years ago."
     "She lifts her hand up to touch your scarred cheek, and you swear you feel a searing burn."

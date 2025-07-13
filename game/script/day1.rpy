@@ -7,6 +7,7 @@ label day1:
     play sound "sfx/forest.mp3" fadein 0.5 loop
     "A lighter clicks, a flame blossoms."
     "There is a circle, drawn into the dirt, with a small stone statue of a mysterious woman in the center."
+    play music "music/goddess_ambient.mp3" fadein 1.0 fadeout 1.0
     "She is dimmed by candlelight. Wisps of incense smoke waft behind her from a myrrh stick."
     "An obsidian scrying mirror reflects your face from the shadows as you approach the circle."
     stop sound fadeout 0.5
@@ -39,18 +40,19 @@ label day1:
     play sound "sfx/water_spill.mp3"
     "There is a loud splash as water spills from the vase, dousing the girl and pooling on the ground."
     show eleanor neutral at center with dissolve
+    play sound "sfx/grassy_footsteps.mp3"
     "A blonde woman arrives soon after, her expression calm and inscrutable. Out of habit, you sit up a bit straighter at her arrival."
     eleanor neutral "Ah - good morning, Marcy. It appears I've come at a bad time..."
     eleanor happy "This is Sarah, our newest member and an absolutely lovely addition to our family."
-    show sarah neutral
+    show sarah neutral with dissolve
     eleanor neutral "That being said, could I steal you for a moment?"
-    show sarah worried
+    show sarah worried with dissolve
     "You look at Sarah, who is exasperatedly fumbling with vases."
     marcy "Who should I go with?"
     menu:
         "Go help Sarah":
             marcy "Eleanor, I knocked over all this water Sarah was carrying. I should help her refill it. Can we talk another time?"
-            show eleanor delighted
+            show eleanor delighted with dissolve
             "Eleanor beams that soft, serene smile of hers, one you've seen many times."
             hide eleanor with dissolve
             "With a nod, she turns to leave respectfully. In turn, you and Sarah head for the river."
@@ -58,12 +60,13 @@ label day1:
             jump day1_sarah
         "Follow Eleanor":
             marcy concern "Of course, Eleanor. Lead the way."
-            show sarah neutral
+            show sarah neutral with dissolve
             "Off to the side, Sarah gathers herself, picking up the vase and carrying it back to the river."
             hide sarah with dissolve
-            show marcy neutral
+            show marcy neutral with dissolve
             "Eleanor smiles, calm and collected as always."
             eleanor happy "Good. This way."
+            play sound "sfx/grassy_footsteps.mp3"
             $ eleanor_count += 1
             jump day1_eleanor
 
@@ -141,7 +144,7 @@ label day1_eleanor:
     play music "music/eleanor_theme_day1.mp3" fadein 1.0 fadeout 1.0
     scene bg garden1 with dissolve
     show marcy neutral at left_side with dissolve
-    show eleanor neutral at right_side, flip with dissolve
+    show eleanor neutral at right_side with dissolve
     "You join Eleanor in the garden. She picks a daisy from one of the flowerbeds, regarding it calmly while twirling it in her fingers."
     eleanor playful "Daisies... the flower of innocence, purity... does it remind you of anyone?"
     show marcy uneasy
@@ -179,7 +182,7 @@ label day1_eleanor:
     eleanor happy "And how has Aeternum been treating you all these years, dear?"
     menu:
         "I... am still figuring it out.":
-            "Eleanor presses the daisy to their nose, the edges of her lips curling into a smile."
+            "Eleanor presses the daisy to her nose, the edges of her lips curling into a smile."
             eleanor happy "Excellent, Marcy. Excellent. You owe no debts to me - it has been a pleasure having you with us."
             "You're not sure what to say in response, so you don't say anything. Your body has faced toward the flowerbeds this whole conversation, but Eleanor's eyes still meet yours from the side."
             "She can tell you're waiting for her to say something more."
@@ -208,6 +211,7 @@ label day1_eleanor:
             "Matching your silence, Eleanor gestures for you to leave."
             "Her usual smile is not angry, but it's certainly not satisfied."
             $ bad_choice_count += 1
+        play sound "sfx/grassy_footsteps.mp3"
     jump day1_end
 
 label day1_end:
@@ -226,8 +230,8 @@ label day1_end:
         "Dust the basement.":
             show bg basement with dissolve
             "You spend the rest of your time in the dark of the basement, a lantern lighting your way as you clear just a few specks of dust."
-            "It surprised you how tidy this place was when you first got assigned this task. Now, you regard it as a bit of a 'get out of jail free' chore to look busy."
-            "Weirdly enough, it's actually kind of... calming down here."
+            "It surprised you how tidy this place was when you first got assigned this task. Now, you regard it as a bit of a \"get out of jail\" chore to seem busy."
+            "Really it's a bit… calming down here."
     show bg dining with dissolve
     "You wrap up your chores and join everyone in the dining hall for dinner."
     "At the end of the meal, everyone receives a chalice of wine, a sacrament of sorts."

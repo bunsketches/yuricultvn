@@ -30,7 +30,16 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""Credits go here.""")
-define gui.warnings = _p("""Content warnings go here.""")
+define gui.warnings = _p("""Forever Yours contains various themes that some audiences may find uncomfortable or disturbing. This includes written or visual depictions of the topics below:
+
+- Religious Abuse\n
+- Physical Abuse\n
+- Mutilation\n
+- Cannibalism\n
+- Manipulation\n
+- Brainwashing
+
+Adjacent or similarly disturbing subjects may be mentioned in passing, please be mindful and engage with Forever Yours with reader discretion.""")
 
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
