@@ -27,7 +27,7 @@ label day1:
     show sarah worried at right_side with dissolve
     "On your way to the river, you bump into a tall, soft girl with preppy hair. Her strong arms release something large - a clay vase."
     "There is a loud splash as water spills from the vase, dousing the girl and pooling on the ground."
-    show eleanor neutral at center, flip with dissolve
+    show eleanor neutral at center with dissolve
     "A blonde woman arrives soon after, her expression calm and inscrutable."
     eleanor neutral "Ah - good morning, Marcy. It appears I've come at a bad time..."
     eleanor happy "This is Sarah, our newest member and an absolutely lovely addition to our family."
@@ -127,7 +127,7 @@ label day1_eleanor:
     play music "music/eleanor_theme_day1.mp3"
     scene bg garden1 with dissolve
     show marcy neutral at left_side with dissolve
-    show eleanor neutral at right_side with dissolve
+    show eleanor neutral at right_side, flip with dissolve
     "You join Eleanor in the garden. She picks a daisy from one of the flowerbeds, regarding it calmly while twirling it in her fingers."
     eleanor playful "Daisies... the flower of innocence, purity... does it remind you of anyone?"
     show marcy uneasy

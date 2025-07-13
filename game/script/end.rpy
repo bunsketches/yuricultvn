@@ -14,7 +14,7 @@ label end:
             show bg hallway with fade
             "After searching the dark halls of the dimly lit ranch, you stumble into the cold embrace of the Basement where Eleanor awaited you patiently."
             show bg basement with fade
-            show eleanor happy at right_side, flip with dissolve
+            show eleanor happy at right_side with dissolve
             "She smiles knowingly and takes your hand."
             "She then opens a secret door for you, welcoming you into her secret worship."
     else:
@@ -25,7 +25,7 @@ label end:
             show marcy uneasy at left_side with dissolve
             marcy "I'm sorry. I need to speak with someone."
             show marcy devastated at left_side with dissolve
-            show eleanor psychotic at right_side, flip with dissolve
+            show eleanor psychotic at right_side with dissolve
             "As you turn away, Eleanor grabs your arm - erratic over what she has shown you, desperate and hungry for you to stay. With a strong tug, you rip yourself out of her grasp."
             show marcy uneasy at left_side with dissolve
             hide eleanor with dissolve
@@ -46,7 +46,7 @@ label eleanor_good:
         scene bg black with fade
         "Your heart beats wildly in your chest, from what you tell yourself is... fear? You're not sure where Sarah is, and while you hope she escaped, given the situation you assume the worst."
         show marcy devastated at left_side with dissolve
-        show eleanor psychotic at right_side, flip with dissolve
+        show eleanor psychotic at right_side with dissolve
         "Eleanor slowly walks toward you, a crazed look on her face. Everything in you tells you to run, to fight, to scream, to do something."
         marcy angry "G-Get away! S-Stop this!"
         "Eleanor laughs; Though you wanted to be genuine in your warnings, your own voice betrays you, and Eleanor is very aware of this."
@@ -54,11 +54,11 @@ label eleanor_good:
         "Eleanor steps even closer, and suddenly she fills your space. All you can see is Eleanor. All you can think about is Eleanor, {i}Forever{/i}. You feel your inhibitions slip away as the tenseness from your body fades, replaced by want."
         scene bg black with fade
         "You want to give in."
-    scene bg day3 eleanor1 with dissolve
+    scene bg day3 eleanor1a with dissolve
     "Eleanor kisses you beside another statue of Forever as you sacrifice Sarah together with the silver, intricately engraved ornamental sacrificial knife over an altar in the Basement."
     "You both wield it together by its hilt as if you are a married couple. You're sure somewhere in your mind you distantly hear Sarah cry out, but you tell yourself you don't mind."
     "You are cheered on by surrounding cloaked cult followers, eagerly holding up chalices for Sarah's blood."
-    scene bg day3 eleanor2 with dissolve
+    scene bg day3 eleanor2b with dissolve
     eleanor "Please, please, one at a time! You'll all get your share, after Her and my Beloved, of course!"
     marcy "Beloved... is that me?"
     "Eleanor turns and lovingly gives you another kiss on the cheek."
@@ -77,25 +77,27 @@ label eleanor_bad:
         scene bg black with fade
         "Your heart beats wildly in your chest, from what you tell yourself is... arousal?"
         show marcy uneasy at left_side with dissolve
-        show eleanor happy at right_side, flip with dissolve
+        show eleanor happy at right_side with dissolve
         "Eleanor leans in, kissing you sweetly before drawing back. She brings the cup of 'wine' to your lips."
         "Though you wait eagerly, as soon as the taste of it finally registers as iron after all this time, you cough."
         show marcy devastated at left_side with dissolve
-        show eleanor psychotic at right_side, flip with dissolve
+        show eleanor psychotic at right_side with dissolve
         "Sputtering, you shove her away."
-    scene bg background1
+    scene bg day3 eleanor1a
     "This is wrong. Seeing an opportunity, you move quickly to wrestle with Eleanor over the altar - and pin her."
     "You see anger flash across Eleanor's features."
     "She's never let her anger show like that before, and you find the revelation exciting."
     "It doesn't last long before it's replaced by fear, as Eleanor follows your line of sight to the knife."
-    "In a blur, you grab it, holding it to her thigh. For the first time in her silver-spooned life, Eleanor begs."
+    "In a blur, you grab it, holding it to her thigh. For the first time in her silver-spoon life, Eleanor begs."
     eleanor "Marcy, wait—you can't!"
     "You want to hear it again, to draw this moment out longer."
     eleanor "We can still fix this, please! I need you to! To find Forever—"
+    scene bg day3 eleanor2a
     "Finally, you plunge the knife into her leg."
     "Though you wanted her to scream, she somehow only hisses. The sound snaps you out of your haze."
+    show bg basement with dissolve
     show marcy angry at left_side with dissolve
-    show eleanor psychotic at right_side, flip with dissolve
+    show eleanor psychotic at right_side with dissolve
     "With her incapacitated, you quickly get off her, taking the dagger with you as a warning to any devotees who dare get in your way."
     "While everyone else is still stunned in shock, you run out the basement, locking the door behind you to buy yourself some time."
     scene bg hallway with fade
