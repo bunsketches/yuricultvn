@@ -85,10 +85,11 @@ label day2:
 
 label day2_eleanor:
     play music "music/eleanor_theme_day2.mp3" fadein 1.0 fadeout 1.0
+    stop music
     show eleanor happy at right_side with dissolve
     eleanor happy "Marcy! Come join me in the kitchen. We need your help."
     "As she speaks to you, you see the glimmer of some unknown intent in her calculating gaze, partially masked by her inviting smile."
-    scene bg kitchen with fade
+    scene bg kitchen with dissolve
     show marcy neutral at left_side with dissolve
     show eleanor neutral at right_side with dissolve
     "Eleanor tasks you with cutting meat and ingredient prep in the kitchen. For reasons known only to her, she follows you there."
@@ -97,8 +98,8 @@ label day2_eleanor:
     "Eleanor lays a leg of ham on the butcher block and gestures at it."
     eleanor "Be a dear and portion out the ham, would you, Marcy?"
     scene bg day2 eleanor1 with fade
-    $ renpy.music.play("sfx/pork_chop.wav", channel="sfx1", loop=True)
-    $ renpy.music.play("sfx/boil_loop.wav", channel="sfx2", loop=True)
+    play sfx1 "sfx/pork_chop.mp3" loop
+    play sfx2 "sfx/boil_loop.mp3" loop
     "As you get to hacking the large cut of meat into more manageable pieces, Eleanor stands beside you, patiently stirring a large pot of broth."
     eleanor "You know, I started off without a goal. Did you know that?"
     "You listen while chopping the meat into rough, ragged chunks. Eleanor smiles."
@@ -107,7 +108,7 @@ label day2_eleanor:
     "The kitchen doesn't have as many windows as it really should. In combination with the summer heat, you feel your skin become a bit sticky."
     "An... acceptable aroma fills the air. The food at Aeternum has never been particularly notable."
     "Eleanor is still looking at you as you tug at your collar, waiting for a breezy reprieve that won't come. She hums thoughtfully before speaking again."
-    $ renpy.music.stop(channel="sfx1")
+    stop sfx1
     eleanor "What is your purpose here, Marcy?"
     menu:
         "To be loved, and to learn to love. To be Forever's Chosen, of course.":
@@ -182,6 +183,7 @@ label day2_eleanor:
             "Even now, there is a gleam of mysterious intent in her gaze."
             eleanor happy "Of course, my dear. Think about it, and come find me tomorrow."
             $ good_choice_count += 1
+    stop sfx2
     show bg kitchen with dissolve
     show marcy neutral at left_side with dissolve
     show eleanor neutral at right_side with dissolve
@@ -234,6 +236,7 @@ label day2_sarah:
         scene bg day2 sarah1 with dissolve
     else:
         scene bg day2 sarah2 with dissolve
+    play sound "sfx/couch_sit.mp3"
     "Resigning yourself to your role as model, you sit in the chaise longue. It creaks and groans as you recline awkwardly in it. Sarah sighs contentedly."
     sarah happy "Thank you, I appreciate your help!"
     "She begins to focus on you as she takes her seat on the opposite side of the canvas, beginning to brush away carefully."

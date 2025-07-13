@@ -7,7 +7,6 @@ label day1:
     play sound "sfx/forest.mp3" fadein 0.5 loop
     "A lighter clicks, a flame blossoms."
     "There is a circle, drawn into the dirt, with a small stone statue of a mysterious woman in the center."
-    play music "music/eleanor_theme_day1.mp3" fadein 1.0 fadeout 1.0
     "She is dimmed by candlelight. Wisps of incense smoke waft behind her from a myrrh stick."
     "An obsidian scrying mirror reflects your face from the shadows as you approach the circle."
     stop sound fadeout 0.5
@@ -37,6 +36,7 @@ label day1:
     show sarah worried at right_side with dissolve
     "On your way to the river, you bump into a tall, soft girl with preppy hair. Her strong arms release something large - a clay vase."
     "You haven't seen her around before, and she certainly seems a bit in over her head."
+    play sound "sfx/water_spill.mp3"
     "There is a loud splash as water spills from the vase, dousing the girl and pooling on the ground."
     show eleanor neutral at center with dissolve
     "A blonde woman arrives soon after, her expression calm and inscrutable. Out of habit, you sit up a bit straighter at her arrival."
@@ -92,6 +92,7 @@ label day1_sarah:
             "You then watch her shake her head, seemingly snapping out of whatever daydream she was in, facing you again."
             $ good_choice_count += 1
         "It's private.":
+            play sound "sfx/water_spill.mp3"
             "Sarah jumps a bit, surprised at the blunt remark. You see her fumble with her vase, almost dropping it before laughing nervously."
             sarah worried "Oh - I'm sorry, I didn't mean to make you uncomfortable."
             sarah worried "It's just that, I swear that everyone here's got a similar story to tell..."
