@@ -249,13 +249,8 @@ label day3_sarah:
     jump day3_end
 
 label day3_end:
-    # scene bg background3
-    marcy "This is the end of Day 3. We will compare how many good and bad choices for were made for this day."
     if good_choice_count > bad_choice_count:
-        "Looks like we made more good choices than bad. Today was a good day!"
         $ good_day_count += 1
     else:
-        "Looks like we made more bad choices than good. Today was a bad day!"
         $ bad_day_count += 1
-    marcy "Now we'll jump to the ending..."
     jump end

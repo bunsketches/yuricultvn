@@ -44,10 +44,11 @@ default secret_end_progress = 0
 
 label start:
     menu:
-        "Debug day skip"
-        "Day 1.":
-            jump day1
-        "Day 2.":
-            jump day2
-        "Day 3.":
-            jump day3
+        jump day1
+        #"Debug day skip"
+        #"Day 1.":
+        #    jump day1
+        #"Day 2.":
+        #    jump day2
+        #"Day 3.":
+        #    jump day3
