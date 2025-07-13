@@ -6,10 +6,11 @@ label day3:
     $ sarah_bad_day3 = False
     $ sarah_day3 = False
     $ eleanor_day3 = False
+
     scene bg sunrise with fade
+    "You wake up with a guilty lump in your throat. Dread sits at the bottom of your stomach."
     play sound "sfx/rooster.mp3"
     play music "sfx/forest.mp3" fadein 1.0
-    "You wake up with a guilty lump in your throat. Dread sits at the bottom of your stomach."
     "The scar on half your body burns, your arm twitching in what registers to your body as pain, but what you know in your brain is not really there. The image of last night plays in your mind over and over and over again."
     "You can't shake the feeling of inevitable doom. You lay there for a while, with that terrible weight, before slipping out from the covers."
     "Your morning routine passes without issue, clockwork as usual. As always, you stand before Forever for morning prayer."
@@ -17,22 +18,23 @@ label day3:
         "A spiderweb of hairline cracks run all over the idol, with a particularly large crack slashing Forever's serene visage, revealing the hollow interior."
         "Was it always cracked like this?"
     "Your face appears in the scrying mirror by the candlelight, as you gather your thoughts."
-    show marcy neutral at left_side with dissolve
+    
+    scene bg pray start
     play music "music/goddess_ambient.mp3" fadein 1.0
     menu:
         marcy "What should I pray for?"
         "Offer your praise to the altar":
-            show marcy smile at left_side with dissolve
+            scene bg pray respects
             "You kneel before the altar again. You rest your head into your lap before the statue."
             marcy "I will always be with you, Forever. Take me when you are ready. I am here, and I will continue to be here for you."
         "Pray for yourself":
-            show marcy uneasy at left_side with dissolve
+            scene bg pray yourself
             "You clasp your hands together tightly and bow your head down."
             marcy "If you are there... I feel it in me that something will happen today. I'm not sure what, but please protect me."
             "You linger for a moment before opening your eyes and running a hand down your face."
             $ secret_end_progress += 1
         "Do not pray":
-            show marcy uneasy at left_side with dissolve
+            scene bg pray nothing
             "You look up, scowling at the statue's face."
             "You never noticed the small cracks adorning it, an imperfect surface as the object of everyone's unquestioning adoration."
             marcy "This place is so fucked, I know it is."

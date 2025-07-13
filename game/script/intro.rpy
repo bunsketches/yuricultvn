@@ -43,8 +43,8 @@ default bad_choice_count = 0
 default secret_end_progress = 0
 
 label start:
-    menu:
-        jump day1
+    jump day1
+    #menu:
         #"Debug day skip"
         #"Day 1.":
         #    jump day1
