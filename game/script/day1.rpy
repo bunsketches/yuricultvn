@@ -8,7 +8,7 @@ label day1:
     "She is dimmed by candlelight. Wisps of incense smoke waft behind her from a myrrh stick."
     "An obsidian scrying mirror reflects your face from the shadows as you approach the circle."
     show marcy neutral at left_side with dissolve
-    marcy neutral "Morning prayer..."
+    marcy neutral "Time for morning prayer. Just like every other day..."
     menu:
         marcy neutral "What should I pray for?"
         "Offer your praise to the altar":
@@ -56,7 +56,7 @@ label day1:
             jump day1_eleanor
 
 label day1_sarah:
-    play music "music/sarah_theme_day1.wav"
+    play music "music/sarah_theme_day1.mp3"
     scene bg river with dissolve
     "Once you reach the river with Sarah, she dips the vase into the cool waters beside you."
     show marcy neutral at left_side with dissolve
@@ -197,6 +197,7 @@ label day1_eleanor:
     jump day1_end
 
 label day1_end:
+    play music "music/general_theme.mp3"
     scene bg house1 with dissolve
     show marcy neutral at left_side with dissolve
     marcy neutral "Well, that sure was... something."
