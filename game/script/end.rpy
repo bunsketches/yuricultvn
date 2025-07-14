@@ -25,6 +25,10 @@ label end:
             show eleanor happy at right_side with dissolve
             "She smiles knowingly and takes your hand."
             "She then opens a secret door for you, welcoming you into her secret worship."
+            if end_string == "eleanor_bad":
+                "As you are led into a recessed altar room, you notice several cloaked devotees."
+                "You see a glint of light, an ornate knife on the altar."
+                "Hushed whispers and Eleanor’s ever-present smile make every hair on your skin raise."
     else:
         $ end_string = "sarah"
         if sarah_good_count > sarah_bad_count:
