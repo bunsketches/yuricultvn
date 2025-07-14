@@ -138,6 +138,10 @@ label day1_sarah:
     "You look at your feet, and listen to the sounds of the forest and river around you."
     marcy neutral "I guess a fresh face wouldn't hurt."
     "Deciding you've spent enough time dilly-dallying, you trudge in the direction back to  Aeternum. More chores are to be done for the day."
+    if good_choice_count > bad_choice_count:
+        $ sarah_good_count += 1
+    else:
+        $ sarah_bad_count += 1
     jump day1_end
 
 label day1_eleanor:
@@ -214,6 +218,10 @@ label day1_eleanor:
             play sound "sfx/grassy_footsteps.mp3"
             "Her usual smile is not angry, but it's certainly not satisfied."
             $ bad_choice_count += 1
+    if good_choice_count > bad_choice_count:
+        $ eleanor_good_count += 1
+    else:
+        $ eleanor_bad_count += 1
     jump day1_end
 
 label day1_end:
@@ -251,9 +259,4 @@ label day1_end:
     play sound "sfx/bed_creak.mp3"
     "The springs creak under your weight, and your eyes grow heavy once their face hits the cool side of the pillow. You drift into a dull, numbing slumber."
     scene bg black with dissolve
-
-    if good_choice_count > bad_choice_count:
-        $ good_day_count += 1
-    else:
-        $ bad_day_count += 1
     jump day2

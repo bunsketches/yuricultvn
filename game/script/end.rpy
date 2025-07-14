@@ -2,6 +2,10 @@ label end:
     default end_string = ""
     if eleanor_count > sarah_count:
         $ end_string = "eleanor"
+        if eleanor_good_count > eleanor_bad_count:
+            $ end_string += "_good"
+        else:
+            $ end_string += "_bad"
         if sarah_day3:
             "The summer night is warm, but something about the air is chilling. Something isn't right."
             show marcy concern at left_side with dissolve
@@ -23,6 +27,10 @@ label end:
             "She then opens a secret door for you, welcoming you into her secret worship."
     else:
         $ end_string = "sarah"
+        if sarah_good_count > sarah_bad_count:
+            $ end_string += "_good"
+        else:
+            $ end_string += "_bad"
         if eleanor_day3:
             scene bg black with dissolve
             "Eleanor and the worshipers are closing in on you. The air is tense, and you need to get out. You grunt before telling what you feel is the truth."
@@ -44,10 +52,6 @@ label end:
             show sarah worried at right_side with dissolve
             marcy "Sarah?"
             sarah "Marcy...!"
-    if good_day_count > bad_day_count:
-        $ end_string += "_good"
-    else:
-        $ end_string += "_bad"
     jump expression end_string
 
 label eleanor_good:

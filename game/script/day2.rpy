@@ -207,6 +207,10 @@ label day2_eleanor:
     sarah happy "Thank you!"
     show sarah worried
     "As she moves away, Sarah's gaze falls once more, the joy draining from her face. Did something happen?"
+    if good_choice_count > bad_choice_count:
+        $ eleanor_good_count += 1
+    else:
+        $ eleanor_bad_count += 1
     jump day2_end
 
 label day2_sarah:
@@ -314,6 +318,10 @@ label day2_sarah:
     show marcy smile at left_side with dissolve
     show sarah happy at right_side with dissolve
     "Tonight's menu is pot roast. It was slightly overcooked, a little under-seasoned - but it was warm and fragrant. It reminded you of home."
+    if good_choice_count > bad_choice_count:
+        $ sarah_good_count += 1
+    else:
+        $ sarah_bad_count += 1
     jump day2_end
 
 label day2_end:
@@ -351,9 +359,4 @@ label day2_end:
     "You've done nothing, yet can't help but feel you've managed to cause this somehow..."
     play sound "sfx/bed_creak.mp3"
     "You rest the night."
-    
-    if good_choice_count > bad_choice_count:
-        $ good_day_count += 1
-    else:
-        $ bad_day_count += 1
     jump day3
