@@ -15,6 +15,7 @@ label end:
             show bg hallway with dissolve
             play sound "sfx/running.mp3"
             play sound "sfx/door_open.mp3"
+            play music "music/eleanor_theme_day3.mp3" fadein 1.0 fadeout 1.0
             "After searching the dark halls of the dimly lit ranch, you stumble into the cold embrace of the Basement where Eleanor awaited you patiently."
             show bg basement with dissolve
             show eleanor happy at right_side with dissolve
@@ -38,6 +39,7 @@ label end:
             "You hurriedly make your way out of the basement, running - not daring to look at the danger that is behind you."
             "You hear shouts and footsteps behind you, but by quick movements and carefully hiding when necessary, you soon make it outside."
             play sound "sfx/grassy_footsteps.mp3"
+            play music "music/sarah_theme_day3.mp3" fadein 1.0 fadeout 1.0
             "You find yourself in the garden, and find the exact person you were looking for."
             show sarah worried at right_side with dissolve
             marcy "Sarah?"
