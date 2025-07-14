@@ -174,7 +174,6 @@ label day3_eleanor:
             eleanor "Marcy, I love you. I have looked forward to this - thank you."
             eleanor neutral "I'll make the announcement. We will drink to your promotion."
             $ good_choice_count += 1
-            jump day3_end
     if good_choice_count > bad_choice_count:
         $ eleanor_good_count += 1
         $ eleanor_bad_day3 = True

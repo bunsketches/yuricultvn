@@ -93,7 +93,7 @@ label eleanor_good:
     "The crowd erupts in cheers."
     "Your expression breaks, something between a smile and a grimace, but before you let Eleanor see, you bring your chalice to your lips and gulp it down."
     eleanor "To Forever."
-    scene bg black with Fade(5.0)
+    scene bg black with Fade(2.5, 0.0, 2.5)
     return
 
 label eleanor_bad:
