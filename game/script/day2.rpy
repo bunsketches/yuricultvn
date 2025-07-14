@@ -95,7 +95,8 @@ label day2_eleanor:
     show eleanor happy at right_side with dissolve
     eleanor happy "Marcy! Come join me['' if same_loc else ' in the kitchen']. We need your help."
     "As she speaks to you, you see the glimmer of some unknown intent in her calculating gaze, partially masked by her inviting smile."
-    scene bg kitchen with dissolve
+    if !same_loc:
+        scene bg kitchen with dissolve
     show marcy neutral at left_side with dissolve
     show eleanor neutral at right_side with dissolve
     "Eleanor tasks you with cutting meat and ingredient prep in the kitchen. For reasons known only to her, she follows you there."
@@ -272,8 +273,10 @@ label day2_sarah:
     show sarah happy at right_side with dissolve
     "After putting the finishing touches to her painting, Sarah wipes off sweat from her brow."
     sarah happy "Phew! It looks amazing! Thanks so much, Marcy! I'll go and show this to Ele—"
+    play music "music/goddess_ambient.mp3" fadein 1.0 fadeout 1.0
     show sarah worried
     "Suddenly, Sarah stops as she notices the glint of metal under one of the shelves."
+    play sound "sfx/knife_pull.mp3"
     "Searching through the shelves, she retrieves an ornate dagger, with what looks like flecks of dried blood on the hilt."
     "She looks at you, unsure of what to make of this find."
     sarah worried "What... is this?"
@@ -299,6 +302,7 @@ label day2_sarah:
             sarah worried "Maybe I should. I don't know whose blood is on this, but I'll wipe it down. I hope no one is getting hurt."
             "Sarah slips the knife into her pocket, despite her unease."
             $ bad_choice_count += 1
+    play music "music/sarah_theme_day2.mp3" fadein 1.0 fadeout 1.0
     show marcy uneasy
     sarah neutral "Let's not dwell on this - come on, I'm hungry! Let's go to get lunch."
     marcy uneasy "Wait, Sarah—"

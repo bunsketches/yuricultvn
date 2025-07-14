@@ -83,6 +83,7 @@ label eleanor_good:
     "The crowd erupts in cheers."
     "Your expression breaks, something between a smile and a grimace, but before you let Eleanor see, you bring your chalice to your lips and gulp it down."
     eleanor "To Forever."
+    scene bg black with Fade(5.0)
     return
 
 label eleanor_bad:
@@ -136,6 +137,7 @@ label eleanor_bad:
     "You pause for a moment to catch your breath."
     "You don't know where exactly you're going to go, and your memories of before Aeternum are hazy, but for once you act before you think."
     "Puffing out one last breath, you run, ignoring the desire for one last sip of wine."
+    scene bg black with Fade(5.0)
     return
 
 label sarah_good:
@@ -200,6 +202,7 @@ label sarah_good:
     "Sarah passes from the world with her tears drying and a smile of relief on her face, below her beloved starry night sky."
     "As you watch the warmth drain from your lover, you take another look at the dismembered arm in your grasp."
     "The bile in your throat turns into desire, and before you can have second thoughts, you bite down."
+    scene bg black with Fade(5.0)
     return
 
 label sarah_bad:
@@ -238,4 +241,5 @@ label sarah_bad:
     "A few weeks later, you overhear Eleanor in her quarters as you're about to go to bed. She's on the phone, seemingly questioned about local disappearing people, and Eleanor replies so calmly, so trained."
     scene bg black with dissolve
     "So collected, so independent. So unlike Sarah."
+    scene bg black with Fade(5.0)
     return

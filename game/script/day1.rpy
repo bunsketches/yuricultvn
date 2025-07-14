@@ -7,7 +7,7 @@ label day1:
     play sound "sfx/forest.mp3" fadein 0.5 loop
     "A lighter clicks, a flame blossoms."
     "There is a circle, drawn into the dirt, with a small stone statue of a mysterious woman in the center."
-    play music "music/goddess_ambient.mp3" fadein 1.0 fadeout 1.0
+    play music "music/general_theme.mp3" fadein 1.0 fadeout 1.0
     "She is dimmed by candlelight. Wisps of incense smoke waft behind her from a myrrh stick."
     "An obsidian scrying mirror reflects your face from the shadows as you approach the circle."
     stop sound fadeout 0.5
@@ -41,7 +41,7 @@ label day1:
     "There is a loud splash as water spills from the vase, dousing the girl and pooling on the ground."
     show eleanor neutral at center with dissolve
     play sound "sfx/grassy_footsteps.mp3"
-    "A blonde woman arrives soon after, her expression calm and inscrutable. Out of habit, you sit up a bit straighter at her arrival."
+    "A light-haired woman arrives soon after, her expression calm and inscrutable. Out of habit, you sit up a bit straighter at her arrival."
     eleanor neutral "Ah - good morning, Marcy. It appears I've come at a bad time..."
     eleanor happy "This is Sarah, our newest member and an absolutely lovely addition to our family."
     show sarah neutral with dissolve
