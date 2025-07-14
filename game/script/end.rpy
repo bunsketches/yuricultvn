@@ -86,7 +86,7 @@ label eleanor_good:
     return
 
 label eleanor_bad:
-    if eleanor_bad_day3:
+    if !eleanor_bad_day3:
         scene bg black with dissolve
         play sound "sfx/heartbeat.mp3"
         "Your heart beats wildly in your chest, from what you tell yourself is... arousal?"
@@ -203,7 +203,7 @@ label sarah_good:
     return
 
 label sarah_bad:
-    if sarah_bad_day3:
+    if !sarah_bad_day3:
         scene bg black with dissolve
         "As you approach a bench in the garden, you feel a painful headache come on. Images of Eleanor, her voice, her footsteps as she chases Sarah all cloy at your head."
         "Your ears begin to ring. Your legs begin to feel like they're trudging through mud."
