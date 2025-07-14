@@ -37,8 +37,10 @@ transform flip:
 default eleanor_count = 0
 default sarah_count = 0
 # Count of good and bad days
-default good_day_count = 0
-default bad_day_count = 0
+default eleanor_good_count = 0
+default eleanor_bad_count = 0
+default sarah_good_count = 0
+default sarah_bad_count = 0
 # Count of good and bad choices, reset to 0 at the start of each day
 default good_choice_count = 0
 default bad_choice_count = 0

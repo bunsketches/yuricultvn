@@ -176,8 +176,11 @@ label day3_eleanor:
             $ good_choice_count += 1
             jump day3_end
     if good_choice_count > bad_choice_count:
+        $ eleanor_good_count += 1
         $ eleanor_bad_day3 = True
-    jump day3_end
+    else:
+        $ eleanor_bad_count += 1
+    jump end
 
 label day3_sarah:
     play music "music/sarah_theme_day3.mp3" fadein 1.0 fadeout 1.0
@@ -251,12 +254,8 @@ label day3_sarah:
             "A sadness grows in her eyes, and you hear her begin to sniffle again."
             sarah "Then that's everything... I hope you find the strength to leave this place someday, too."
     if good_choice_count > bad_choice_count:
+        $ sarah_good_count += 1
         $ sarah_bad_day3 = True
-    jump day3_end
-
-label day3_end:
-    if good_choice_count > bad_choice_count:
-        $ good_day_count += 1
     else:
-        $ bad_day_count += 1
+        $ sarah_bad_count += 1
     jump end

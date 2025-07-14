@@ -2,6 +2,10 @@ label end:
     default end_string = ""
     if eleanor_count > sarah_count:
         $ end_string = "eleanor"
+        if eleanor_good_count > eleanor_bad_count:
+            $ end_string += "_good"
+        else:
+            $ end_string += "_bad"
         if sarah_day3:
             "The summer night is warm, but something about the air is chilling. Something isn't right."
             show marcy concern at left_side with dissolve
@@ -15,13 +19,22 @@ label end:
             show bg hallway with dissolve
             play sound "sfx/running.mp3"
             play sound "sfx/door_open.mp3"
+            play music "music/eleanor_theme_day3.mp3" fadein 1.0 fadeout 1.0
             "After searching the dark halls of the dimly lit ranch, you stumble into the cold embrace of the Basement where Eleanor awaited you patiently."
             show bg basement with dissolve
             show eleanor happy at right_side with dissolve
             "She smiles knowingly and takes your hand."
             "She then opens a secret door for you, welcoming you into her secret worship."
+            if end_string == "eleanor_bad":
+                "As you are led into a recessed altar room, you notice several cloaked devotees."
+                "You see a glint of light, an ornate knife on the altar."
+                "Hushed whispers and Eleanor’s ever-present smile make every hair on your skin raise."
     else:
         $ end_string = "sarah"
+        if sarah_good_count > sarah_bad_count:
+            $ end_string += "_good"
+        else:
+            $ end_string += "_bad"
         if eleanor_day3:
             scene bg black with dissolve
             "Eleanor and the worshipers are closing in on you. The air is tense, and you need to get out. You grunt before telling what you feel is the truth."
@@ -38,14 +51,11 @@ label end:
             "You hurriedly make your way out of the basement, running - not daring to look at the danger that is behind you."
             "You hear shouts and footsteps behind you, but by quick movements and carefully hiding when necessary, you soon make it outside."
             play sound "sfx/grassy_footsteps.mp3"
+            play music "music/sarah_theme_day3.mp3" fadein 1.0 fadeout 1.0
             "You find yourself in the garden, and find the exact person you were looking for."
             show sarah worried at right_side with dissolve
             marcy "Sarah?"
             sarah "Marcy...!"
-    if good_day_count > bad_day_count:
-        $ end_string += "_good"
-    else:
-        $ end_string += "_bad"
     jump expression end_string
 
 label eleanor_good:
@@ -83,6 +93,7 @@ label eleanor_good:
     "The crowd erupts in cheers."
     "Your expression breaks, something between a smile and a grimace, but before you let Eleanor see, you bring your chalice to your lips and gulp it down."
     eleanor "To Forever."
+    scene bg black with Fade(5.0)
     return
 
 label eleanor_bad:
@@ -136,6 +147,7 @@ label eleanor_bad:
     "You pause for a moment to catch your breath."
     "You don't know where exactly you're going to go, and your memories of before Aeternum are hazy, but for once you act before you think."
     "Puffing out one last breath, you run, ignoring the desire for one last sip of wine."
+    scene bg black with Fade(5.0)
     return
 
 label sarah_good:
@@ -200,6 +212,7 @@ label sarah_good:
     "Sarah passes from the world with her tears drying and a smile of relief on her face, below her beloved starry night sky."
     "As you watch the warmth drain from your lover, you take another look at the dismembered arm in your grasp."
     "The bile in your throat turns into desire, and before you can have second thoughts, you bite down."
+    scene bg black with Fade(5.0)
     return
 
 label sarah_bad:
@@ -238,4 +251,5 @@ label sarah_bad:
     "A few weeks later, you overhear Eleanor in her quarters as you're about to go to bed. She's on the phone, seemingly questioned about local disappearing people, and Eleanor replies so calmly, so trained."
     scene bg black with dissolve
     "So collected, so independent. So unlike Sarah."
+    scene bg black with Fade(5.0)
     return
