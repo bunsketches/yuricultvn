@@ -201,17 +201,19 @@ label day1_eleanor:
         "Of course. I'll continue to work hard, Eleanor.":
             "Eleanor chuckles at you, nodding approvingly. She moves to leave, but not without reaching up to pat the top of your head."
             "She's quite a bit shorter than you, so as if moving on autopilot, you duck your head so that she can reach. You watch her saunter off, grace in every step." 
+            play sound "sfx/grassy_footsteps.mp3"
             "Stunned at the sudden act of what can only be confusingly described as affection, you now stand alone in the garden, sun beaming down, daisies not quite in full bloom."
             $ good_choice_count += 1
         "Please don't.":
             "If your rebuke has any effect on Eleanor, it doesn't show. Eleanor gestures for you to leave."
+            play sound "sfx/grassy_footsteps.mp3"
             "Her usual smile is not angry, but it's certainly not satisfied."
             $ bad_choice_count += 1
         "...":
             "Matching your silence, Eleanor gestures for you to leave."
+            play sound "sfx/grassy_footsteps.mp3"
             "Her usual smile is not angry, but it's certainly not satisfied."
             $ bad_choice_count += 1
-        play sound "sfx/grassy_footsteps.mp3"
     jump day1_end
 
 label day1_end:
